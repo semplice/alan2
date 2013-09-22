@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # alan2 - An openbox menu builder
@@ -19,4 +18,23 @@
 # Authors:
 #    Eugenio "g7" Paolantonio <me@medesimo.eu>
 #
+# This file contains the BaseObject.
 
+from alan.core.objects.Menu import Menu
+
+class Extension:
+	""" A base Extension object. Extension should subclass this. """
+	
+	extensionName = "Extension"
+	
+	def __init__(self):
+		""" Initializes the object. """
+		
+		self.menu = Menu(self.extensionName)
+		self.generate()
+	
+	def generate(self):
+		""" Extension creators should override this method to get things
+		done. """
+		
+		pass

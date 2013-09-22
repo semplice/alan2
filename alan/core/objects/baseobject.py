@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # alan2 - An openbox menu builder
@@ -19,4 +18,17 @@
 # Authors:
 #    Eugenio "g7" Paolantonio <me@medesimo.eu>
 #
+# This file contains the BaseObject.
 
+import xml.etree.ElementTree as etree
+
+class BaseObject(etree.Element):
+	""" A BaseObject class is the base menu object.
+	Items, Headers and Menus extends this class to generate a working object. """
+	
+	objectName = "BaseObject"
+	
+	def __init__(self):
+		""" Initializes the object. """
+		
+		etree.__init__(self.objectName)

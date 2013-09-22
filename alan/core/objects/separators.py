@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # alan2 - An openbox menu builder
@@ -19,4 +18,20 @@
 # Authors:
 #    Eugenio "g7" Paolantonio <me@medesimo.eu>
 #
+# This file contains the Separators objects.
 
+from alan.core.objects.baseobject import BaseObject
+
+class Separator(BaseObject):
+	""" A Separator. """
+	
+	objectName = "separator"
+
+class Header(Separator):
+	""" An Header (a Separator with a label). """
+	
+	def __init__(self, label):
+		""" Initializes the object. """
+		
+		Separator.__init__(self)
+		self.set("label", label)

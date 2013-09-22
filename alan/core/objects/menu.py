@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # alan2 - An openbox menu builder
@@ -19,4 +18,17 @@
 # Authors:
 #    Eugenio "g7" Paolantonio <me@medesimo.eu>
 #
+# This file contains the Menu object.
 
+from alan.core.objects.baseobject import BaseObject
+
+class Menu(BaseObject):
+	""" A Menu class contains an openbox submenu. """
+	
+	objectName = "menu"
+	
+	def __init__(self, id):
+		""" Initializes the object. """
+		
+		BaseObject.__init__(self)
+		self.set("id", id)

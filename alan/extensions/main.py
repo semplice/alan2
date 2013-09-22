@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # alan2 - An openbox menu builder
@@ -19,4 +18,17 @@
 # Authors:
 #    Eugenio "g7" Paolantonio <me@medesimo.eu>
 #
+# This file contains the main extension.
 
+import alan.core.extension as extension
+from alan.core.objects.separators import Header, Separator
+
+class Extension(extension.Extension):
+	
+	extensionName = "main"
+	
+	def generate(self):
+		""" Actually generate things. """
+		
+		mainHeader = Header("This is alan!")
+		

@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # alan2 - An openbox menu builder
@@ -19,4 +18,19 @@
 # Authors:
 #    Eugenio "g7" Paolantonio <me@medesimo.eu>
 #
+# This file contains the Item object.
 
+from alan.core.objects.baseobject import BaseObject
+
+class Item(BaseObject):
+	""" An Item object. """
+	
+	objectName = "item"
+	
+	def __init__(self, label, icon=None):
+		""" Initializes the object. """
+		
+		BaseObject.__init__(self)
+		self.set("label", label)
+		if icon:
+			self.set("icon", icon)
