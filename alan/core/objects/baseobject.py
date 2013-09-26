@@ -20,15 +20,20 @@
 #
 # This file contains the BaseObject.
 
-import xml.etree.ElementTree as etree
+import xml.etree.cElementTree as etree
 
-class BaseObject(etree.Element):
+class BaseObject:
 	""" A BaseObject class is the base menu object.
 	Items, Headers and Menus extends this class to generate a working object. """
-	
+
 	objectName = "BaseObject"
-	
+
 	def __init__(self):
 		""" Initializes the object. """
-		
-		etree.__init__(self.objectName)
+
+		self.__tree = etree.Element(self.objectName)
+
+	def set(self, name, value):
+		""" Creates a new tag. """
+
+		self.__tree.set(name, value)
