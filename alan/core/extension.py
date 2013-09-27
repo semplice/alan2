@@ -21,12 +21,11 @@
 # This file contains the BaseObject.
 
 import sys
-
-import xml.etree.cElementTree as etree
+import xml.etree.ElementTree as etree
 
 from alan.core.objects.menu import OpenboxMenu, Menu
 
-class Extension:
+class Extension(OpenboxMenu):
 	""" A base Extension object. Extension should subclass this. """
 	
 	extensionName = "Extension"
@@ -34,11 +33,11 @@ class Extension:
 	def __init__(self):
 		""" Initializes the object. """
 		
-		self.tree = OpenboxMenu()
-		
+		OpenboxMenu.__init__(self)
+
 		self.menu = Menu(self.extensionName)
 		
-		self.tree.append(self.menu)
+		self.append(self.menu)
 		
 		self.generate()
 	
@@ -56,4 +55,4 @@ class Extension:
 	def get_menu(self):
 		""" Prints the resulting menu. """
 		
-		etree.ElementTree(self.tree.get_base_object()).write(sys.stdout)
+		etree.ElementTree(self).write(sys.stdout)
