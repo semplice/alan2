@@ -22,6 +22,11 @@
 
 from alan.core.objects.baseobject import BaseObject
 
+class OpenboxMenu(BaseObject):
+	""" The main Openbox menu tag. """
+
+	objectName = "openbox_menu"
+
 class Menu(BaseObject):
 	""" A Menu class contains an openbox submenu. """
 	

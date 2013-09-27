@@ -21,7 +21,7 @@
 # This file contains the main extension.
 
 import alan.core.extension as extension
-from alan.core.objects.separators import Header, Separator
+from alan.core.objects.separator import Header, Separator
 
 class Extension(extension.Extension):
 	
@@ -30,5 +30,4 @@ class Extension(extension.Extension):
 	def generate(self):
 		""" Actually generate things. """
 		
-		mainHeader = Header("This is alan!")
-		
+		self.add(Header("This is alan!"))

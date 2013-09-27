@@ -37,3 +37,13 @@ class BaseObject:
 		""" Creates a new tag. """
 
 		self.__tree.set(name, value)
+	
+	def append(self, obj):
+		""" Appends obj to the tree. """
+		
+		self.__tree.append(obj.__tree)
+
+	def get_base_object(self):
+		""" Returns the base object (__tree) """
+		
+		return self.__tree
