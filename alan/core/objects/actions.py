@@ -18,31 +18,39 @@
 # Authors:
 #    Eugenio "g7" Paolantonio <me@medesimo.eu>
 #
-# This file contains the BaseObject.
+# This file contains openbox actions.
 
-import xml.etree.ElementTree as etree
+from alan.core.objects.baseobject import BaseObject, DynamicObject
 
-class BaseObject(etree.Element):
-	""" A BaseObject class is the base menu object.
-	Items, Headers and Menus extends this class to generate a working object. """
-
-	objectName = "BaseObject"
-
+class BaseAction(BaseObject):
+	""" A BaseAction object. Extension creators should not need this. """
+	
+	objectName = "action"
+	actionName = None
+	
 	def __init__(self):
 		""" Initializes the object. """
+		
+		BaseObject.__init__(self)
+		if self.actionName:
+			self.set("name", self.actionName)
 
-		etree.Element.__init__(self, self.objectName)
-
-class DynamicObject(etree.Element):
-	""" A BaseObject-derived object with the objectName set at runtime. """
+class ExecuteAction(BaseAction):
+	""" An Action which executes applications. """
 	
-	def __init__(self, name, text=None):
+	actionName = "Execute"
+	
+	def __init__(self, command, prompt=None):
 		""" Initializes the object.
 		
-		'name' is the object's name.
-		'text', if not None, is the text to set. If None, no text will
-		be set."""
+		'command' is the command to execute.
+		'prompt', if not None, contains the string to show in a Yes/No
+		popup dialog. If None, the popup will not be displayed. """
 		
-		etree.Element.__init__(self, name)
-		if text:
-			self.text = text
+		BaseAction.__init__(self)
+		
+		self.append(DynamicObject("command", command))
+		if prompt:
+			self.append(DynamicObject("prompt", prompt))
+		
+		

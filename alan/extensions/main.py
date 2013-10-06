@@ -26,6 +26,7 @@ import alan.core.extension as extension
 from alan.core.objects.separator import Header, Separator
 from alan.core.objects.item import Item
 from alan.core.objects.menu import Menu
+from alan.core.objects.actions import ExecuteAction
 
 class Extension(extension.Extension):
 	
@@ -77,7 +78,13 @@ class Extension(extension.Extension):
 			item_file = launcher_settings[item]
 			item_file = xdg.DesktopEntry.DesktopEntry(item_file)
 			
-			self.add(Item(label=item_file.getName()))
+			item = Item(label=item_file.getName())
+			# Create an action...
+			action = ExecuteAction(item_file.getExec())
+			
+			item.append(action)
+			
+			self.add(item)
 	
 	def new_menu_link(self, item):
 		""" Creates a new_menu_link """
