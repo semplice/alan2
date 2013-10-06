@@ -20,17 +20,64 @@
 #
 # This file contains the main extension.
 
+import xdg.DesktopEntry
+
 import alan.core.extension as extension
 from alan.core.objects.separator import Header, Separator
+from alan.core.objects.item import Item
+from alan.core.objects.menu import Menu
 
 class Extension(extension.Extension):
 	
 	extensionName = "main"
-	structure_links = {}
 	
 	def generate(self):
 		""" Actually generate things. """
 				
 		self.add(Header("This is alan!"))
 		
-		extension.Extension.generate(self)
+		for item in self.structure:
+			
+			_item = item.split(":")
+			if len(_item) > 1:
+				# special object
+				obj = _item[0]
+				item = ":".join(_item[1:])
+			else:
+				# menu
+				obj = "MenuLink"
+				item = item
+			
+			# Set linkedto
+			if obj == "MenuLink":
+				linkedto = self.new_menu_link
+			elif obj == "ItemPool":
+				linkedto = self.new_itempool
+			elif obj == "Menu":
+				linkedto = self.new_internal_menu
+			elif obj == "LauncherPool":
+				linkedto = self.new_launcher_pool
+			
+			linkedto(item)
+		
+	def new_launcher_pool(self, item):
+		""" Creates a new LauncherPool """
+		
+		launcher_settings = self.settings["LauncherPool:%s" % item]
+		structure = launcher_settings["structure"].split(" ")
+		
+		for item in structure:
+			item_file = launcher_settings[item]
+			item_file = xdg.DesktopEntry.DesktopEntry(item_file)
+			
+			self.add(Item(label=item_file.getName()))
+	
+	def new_menu_link(self, item):
+		""" Creates a new_menu_link """
+		
+		self.add(Menu(id=item))
+	
+	def new_internal_menu(self, item):
+		""" Creates a new internal menu """
+		
+		pass
