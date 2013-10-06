@@ -31,8 +31,10 @@ class Extension(OpenboxMenu):
 	extensionName = "Extension"
 	structure = []
 	
-	def __init__(self, configuration=None):
+	def __init__(self, configuration=None, is_pipe=False):
 		""" Initializes the object. """
+		
+		self.is_pipe = is_pipe
 		
 		self.extensionId = self.__module__.replace("alan.extensions.", "")
 		
@@ -43,11 +45,16 @@ class Extension(OpenboxMenu):
 		if "structure" in self.extension_settings:
 			self.structure = self.extension_settings["structure"].split(" ")
 		
+		if is_pipe:
+			# pipemenu, change things accordingly
+			self.objectName = "openbox_pipe_menu"
+
 		OpenboxMenu.__init__(self)
 
-		self.menu = Menu(self.extensionName)
-		
-		self.append(self.menu)
+		if not is_pipe:
+			self.menu = Menu(self.extensionName)
+			
+			self.append(self.menu)
 	
 	def generate(self):
 		""" Override this method to actually do things. """
@@ -57,7 +64,10 @@ class Extension(OpenboxMenu):
 	def add(self, obj):
 		""" Appends to the main menu the specified object. """
 		
-		return self.menu.append(obj)
+		if self.is_pipe:
+			return self.append(obj)
+		else:
+			return self.menu.append(obj)
 	
 	def get_menu(self):
 		""" Prints the resulting menu. """
