@@ -63,4 +63,12 @@ class Configuration(cp.SafeConfigParser):
 			elif value.lower() == "none":
 				value = None
 			self.settings[extension][option] = value
+			
+			# Parse structure to get special objects...
+			if option == "structure":
+				_workspace = value.split(" ")
+				for item in _workspace:
+					if item.startswith("ItemPool") or item.startswith("Menu") or item.startswith("LauncherPool"):
+						# obtain settings!
+						self.populate_settings(item)
 		

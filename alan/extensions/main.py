@@ -26,10 +26,11 @@ from alan.core.objects.separator import Header, Separator
 class Extension(extension.Extension):
 	
 	extensionName = "main"
+	structure_links = {}
 	
 	def generate(self):
 		""" Actually generate things. """
-		
-		print self.settings, self.structure
-		
+				
 		self.add(Header("This is alan!"))
+		
+		extension.Extension.generate(self)
