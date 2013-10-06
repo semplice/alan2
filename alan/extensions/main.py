@@ -30,4 +30,6 @@ class Extension(extension.Extension):
 	def generate(self):
 		""" Actually generate things. """
 		
+		print self.settings, self.structure
+		
 		self.add(Header("This is alan!"))

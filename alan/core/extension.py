@@ -25,13 +25,25 @@ import xml.etree.ElementTree as etree
 
 from alan.core.objects.menu import OpenboxMenu, Menu
 
+# Get name
+#print __module__
+
 class Extension(OpenboxMenu):
 	""" A base Extension object. Extension should subclass this. """
 	
 	extensionName = "Extension"
+	structure = None
 	
-	def __init__(self):
+	def __init__(self, settings={}):
 		""" Initializes the object. """
+		
+		self.extensionId = self.__module__.replace("alan.extensions.", "")
+		
+		self.settings = settings
+		self.extension_settings = settings["extension:%s" % self.extensionId]
+		
+		if "structure" in self.extension_settings:
+			self.structure = self.extension_settings["structure"].split(" ")
 		
 		OpenboxMenu.__init__(self)
 

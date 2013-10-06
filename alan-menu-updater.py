@@ -20,7 +20,8 @@
 #    Eugenio "g7" Paolantonio <me@medesimo.eu>
 #
 
-import alan.core.main as coreMain
+import alan.core.main as main
+import alan.core.config as config
 
 import argparse
 import os
@@ -49,11 +50,14 @@ if not args.target:
 
 ## Welcome to alan2!
 
+# Get extension configuration
+configuration = config.Configuration(args.extension)
+
 # Import extension
-extension_module = coreMain.import_extension(args.extension)
+extension_module = main.import_extension(args.extension)
 
 # Get extension object
-extension = extension_module.Extension()
+extension = extension_module.Extension(settings=configuration.settings)
 
 # Generate menu
 extension.generate()
