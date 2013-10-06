@@ -20,3 +20,43 @@
 #    Eugenio "g7" Paolantonio <me@medesimo.eu>
 #
 
+import alan.core.main as coreMain
+
+import argparse
+import os
+
+DEFAULT_PATH=os.path.expanduser("~/.config/alan-menus")
+# Generate directory if it doesn't exist
+if not os.path.exists(DEFAULT_PATH):
+	os.makedirs(DEFAULT_PATH)
+
+# Create and parse arguments
+parser = argparse.ArgumentParser()
+parser.add_argument(
+	"extension",
+	help="the extension to process"
+)
+parser.add_argument(
+	"-t", "--target",
+	help="the target file. Defaults to ~/.config/alan-menus/<extension>.xml"
+)
+
+args = parser.parse_args()
+
+# If target is not specified, use our default
+if not args.target:
+	args.target = os.path.join(DEFAULT_PATH, "%s.xml" % args.extension)
+
+## Welcome to alan2!
+
+# Import extension
+extension_module = coreMain.import_extension(args.extension)
+
+# Get extension object
+extension = extension_module.Extension()
+
+# Generate menu
+extension.generate()
+
+# Write menu
+extension.write_menu(args.target)

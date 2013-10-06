@@ -38,8 +38,6 @@ class Extension(OpenboxMenu):
 		self.menu = Menu(self.extensionName)
 		
 		self.append(self.menu)
-		
-		self.generate()
 	
 	def generate(self):
 		""" Extension creators should override this method to get things
@@ -56,3 +54,8 @@ class Extension(OpenboxMenu):
 		""" Prints the resulting menu. """
 		
 		etree.ElementTree(self).write(sys.stdout)
+	
+	def write_menu(self, dest):
+		""" Writes the menu in dest."""
+		
+		etree.ElementTree(self).write(dest)
