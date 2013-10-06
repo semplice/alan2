@@ -31,13 +31,14 @@ class Extension(OpenboxMenu):
 	extensionName = "Extension"
 	structure = []
 	
-	def __init__(self, settings={}):
+	def __init__(self, configuration=None):
 		""" Initializes the object. """
 		
 		self.extensionId = self.__module__.replace("alan.extensions.", "")
 		
-		self.settings = settings
-		self.extension_settings = settings["extension:%s" % self.extensionId]
+		self.configuration = configuration
+		self.settings = configuration.settings
+		self.extension_settings = self.settings["extension:%s" % self.extensionId]
 		
 		if "structure" in self.extension_settings:
 			self.structure = self.extension_settings["structure"].split(" ")

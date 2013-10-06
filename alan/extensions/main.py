@@ -33,7 +33,14 @@ class Extension(extension.Extension):
 	
 	def generate(self):
 		""" Actually generate things. """
-				
+		
+		# Get special objects...
+		for item in self.structure:
+			if item.startswith("ItemPool") or item.startswith("Menu") or item.startswith("LauncherPool"):
+				# obtain settings!
+				self.configuration.populate_settings(item)
+		self.settings = self.configuration.settings # update settings
+		
 		self.add(Header("This is alan!"))
 		
 		for item in self.structure:

@@ -57,7 +57,7 @@ configuration = config.Configuration(args.extension)
 extension_module = main.import_extension(args.extension)
 
 # Get extension object
-extension = extension_module.Extension(settings=configuration.settings)
+extension = extension_module.Extension(configuration=configuration)
 
 # Generate menu
 extension.generate()
