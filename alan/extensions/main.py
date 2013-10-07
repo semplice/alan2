@@ -49,11 +49,12 @@ class Extension(extension.Extension):
 				self.configuration.populate_settings(item)
 		self.settings = self.configuration.settings # update settings
 		
-		header_text = self.extension_settings["header_text"]
-		if header_text in HeaderMagic:
-			header_text = HeaderMagic[header_text]
-		
-		self.add(Header(header_text))
+		if self.extension_settings["show_header"]:
+			header_text = self.extension_settings["header_text"]
+			if header_text in HeaderMagic:
+				header_text = HeaderMagic[header_text]
+
+			self.add(Header(header_text))
 		
 		for item in self.structure:
 			
