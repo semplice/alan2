@@ -111,7 +111,7 @@ class Extension(extension.Extension):
 	def return_executable_item(self, label, target, icon=None):
 		""" Returns an executable item. """
 		
-		item = Item(label=label, icon=icon)
+		item = Item(label=label, icon=self.IconPool.get_icon(icon))
 		action = ExecuteAction("%s \"%s\"" % (self.filemanager, target))
 		item.append(action)
 		

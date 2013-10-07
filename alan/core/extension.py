@@ -24,6 +24,7 @@ import sys
 import xml.etree.ElementTree as etree
 
 from alan.core.objects.menu import OpenboxMenu, Menu
+from alan.core.objects.icon import IconPool
 
 class Extension(OpenboxMenu):
 	""" A base Extension object. Extension should subclass this. """
@@ -44,6 +45,13 @@ class Extension(OpenboxMenu):
 		
 		if "structure" in self.extension_settings:
 			self.structure = self.extension_settings["structure"].split(" ")
+		
+		if not "icons" in self.settings["alan"]:
+			icons = False
+		else:
+			icons = self.settings["alan"]["icons"]
+		
+		self.IconPool = IconPool(icons)
 		
 		if is_pipe:
 			# pipemenu, change things accordingly
