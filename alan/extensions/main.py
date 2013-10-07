@@ -25,6 +25,8 @@ from socket import gethostname
 
 import xdg.DesktopEntry
 
+import os, sys
+
 import alan.core.extension as extension
 from alan.core.objects.separator import Header, Separator
 from alan.core.objects.item import Item
@@ -98,7 +100,18 @@ class Extension(extension.Extension):
 	def new_menu_link(self, item):
 		""" Creates a new_menu_link """
 		
-		self.add(Menu(id=item))
+		if self.is_pipe:
+			execute = "%s %s" % (os.path.abspath(sys.argv[0]), item)
+		else:
+			execute = None
+		
+		# Get name
+		if "label_%s" % item in self.extension_settings:
+			label = self.extension_settings["label_%s" % item]
+		else:
+			label = None
+		
+		self.add(Menu(id=item, label=label, execute=execute))
 	
 	def new_internal_menu(self, item):
 		""" Creates a new internal menu """
