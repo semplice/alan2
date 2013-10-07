@@ -57,6 +57,11 @@ class Extension(extension.Extension):
 		
 		for item in self.structure:
 			
+			if item == "-":
+				# It's a separator!
+				self.add(Separator())
+				continue
+			
 			_item = item.split(":")
 			if len(_item) > 1:
 				# special object
