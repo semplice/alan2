@@ -48,7 +48,8 @@ class Configuration(cp.SafeConfigParser):
 		self.populate_settings("alan")
 		
 		# ...and for the extension.
-		self.populate_settings("extension:%s" % extension)
+		if "extension:%s" % extension in self.sections():
+			self.populate_settings("extension:%s" % extension)
 		
 	def populate_settings(self, extension):
 		""" Populates self.settings with extension's settings. """

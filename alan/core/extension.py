@@ -41,7 +41,10 @@ class Extension(OpenboxMenu):
 		
 		self.configuration = configuration
 		self.settings = configuration.settings
-		self.extension_settings = self.settings["extension:%s" % self.extensionId]
+		if "extension:%s" % self.extensionId in self.settings:
+			self.extension_settings = self.settings["extension:%s" % self.extensionId]
+		else:
+			self.extension_settings = {}
 		
 		if "structure" in self.extension_settings:
 			self.structure = self.extension_settings["structure"].split(" ")

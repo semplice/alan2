@@ -32,7 +32,7 @@ class Menu(BaseObject):
 	
 	objectName = "menu"
 	
-	def __init__(self, id, label=None, execute=None):
+	def __init__(self, id, label=None, execute=None, icon=None):
 		""" Initializes the object. """
 		
 		BaseObject.__init__(self)
@@ -41,3 +41,5 @@ class Menu(BaseObject):
 			self.set("label", label)
 		if execute:
 			self.set("execute", execute)
+		if icon:
+			self.set("icon", icon)
