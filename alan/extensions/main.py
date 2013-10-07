@@ -20,6 +20,9 @@
 #
 # This file contains the main extension.
 
+from getpass import getuser
+from socket import gethostname
+
 import xdg.DesktopEntry
 
 import alan.core.extension as extension
@@ -27,6 +30,8 @@ from alan.core.objects.separator import Header, Separator
 from alan.core.objects.item import Item
 from alan.core.objects.menu import Menu
 from alan.core.objects.actions import ExecuteAction
+
+HeaderMagic = {"__username__":getuser(), "__hostname__":gethostname()}
 
 class Extension(extension.Extension):
 	
@@ -42,7 +47,11 @@ class Extension(extension.Extension):
 				self.configuration.populate_settings(item)
 		self.settings = self.configuration.settings # update settings
 		
-		self.add(Header("This is alan!"))
+		header_text = self.extension_settings["header_text"]
+		if header_text in HeaderMagic:
+			header_text = HeaderMagic[header_text]
+		
+		self.add(Header(header_text))
 		
 		for item in self.structure:
 			
