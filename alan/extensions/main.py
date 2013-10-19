@@ -165,4 +165,22 @@ class Extension(extension.Extension):
 	def new_itempool(self, item):
 		""" Creates a new ItemPool. """
 		
-		return []
+		returnlst = []
+		
+		pool_settings = self.settings["ItemPool:%s" % item]
+		structure = pool_settings["structure"].split(" ")
+		
+		for item in structure:
+			
+			_item = Item(label=pool_settings["%s_label" % item],
+				icon=self.IconPool.get_icon(pool_settings["%s_icon" % item])
+			)
+			
+			# Create an action...
+			action = ExecuteAction(pool_settings["%s_executable" % item])
+			
+			_item.append(action)
+			
+			returnlst.append(_item)
+		
+		return returnlst
