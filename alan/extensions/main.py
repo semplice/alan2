@@ -108,6 +108,12 @@ class Extension(extension.Extension):
 		structure = launcher_settings["structure"].split(" ")
 		
 		for item in structure:
+
+			if item == "-":
+				# Separator
+				returnlst.append(Separator())
+				continue
+
 			item_file = launcher_settings[item]
 			item_file = xdg.DesktopEntry.DesktopEntry(item_file)
 			
