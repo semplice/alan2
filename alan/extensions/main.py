@@ -172,6 +172,11 @@ class Extension(extension.Extension):
 		
 		for item in structure:
 			
+			if item == "-":
+				# Separator
+				returnlst.append(Separator())
+				continue
+			
 			_item = Item(label=pool_settings["%s_label" % item],
 				icon=self.IconPool.get_icon(pool_settings["%s_icon" % item])
 			)
