@@ -56,11 +56,23 @@ class Extension(extension.Extension):
 
 			self.add(Header(header_text))
 		
-		for item in self.structure:
+		result = self.parse_structure()
+		for item in result: self.add(item)
+	
+	def parse_structure(self, structure=None):
+		""" Parses the defined structure. If structure is None, self.structure
+		will be used.
+		
+		Returns a list with the items to add to the main menu."""
+	
+		if not structure: structure = self.structure
+		returnlst = []
+	
+		for item in structure:
 			
 			if item == "-":
 				# It's a separator!
-				self.add(Separator())
+				returnlst.append(Separator())
 				continue
 			
 			_item = item.split(":")
@@ -83,10 +95,14 @@ class Extension(extension.Extension):
 			elif obj == "LauncherPool":
 				linkedto = self.new_launcher_pool
 			
-			linkedto(item)
+			returnlst += linkedto(item)
+		
+		return returnlst
 		
 	def new_launcher_pool(self, item):
 		""" Creates a new LauncherPool """
+		
+		returnlst = []
 		
 		launcher_settings = self.settings["LauncherPool:%s" % item]
 		structure = launcher_settings["structure"].split(" ")
@@ -101,7 +117,9 @@ class Extension(extension.Extension):
 			
 			item.append(action)
 			
-			self.add(item)
+			returnlst.append(item)
+		
+		return returnlst
 	
 	def new_menu_link(self, item):
 		""" Creates a new_menu_link """
@@ -117,9 +135,34 @@ class Extension(extension.Extension):
 		else:
 			label = None
 		
-		self.add(Menu(id=item, label=label, execute=execute))
-	
+		return [Menu(id=item, label=label, execute=execute), ]
+			
 	def new_internal_menu(self, item):
 		""" Creates a new internal menu """
 		
-		pass
+		returnlst = []
+		
+		# Get structure
+		menu_settings = self.settings["Menu:%s" % item]
+		structure = menu_settings["structure"].split(" ")
+
+		# Get name
+		if "label_%s" % item in self.extension_settings:
+			label = self.extension_settings["label_%s" % item]
+		elif "label_%s" % item in menu_settings:
+			label = menu_settings["label_%s" % item]
+		else:
+			label = None
+
+		# Create containing menu
+		menu = Menu(id=item, label=label)
+		
+		result = self.parse_structure(structure)
+		for item in result: menu.add(item)
+		
+		return [menu,]
+	
+	def new_itempool(self, item):
+		""" Creates a new ItemPool. """
+		
+		return []
