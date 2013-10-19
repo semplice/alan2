@@ -115,6 +115,7 @@ class Extension(extension.Extension):
 				continue
 
 			item_file = launcher_settings[item]
+			if not os.path.exists(item_file): continue
 			item_file = xdg.DesktopEntry.DesktopEntry(item_file)
 			
 			item = Item(label=item_file.getName(), icon=self.IconPool.get_icon(item_file.getIcon()))
