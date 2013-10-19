@@ -117,7 +117,7 @@ class Extension(extension.Extension):
 			item_file = launcher_settings[item]
 			item_file = xdg.DesktopEntry.DesktopEntry(item_file)
 			
-			item = Item(label=item_file.getName())
+			item = Item(label=item_file.getName(), icon=self.IconPool.get_icon(item_file.getIcon()))
 			# Create an action...
 			action = ExecuteAction(item_file.getExec())
 			
@@ -183,8 +183,13 @@ class Extension(extension.Extension):
 				returnlst.append(Separator())
 				continue
 			
+			if "%s_icon" % item in pool_settings:
+				icon = pool_settings["%s_icon" % item]
+			else:
+				icon = None
+			
 			_item = Item(label=pool_settings["%s_label" % item],
-				icon=self.IconPool.get_icon(pool_settings["%s_icon" % item])
+				icon=self.IconPool.get_icon(icon)
 			)
 			
 			# Create an action...
