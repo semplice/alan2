@@ -141,8 +141,14 @@ class Extension(extension.Extension):
 			label = self.extension_settings["%s_label" % item]
 		else:
 			label = None
+
+		# Get icon
+		if "%s_icon" % item in self.extension_settings:
+			icon = self.extension_settings["%s_icon" % item]
+		else:
+			icon = None
 		
-		return [Menu(id=item, label=label, execute=execute), ]
+		return [Menu(id=item, label=label, execute=execute, icon=self.IconPool.get_icon(icon)), ]
 			
 	def new_internal_menu(self, item):
 		""" Creates a new internal menu """
