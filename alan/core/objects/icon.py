@@ -63,7 +63,7 @@ class IconPool:
 	def get_icon(self, icon, size=size):
 		""" Examinates an icon, then returns an appropriate filename. """
 		
-		if not self.enabled: return None
+		if not self.enabled or not icon: return None
 		
 		icon = os.path.expanduser(icon)
 		

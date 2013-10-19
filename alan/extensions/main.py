@@ -137,8 +137,8 @@ class Extension(extension.Extension):
 			execute = None
 		
 		# Get name
-		if "label_%s" % item in self.extension_settings:
-			label = self.extension_settings["label_%s" % item]
+		if "%s_label" % item in self.extension_settings:
+			label = self.extension_settings["%s_label" % item]
 		else:
 			label = None
 		
@@ -154,15 +154,19 @@ class Extension(extension.Extension):
 		structure = menu_settings["structure"].split(" ")
 
 		# Get name
-		if "label_%s" % item in self.extension_settings:
-			label = self.extension_settings["label_%s" % item]
-		elif "label_%s" % item in menu_settings:
-			label = menu_settings["label_%s" % item]
+		if "%s_label" % item in self.extension_settings:
+			label = self.extension_settings["%s_label" % item]
 		else:
 			label = None
 
+		# Get icon
+		if "%s_icon" % item in self.extension_settings:
+			icon = self.extension_settings["%s_icon" % item]
+		else:
+			icon = None
+
 		# Create containing menu
-		menu = Menu(id=item, label=label)
+		menu = Menu(id=item, label=label, icon=self.IconPool.get_icon(icon))
 		
 		result = self.parse_structure(structure)
 		for item in result: menu.append(item)
