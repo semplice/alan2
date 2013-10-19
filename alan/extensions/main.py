@@ -42,13 +42,6 @@ class Extension(extension.Extension):
 	def generate(self):
 		""" Actually generate things. """
 		
-		# Get special objects...
-		for item in self.structure:
-			if item.startswith("ItemPool") or item.startswith("Menu") or item.startswith("LauncherPool"):
-				# obtain settings!
-				self.configuration.populate_settings(item)
-		self.settings = self.configuration.settings # update settings
-		
 		if self.extension_settings["show_header"]:
 			header_text = self.extension_settings["header_text"]
 			if header_text in HeaderMagic:
@@ -67,7 +60,14 @@ class Extension(extension.Extension):
 	
 		if not structure: structure = self.structure
 		returnlst = []
-	
+
+		# Get special objects...
+		for item in structure:
+			if (item.startswith("ItemPool") or item.startswith("Menu") or item.startswith("LauncherPool")) and not item in self.settings:
+				# obtain settings!
+				self.configuration.populate_settings(item)
+		self.settings = self.configuration.settings # update settings
+
 		for item in structure:
 			
 			if item == "-":
@@ -158,7 +158,7 @@ class Extension(extension.Extension):
 		menu = Menu(id=item, label=label)
 		
 		result = self.parse_structure(structure)
-		for item in result: menu.add(item)
+		for item in result: menu.append(item)
 		
 		return [menu,]
 	
