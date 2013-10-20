@@ -63,7 +63,30 @@ class Extension(OpenboxMenu):
 		OpenboxMenu.__init__(self)
 
 		if not is_pipe:
-			self.menu = Menu(self.extensionName)
+			if self.settings["alan"]["map_as_main"] == self.extensionId:
+				self.menu = Menu("root-menu")
+				self.menu.set("label", "Openbox 3")
+			else:
+				self.menu = Menu(self.extensionName)
+				
+				# Unfortunately in non-pipe mode Openbox gets the label from
+				# the menu file and not from the id link in the main menu.
+				# We need then to get the label.
+				main = "extension:%s" % self.settings["alan"]["map_as_main"]
+				self.configuration.populate_settings(main)
+				
+				if not "%s_label" % self.extensionName:
+					label = "alan2"
+				else:
+					label = self.configuration.settings[main]["%s_label" % self.extensionName]
+				
+				self.menu.set("label", label)
+				
+			
+
+			self.set("xmlns", "http://openbox.org/")
+			self.set("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance")
+			self.set("xsi:schemaLocation", "http://openbox.org/ file:///usr/share/openbox/menu.xsd")
 			
 			self.append(self.menu)
 	
@@ -88,4 +111,4 @@ class Extension(OpenboxMenu):
 	def write_menu(self, dest):
 		""" Writes the menu in dest."""
 		
-		etree.ElementTree(self).write(dest)
+		etree.ElementTree(self).write(dest, encoding='utf-8', xml_declaration=True)
