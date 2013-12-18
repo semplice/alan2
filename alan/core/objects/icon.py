@@ -35,7 +35,7 @@ def load():
 class IconPool:
 	""" A Pool of icons. """
 
-	size = 64 # Ovverride this using the size argument on any function.
+	size = 96 # Ovverride this using the size argument on any function.
 	
 	def __init__(self, enabled):
 		""" Initializes the object.

@@ -73,7 +73,7 @@ files = {}
 applications_objects = {}
 
 pool = WatcherPool()
-queue = Queue()
+queue = Queue(10)
 
 for application in os.listdir("watchers/"):
 	
