@@ -73,12 +73,15 @@ class Extension(OpenboxMenu):
 				# the menu file and not from the id link in the main menu.
 				# We need then to get the label.
 				main = "extension:%s" % self.settings["alan"]["map_as_main"]
-				self.configuration.populate_settings(main)
-				
-				if not "%s_label" % self.extensionName:
+				if not main in self.configuration.sections():
 					label = "alan2"
 				else:
-					label = self.configuration.settings[main]["%s_label" % self.extensionName]
+					self.configuration.populate_settings(main)
+					
+					if not "%s_label" % self.extensionName in self.configuration.settings[main]:
+						label = "alan2"
+					else:
+						label = self.configuration.settings[main]["%s_label" % self.extensionName]
 				
 				self.menu.set("label", label)
 				
