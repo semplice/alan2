@@ -22,10 +22,11 @@
 # This file contains a reference python watcher based on python-nala libraries.
 #
 
-import sys, os
+import sys, os, time
 sys.path.append("/home/g7/semplice/next/nala/nala/python") 
 
 import subprocess
+
 
 from gi.repository import GLib
 
@@ -45,11 +46,24 @@ def add_to_queue(pool, watcher, trigger, event, queue):
 def do_something(queue, apps, lst):
 	""" Fired when ready to regenerate the menus """
 
+	processes = []
+
 	print "GOT QUEUE!", apps, lst
 	# Regenerate!
 	for app in apps:
 		name = app.path
-		subprocess.Popen([ALAN2_BUILDER_PATH, name], shell=False)
+		processes.append(subprocess.Popen([ALAN2_BUILDER_PATH, name], shell=False))
+	
+	while processes != []:
+		# Poll every active process
+		for proc in processes:
+			if proc.poll != None:
+				# Yeah, remove it
+				processes.remove(proc)
+		time.sleep(0.1)
+	
+	# Reconfigure openbox
+	subprocess.Popen(["openbox", "--reconfigure"], shell=False)
 
 # Hello all...
 
@@ -72,11 +86,18 @@ for application in os.listdir("watchers/"):
 	applications.append(cfg.get("nala", "application"))
 	
 	# Get files
-	_files = ["/etc/alan/alan.conf", os.path.expanduser("~/.gtkrc-2.0")]
+	_files = []
 	if cfg.has_option("nala", "files"):
 		__files = cfg.get("nala", "files").split(" ")
-		for _file in __files:
-			_files.append(os.path.expanduser(_file))
+	else:
+		__files = []
+	__files += ["/etc/alan/alan.conf", os.path.expanduser("~/.gtkrc-2.0")]
+	
+	for _file in __files:
+		path = os.path.expanduser(_file)
+		if os.path.islink(path):
+			path = os.readlink(path)
+		_files.append(path)
 	
 	files[application] = _files
 	
@@ -87,6 +108,8 @@ for application in os.listdir("watchers/"):
 
 pool.connect("watcher-changed", add_to_queue, queue)
 queue.connect("processable", do_something)
+
+print files
 
 if __name__ == "__main__":
 	loop = GLib.MainLoop()
