@@ -55,4 +55,10 @@ if [ ! -e "$LIST" ]; then
 	exit 1
 fi
 
-exec alan-config --setup "`xargs -a $LIST`"
+modules="`xargs -a $LIST`"
+
+for module in $modules; do
+	alan-menu-updater $module
+done
+
+exec alan-config --setup "$modules"
