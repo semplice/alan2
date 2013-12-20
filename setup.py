@@ -32,7 +32,7 @@ setup(
 	scripts=['alan-config.py', 'alan-menu-updater.py', 'alan-pipe.py', 'reference-watcher.py'],
 	packages=['alan', 'alan.core', 'alan.core.objects', 'alan.extensions'],
 	data_files=[
-		("/usr/bin", ["alan2-setup.sh"]),
+		("/usr/share/alan2", ["alan2-setup.sh"]),
 		("/etc/alan", ["alan.conf", "semplice.distrib"]),
 		(
 			"/etc/alan/watchers",
