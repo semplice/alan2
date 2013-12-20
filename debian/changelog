@@ -1,3 +1,13 @@
+alan2 (0.0.4-1) devel; urgency=low
+
+  * alan2-setup.sh: ensure we actually also cache the menu files.
+  * reference-watcher.py: ensure we run distributors' setup in order
+    to properly and automagically set-up things for alan2
+  * Added autostart item for the reference watcher.
+  * debian/alan2-reference-watcher: ship the autostart file.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 20 Dec 2013 19:06:52 +0100
+
 alan2 (0.0.3-1) devel; urgency=low
 
   * Added setup helpers in alan-config and in a new bash script, alan2-setup.sh
