@@ -73,6 +73,9 @@ if not os.path.exists(DEFAULT_PATH):
 	if ret > 0:
 		# :/
 		raise Exception("Unable to setup alan2.")
+	
+	# Reconfigure openbox
+	subprocess.Popen(["openbox", "--reconfigure"], shell=False)
 
 # parse the watchers/
 applications = []
