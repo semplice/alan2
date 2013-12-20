@@ -1,0 +1,9 @@
+
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=alan2 python reference watcher
+Categories=Utility;
+Exec=/usr/bin/alan-reference-watcher
+Icon=alacarte

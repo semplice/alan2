@@ -33,6 +33,7 @@ setup(
 	packages=['alan', 'alan.core', 'alan.core.objects', 'alan.extensions'],
 	data_files=[
 		("/usr/share/alan2", ["alan2-setup.sh"]),
+		("/etc/xdg/autostart", ["alan-reference-watcher.desktop"]),
 		("/etc/alan", ["alan.conf", "semplice.distrib"]),
 		(
 			"/etc/alan/watchers",
