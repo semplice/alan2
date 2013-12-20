@@ -23,10 +23,8 @@
 #
 
 import sys, os, time
-#sys.path.append("/home/g7/semplice/next/nala/nala/python") 
 
 import subprocess
-
 
 from gi.repository import GLib
 
@@ -36,6 +34,7 @@ from nala.applications import Application
 
 from ConfigParser import SafeConfigParser
 
+DEFAULT_PATH=os.path.expanduser("~/.config/alan-menus")
 ALAN2_BUILDER_PATH=os.path.expanduser("/usr/bin/alan-menu-updater")
 
 def add_to_queue(pool, watcher, trigger, event, queue):
@@ -67,6 +66,14 @@ def do_something(queue, apps, lst):
 
 # Hello all...
 
+# Should setup?
+if not os.path.exists(DEFAULT_PATH):
+	# Yeah babe!
+	ret = subprocess.call(["/usr/share/alan2/alan2-setup.sh", "semplice"]) # FIXME, we don't like hardcoded things
+	if ret > 0:
+		# :/
+		raise Exception("Unable to setup alan2.")
+
 # parse the watchers/
 applications = []
 files = {}
@@ -75,9 +82,9 @@ applications_objects = {}
 pool = WatcherPool()
 queue = Queue(3)
 
-for application in os.listdir("watchers/"):
+for application in os.listdir("/etc/alan/watchers/"):
 	
-	_file = os.path.join(os.getcwd(), "watchers", application)
+	_file = os.path.join("/etc/alan/watchers", application)
 	application = application.replace(".watcher","")
 		
 	cfg = SafeConfigParser()
