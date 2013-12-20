@@ -1,0 +1,4 @@
+/usr/share/alan2/alan-config.py /usr/bin/alan-config
+/usr/share/alan2/alan-pipe.py /usr/bin/alan-pipe
+/usr/share/alan2/alan-menu-updater.py /usr/bin/alan-menu-updater
+/usr/share/alan2/reference-watcher.py /usr/bin/alan-reference-watcher

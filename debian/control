@@ -1,0 +1,31 @@
+Source: alan2
+Section: x11
+Priority: optional
+Maintainer: Eugenio Paolantonio (g7) <me@medesimo.eu>
+Build-Depends: python (>= 2.6.6-3), python-all, debhelper (>= 8.0.0)
+X-Python-Version: >= 2.6
+Standards-Version: 3.9.5
+Homepage: http://github.com/semplice/alan2
+Vcs-Git: git://github.com/semplice/alan2.git
+Vcs-Browser: https://github.com/semplice/alan2
+
+Package: alan2
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-t9n, python-t9n, python-gmenu, python-gtk2
+Description: New generation Openbox menu framework - Main Executable and Extensions
+ Alan is a framework that permits to generate dynamic menus
+ just with some python code.
+ It supports i18n (via gettext) and can generate a dynamic
+ menu tree with only a configuration file (ConfigParser style)
+ .
+ This package contains the main executable and extensions.
+
+Package: alan2-config-semplice
+Architecture: all
+Description: New generation Openbox menu framework - Semplice Configuration
+ Alan is a framework that permits to generate dynamic menus
+ just with some python code.
+ It supports i18n (via gettext) and can generate a dynamic
+ menu tree with only a configuration file (ConfigParser style)
+ .
+ This package contains the configuration file for semplice.
