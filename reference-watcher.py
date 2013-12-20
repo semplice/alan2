@@ -23,7 +23,7 @@
 #
 
 import sys, os, time
-sys.path.append("/home/g7/semplice/next/nala/nala/python") 
+#sys.path.append("/home/g7/semplice/next/nala/nala/python") 
 
 import subprocess
 
@@ -36,7 +36,7 @@ from nala.applications import Application
 
 from ConfigParser import SafeConfigParser
 
-ALAN2_BUILDER_PATH=os.path.expanduser("~/semplice/alan2/alan2/alan-menu-updater.py")
+ALAN2_BUILDER_PATH=os.path.expanduser("/usr/bin/alan-menu-updater")
 
 def add_to_queue(pool, watcher, trigger, event, queue):
 	""" Add to queue. """
@@ -73,7 +73,7 @@ files = {}
 applications_objects = {}
 
 pool = WatcherPool()
-queue = Queue(10)
+queue = Queue(3)
 
 for application in os.listdir("watchers/"):
 	
