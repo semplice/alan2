@@ -20,6 +20,17 @@ Description: New generation Openbox menu framework - Main Executable and Extensi
  .
  This package contains the main executable and extensions.
 
+Package: alan2-reference-watcher
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-nala, python-gi, gir1.2-glib-2.0
+Description: New generation Openbox menu framework - Python reference watcher
+ Alan is a framework that permits to generate dynamic menus
+ just with some python code.
+ It supports i18n (via gettext) and can generate a dynamic
+ menu tree with only a configuration file (ConfigParser style)
+ .
+ This package contains the python reference watcher based on python-nala.
+ 
 Package: alan2-config-semplice
 Architecture: all
 Description: New generation Openbox menu framework - Semplice Configuration
