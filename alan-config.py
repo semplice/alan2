@@ -62,8 +62,14 @@ group.add_argument(
 	action="store_true"
 )
 
+group.add_argument(
+	"-s", "--setup",
+	help="setups alan2",
+	action="store_true"
+)
+
 args = parser.parse_args()
-if not args.list and not args.extension:
+if not (args.list or args.setup) and not args.extension:
 	raise Exception("You must specify an extension!")
 
 ## Welcome to alan2!
@@ -71,6 +77,16 @@ if not args.list and not args.extension:
 # Open alan2 configuration
 configuration = config.Configuration(args.extension)
 map_as_main = configuration.settings["alan"]["map_as_main"]
+
+if args.extension:
+	args.extension = args.extension.split(" ")
+	# Check for map_as_main
+	if map_as_main in args.extension:
+		# Found it, ensure we put it at the end
+		if args.extension.index(map_as_main) != len(args.extension)-1:
+			# It isn't at the end, remove it and reappend again
+			args.extension.remove(map_as_main)
+			args.extension.append(map_as_main)
 
 # Open openbox configuration
 tree = etree.parse(os.path.join(OPENBOX_CONFIGURATION_DIR, "rc.xml"), tree_helpers.PIParser())
@@ -80,12 +96,29 @@ menu = root.find("ob:menu", namespaces=namespaces)
 
 # Get and parse all enabled modules...
 ENABLED_MODULES = {}
+_openbox_menu = None
 for child in menu.findall("ob:file", namespaces=namespaces):
 	if os.path.dirname(child.text) == DEFAULT_PATH:
 		# it's ours!
 		ENABLED_MODULES[".".join(os.path.basename(child.text).split(".")[:-1])] = child
+	elif child.text == "menu.xml":
+		# Openbox default? Maybe. Cache the child, so that we can use it
+		# if we are going to setup alan2.
+		_openbox_menu = child
 
 # What should we do?
+if args.setup:
+	# Setup!
+	if _openbox_menu is not None:
+		# Remove menu.xml, it will clash with alan2 *for sure*.
+		menu.remove(_openbox_menu)
+
+	# If there are some extensions in the arguments, it's a good thing
+	# to set args.enable to True so that we do not need to recall this
+	# executable to enable things...
+	if args.extension:
+		args.enable = True
+
 if args.list:
 	# Should do a list!
 	for module, child in ENABLED_MODULES.items():
@@ -94,23 +127,25 @@ if args.list:
 	sys.exit()
 elif args.enable:
 	# Should enable a module!
-	if args.extension in ENABLED_MODULES:
-		# Already enabled!
-		raise Exception("Extension %s already enabled!" % args.extension)
-	
-	ext = etree.SubElement(menu, "file")
-	ext.text = os.path.join(DEFAULT_PATH, "%s.xml" % args.extension)
+	for extension in args.extension:
+		if extension in ENABLED_MODULES:
+			# Already enabled!
+			raise Exception("Extension %s already enabled!" % extension)
+		
+		ext = etree.SubElement(menu, "file")
+		ext.text = os.path.join(DEFAULT_PATH, "%s.xml" % extension)
 elif args.disable:
 	# Should remove a module!
-	if not args.extension in ENABLED_MODULES:
-		# Not found :(
-		raise Exception("Extension %s is not currently enabled!" % args.extension)
-	elif args.extension == map_as_main:
-		# Removing the main module would be a kind of pointless...
-		raise Exception("Extension %s is currently mapped as the main extension in alan2. Please change alan2's main module in order to disable this." % args.extension)
-	
-	menu.remove(ENABLED_MODULES[args.extension])
-	del ENABLED_MODULES[args.extension]
+	for extension in args.extension:
+		if not extension in ENABLED_MODULES:
+			# Not found :(
+			raise Exception("Extension %s is not currently enabled!" % extension)
+		elif extension == map_as_main:
+			# Removing the main module would be a kind of pointless...
+			raise Exception("Extension %s is currently mapped as the main extension in alan2. Please change alan2's main module in order to disable this." % extension)
+		
+		menu.remove(ENABLED_MODULES[extension])
+		del ENABLED_MODULES[extension]
 
 # This is not a great thing to do, but we must: ensure we have the module
 # mapped as main at the end of the subsection.
