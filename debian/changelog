@@ -1,3 +1,9 @@
+alan2 (0.0.5-1) devel; urgency=low
+
+  * reference-watcher.py: ensure we reconfigure openbox after setup.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 20 Dec 2013 19:15:20 +0100
+
 alan2 (0.0.4-1) devel; urgency=low
 
   * alan2-setup.sh: ensure we actually also cache the menu files.
