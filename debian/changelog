@@ -1,3 +1,10 @@
+alan2 (0.0.2-2) devel; urgency=low
+
+  * Fixed /usr/bin handling.
+  * reference-watcher.py: made it working in box unowned by g7 ;)
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 20 Dec 2013 16:13:14 +0100
+
 alan2 (0.0.1-1) devel; urgency=low
 
   * Initial release
