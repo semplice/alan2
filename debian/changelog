@@ -1,3 +1,12 @@
+alan2 (0.0.3-1) devel; urgency=low
+
+  * Added setup helpers in alan-config and in a new bash script, alan2-setup.sh
+  * alan-config now properly parses multiple extensions at once.
+  * Also modified setup.py to reflect previous changes.
+  * debian/: added new package alan2-reference-watcher.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 20 Dec 2013 18:41:37 +0100
+
 alan2 (0.0.2-2) devel; urgency=low
 
   * Fixed /usr/bin handling.
