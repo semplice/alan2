@@ -1,3 +1,14 @@
+alan2 (0.0.6-1) devel; urgency=low
+
+  [ Giuseppe Corti (GsC_RuL3Z) ]
+  * added logout and appearance extensions
+
+  [ Eugenio Paolantonio (g7) ]
+  * Added logout and appearance to semplice.distrib.
+  * watchers/: added logout and appearance watchers.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 23 Dec 2013 23:51:58 +0100
+
 alan2 (0.0.5-1) devel; urgency=low
 
   * reference-watcher.py: ensure we reconfigure openbox after setup.
