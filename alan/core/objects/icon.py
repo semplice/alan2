@@ -20,7 +20,7 @@
 #
 # This file contains the IconPool object.
 
-import os, importlib
+import os
 
 def load():
 	""" We do not want to waste time loading pieces of the GTK libraries
@@ -28,9 +28,9 @@ def load():
 	Thus, this ugly workaround will be called on load by IconPool's __init__
 	when the enabled parameter is set to True. """
 	
-	from gtk import icon_theme_get_default, ICON_LOOKUP_NO_SVG
+	from gtk import icon_theme_get_default, ICON_LOOKUP_NO_SVG, ICON_LOOKUP_FORCE_SVG
 	
-	global icon_theme_get_default, ICON_LOOKUP_NO_SVG
+	global icon_theme_get_default, ICON_LOOKUP_NO_SVG, ICON_LOOKUP_FORCE_SVG
 
 class IconPool:
 	""" A Pool of icons. """
@@ -53,7 +53,7 @@ class IconPool:
 		
 		#theme = IconTheme.new()
 		theme = icon_theme_get_default()
-		icon = theme.lookup_icon(icon.replace(".png","").replace(".xpm","").replace(".svg",""), self.size, ICON_LOOKUP_NO_SVG)
+		icon = theme.lookup_icon(icon.replace(".png","").replace(".xpm","").replace(".svg",""), self.size, ICON_LOOKUP_FORCE_SVG)
 		
 		if icon:
 			return icon.get_filename()

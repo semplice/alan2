@@ -20,19 +20,15 @@
 #
 # This file contains the places extension.
 
-import t9n.library
-
 import os
 
 from getpass import getuser
 
 import alan.core.extension as extension
-from alan.core.objects.separator import Header, Separator
+from alan.core.objects.separator import Separator
 from alan.core.objects.item import Item
 from alan.core.objects.menu import Menu
 from alan.core.objects.actions import ExecuteAction
-
-_ = t9n.library.translation_init("alan2")
 
 USER = getuser()
 HOME = os.path.expanduser("~")
@@ -45,18 +41,19 @@ class Extension(extension.Extension):
 		""" Actually generate things. """
 
 		# Wallpapers submenu
-		_menu = Menu("wallpaper", "Wallpaper", icon=self.IconPool.get_icon("preferences-desktop-wallpaper"))
-		_menu.append(self.return_executable_item("Add", "nitrogen-add-wallpaper", icon=self.IconPool.get_icon("gtk-add")))
-		_menu.append(self.return_executable_item("Manage", "nitrogen", icon=self.IconPool.get_icon("preferences-desktop-wallpaper")))
+		_menu = Menu("wallpaper", _("Wallpaper"), icon=self.IconPool.get_icon("preferences-desktop-wallpaper"))
+		_menu.append(self.return_executable_item(_("Add"), "nitrogen-add-wallpaper", icon="gtk-add"))
+		_menu.append(self.return_executable_item(_("Manage"), "nitrogen", icon="preferences-desktop-wallpaper"))
 
 		self.add(_menu)
-
+		self.add(Separator())
+		
 		# Theme selector
-		self.add(self.return_executable_item("Appearance settings", "lxappearance", icon=self.IconPool.get_icon("preferences-desktop-theme") ))
+		self.add(self.return_executable_item(_("Appearance settings"), "lxappearance", icon="preferences-desktop-theme"))
 		
 		# Paranoid
 		if os.path.exists("/usr/bin/paranoid"):
-			self.add(self.return_executable_item("Visual effects", "paranoid", icon=self.IconPool.get_icon("preferences-system-windows") ))
+			self.add(self.return_executable_item(_("Visual effects"), "paranoid", icon="desktop-effects"))
 
 		
 		

@@ -20,8 +20,6 @@
 #
 # This file contains the places extension.
 
-import t9n.library
-
 import os
 
 from getpass import getuser
@@ -31,8 +29,6 @@ from alan.core.objects.separator import Header, Separator
 from alan.core.objects.item import Item
 from alan.core.objects.menu import Menu
 from alan.core.objects.actions import ExecuteAction
-
-_ = t9n.library.translation_init("alan2")
 
 USER = getuser()
 HOME = os.path.expanduser("~")

@@ -41,8 +41,6 @@
 #            Miroslav Lichvar <mlichvar@redhat.com>
 ####
 
-import t9n.library
-
 import sys, os
 import glob
 
@@ -56,8 +54,6 @@ from alan.core.objects.separator import Header, Separator
 from alan.core.objects.item import Item
 from alan.core.objects.menu import Menu
 from alan.core.objects.actions import ExecuteAction
-
-_ = t9n.library.translation_init("alan2")
 
 USER = getuser()
 HOME = os.path.expanduser("~")
@@ -83,7 +79,7 @@ class Extension(extension.Extension):
 					continue
 				
 				# Directory, create new submenu
-				_menu = Menu(escape(entry.menu_id), escape(entry.name), icon=self.IconPool.get_icon(entry.icon))
+				_menu = Menu(escape(entry.menu_id), entry.name, icon=self.IconPool.get_icon(entry.icon))
 				
 				self.walk(entry.get_contents(), _menu)
 				
@@ -102,7 +98,7 @@ class Extension(extension.Extension):
 					command = 'x-terminal-emulator --title "%s" -e %s' % \
 						(entry.name.replace("&","and"), command)
 				
-				menu.append(self.return_executable_item(escape(entry.name), escape(command), icon=entry.icon))
+				menu.append(self.return_executable_item(entry.name, command, icon=entry.icon))
 
 	def generate(self):
 		""" Actually generate things. """
