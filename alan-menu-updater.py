@@ -20,6 +20,11 @@
 #    Eugenio "g7" Paolantonio <me@medesimo.eu>
 #
 
+import quickstart.translations
+
+tr = quickstart.translations.Translation("alan2")
+tr.install()
+
 import alan.core.main as main
 import alan.core.config as config
 

@@ -20,7 +20,7 @@
 #
 # This file contains the places extension.
 
-import t9n.library
+#import quickstart.translations
 
 import os, sys
 import ConfigParser as cp
@@ -33,10 +33,7 @@ from alan.core.objects.item import Item
 from alan.core.objects.menu import Menu
 from alan.core.objects.actions import ExecuteAction
 
-_ = t9n.library.translation_init("alan2")
-
 userbegin = 1000
-
 
 USER = getuser()
 HOME = os.path.expanduser("~")
@@ -75,19 +72,19 @@ class Extension(extension.Extension):
 		# Add that choice!
 		if last:
 			choice = actions[last] + " " + _("(CTRL+ALT+SPACE)")
-			self.add(self.return_executable_item(choice, ections[last], icon=self.IconPool.get_icon(ictions[last])))
+			self.add(self.return_executable_item(choice, ections[last], icon=ictions[last]))
 			self.add(Separator())
 
 		# Add normal choices
 			
 		# Lock screen
-		self.add(self.return_executable_item("Lock Screen", "semplice-logout --lock", icon=self.IconPool.get_icon("system-lock-screen")))
+		self.add(self.return_executable_item(_("Lock Screen"), "semplice-logout --lock", icon="system-lock-screen"))
 		# Logout
-		self.add(self.return_executable_item("Logout", "semplice-logout --logout", icon=self.IconPool.get_icon("system-log-out")))
+		self.add(self.return_executable_item(_("Logout"), "semplice-logout --logout", icon="system-log-out"))
 		
 		# Switch User
 		# create menu:
-		switch_items = []
+		switch_items = Menu("switchuser", _("Switch User"), icon=self.IconPool.get_icon("system-users"))
 		# open passwd and populate switch_items
 		with open("/etc/passwd", "r") as passwd:
 			for line in passwd.readlines():
@@ -107,46 +104,45 @@ class Extension(extension.Extension):
 					else:
 						_uface = "system-users"
 				
-					switch_items.append(self.return_executable_item(_udesc, "semplice-logout --switch-to " + _uname, icon=self.IconPool.get_icon(_uface)))
+					switch_items.append(self.return_executable_item(_udesc, "semplice-logout --switch-to " + _uname, icon=_uface))
 				else:
 					_uface = "gnome-settings-default-applications"
 
 					_menu = Menu("usermenu", _udesc, icon=self.IconPool.get_icon(_uface))
-					_menu.append(self.return_executable_item("Change profile image", "semplice-change-face", icon=self.IconPool.get_icon("eog")))
+					_menu.append(self.return_executable_item(_("Change profile image"), "semplice-change-face", icon="eog"))
 
 					switch_items.append(_menu)
 
 		switch_items.append(Separator())
-		switch_items.append(self.return_executable_item("Other...", "semplice-logout --switch-user", icon=self.IconPool.get_icon("gdm")))
+		switch_items.append(self.return_executable_item(_("Other..."), "semplice-logout --switch-user", icon="gdm"))
 
-		self.add(Menu("switchuser", "Switch menu", icon=self.IconPool.get_icon("system-users")))
-		
+		self.add(switch_items)
 
 		self.add(Separator())
 
 		# Suspend
-		self.add(self.return_executable_item("Suspend", "semplice-logout --suspend", icon=self.IconPool.get_icon("gnome-session-suspend")))
+		self.add(self.return_executable_item(_("Suspend"), "semplice-logout --suspend", icon="gnome-session-suspend"))
 
 		# Hibernate
-		self.add(self.return_executable_item("Hibernate", "semplice-logout --hibernate", icon=self.IconPool.get_icon("gnome-session-hibernate")))
+		self.add(self.return_executable_item(_("Hibernate"), "semplice-logout --hibernate", icon="gnome-session-hibernate"))
 
 		self.add(Separator())
 
 		# Shutdown
-		self.add(self.return_executable_item("Shutdown", "semplice-logout --shutdown", icon=self.IconPool.get_icon("gnome-session-halt")))
+		self.add(self.return_executable_item(_("Shutdown"), "semplice-logout --shutdown", icon="gnome-session-halt"))
 
 		# Reboot
-		self.add(self.return_executable_item("Reboot", "semplice-logout --reboot", icon=self.IconPool.get_icon("gnome-session-reboot")))
+		self.add(self.return_executable_item(_("Reboot"), "semplice-logout --reboot", icon="gnome-session-reboot"))
 
 		self.add(Separator())
 
 		# Settings
-		self.add(self.return_executable_item("Settings...", "semplice-logout --settings", icon=self.IconPool.get_icon("preferences-desktop")))
+		self.add(self.return_executable_item(_("Settings..."), "semplice-logout --settings", icon="preferences-desktop"))
 
 
 	def return_executable_item(self, label, target, icon=None):
 		""" Returns an executable item. """
-		
+				
 		item = Item(label=label, icon=self.IconPool.get_icon(icon))
 		action = ExecuteAction(target)
 		item.append(action)

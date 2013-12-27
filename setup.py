@@ -24,7 +24,7 @@ from distutils.core import setup
 
 setup(
 	name='alan2',
-	version='0.0.6',
+	version='0.70.0',
 	description='Openbox Menu Extension Framework and Builder',
 	author='Eugenio Paolantonio',
 	author_email='me@medesimo.eu',
@@ -40,10 +40,12 @@ setup(
 			[
 				"watchers/xdgmenu.watcher",
 				"watchers/places.watcher",
+				"watchers/logout.watcher",
+				"watchers/appearance.watcher",
 				"watchers/main.watcher",
 			]
 		)
 	
 	],
-	requires=['ConfigParser', 'commands', 'gettext', 'gmenu', 'locale', 'os', 'sys', 're', 'shutil', 'xml.etree.ElementTree', 't9n.library', 'gtk', 'nala'],
+	requires=['ConfigParser', 'commands', 'gettext', 'gmenu', 'locale', 'os', 'sys', 're', 'shutil', 'xml.etree.ElementTree', 'quickstart.translations', 'gtk', 'nala'],
 )
