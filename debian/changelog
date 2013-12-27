@@ -1,3 +1,9 @@
+alan2 (0.70.1-1) devel; urgency=low
+
+  * Fixes, translation support, SVG forcing.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 27 Dec 2013 18:53:40 +0100
+
 alan2 (0.0.6-1) devel; urgency=low
 
   [ Giuseppe Corti (GsC_RuL3Z) ]
