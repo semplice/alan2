@@ -1,3 +1,15 @@
+alan2 (0.80.0-1) devel; urgency=low
+
+  * Made the alan.conf labels extractable.
+    Also added the evergreens create_pot_template.sh and create_mo.sh.
+  * Added the exaile extension from alan-legacy.
+    It does not work currently with alan2.
+  * Added and updated translations.
+  * Automatically translate values in the configuration file.
+  * debian/rules: ship translations.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 02 Jan 2014 17:41:01 +0100
+
 alan2 (0.70.1-1) devel; urgency=low
 
   * Fixes, translation support, SVG forcing.
