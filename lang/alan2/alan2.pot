@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-02 17:09+0100\n"
+"POT-Creation-Date: 2014-01-02 17:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,6 +99,38 @@ msgstr ""
 
 #: alan/extensions/logout.py:140
 msgid "Settings..."
+msgstr ""
+
+#: alan/extensions/exaile.py:21
+msgid "Coders"
+msgstr ""
+
+#: alan/extensions/exaile.py:55
+msgid "Pause"
+msgstr ""
+
+#: alan/extensions/exaile.py:57
+msgid "Play"
+msgstr ""
+
+#: alan/extensions/exaile.py:59
+msgid "Stop"
+msgstr ""
+
+#: alan/extensions/exaile.py:63
+msgid "Previous"
+msgstr ""
+
+#: alan/extensions/exaile.py:64
+msgid "Next"
+msgstr ""
+
+#: alan/extensions/exaile.py:74
+msgid "Exaile is not playing."
+msgstr ""
+
+#: alan/extensions/exaile.py:76
+msgid "Open Exaile"
 msgstr ""
 
 # alan.conf
