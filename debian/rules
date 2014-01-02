@@ -15,4 +15,12 @@
 override_dh_auto_install:
 	python setup.py install --root=debian/tmp --install-layout=deb --install-scripts=/usr/share/alan2 --install-lib=/usr/share/alan2
 
+	# Borrowed from clamtk source package, thank you all
+	@echo Installing locales now...
+	for locale in $(shell ls $(CURDIR)/lang/alan2/*.mo | sed 's@.*/\(.*\)\.mo@\1@g'); \
+		do mkdir -p $(LOCALES_DIR)/$$locale/LC_MESSAGES/ && \
+		install -m 644 $(CURDIR)/lang/alan2/$$locale.mo $(LOCALES_DIR)/$$locale/LC_MESSAGES/alan2.mo; \
+	done
+	-rm -rf $(LOCALES_DIR)/alan2/
+
 override_dh_auto_build:
