@@ -1,3 +1,9 @@
+alan2 (0.80.0-3) devel; urgency=low
+
+  * debian/rules: ship translations.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 02 Jan 2014 18:11:09 +0100
+
 alan2 (0.80.0-2) devel; urgency=low
 
   * debian/control: alan2: depend on python-quickstart.
