@@ -9,6 +9,11 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+# This has to be exported to make some magic below work.
+export DH_OPTIONS
+
+LOCALES_DIR = $(CURDIR)/debian/tmp/usr/share/locale
+
 %:
 	dh $@ --with python2
 
