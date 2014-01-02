@@ -63,5 +63,9 @@ class Configuration(cp.SafeConfigParser):
 				value = True
 			elif value.lower() == "none":
 				value = None
+			
+			if "label" in option:
+				value = _(value)
+			
 			self.settings[extension][option] = value
 		
