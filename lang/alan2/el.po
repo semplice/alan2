@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: alan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-02 17:32+0100\n"
+"PO-Revision-Date: 2014-01-02 16:29+0000\n"
+"Last-Translator: g7 <me@medesimo.eu>\n"
+"Language-Team: Greek (http://www.transifex.com/projects/p/semplice/language/el/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: alan/extensions/appearance.py:44
+msgid "Wallpaper"
+msgstr "Ταπετσαρία"
+
+#: alan/extensions/appearance.py:45
+msgid "Add"
+msgstr "Προσθήκη"
+
+#: alan/extensions/appearance.py:46
+msgid "Manage"
+msgstr "Διαχείριση"
+
+#: alan/extensions/appearance.py:52
+msgid "Appearance settings"
+msgstr "Ρυθμίσεις Εμφάνισης"
+
+#: alan/extensions/appearance.py:56
+msgid "Visual effects"
+msgstr ""
+
+#: alan/extensions/places.py:52
+msgid "Desktop"
+msgstr "Επιφάνεια εργασίας"
+
+#: alan/extensions/places.py:55
+msgid "Trash"
+msgstr "Κάδος Απορριμμάτων"
+
+#: alan/extensions/places.py:58
+msgid "Computer"
+msgstr "Υπολογιστής"
+
+#: alan/extensions/places.py:66
+msgid "System (/)"
+msgstr "Σύστημα Αρχείων (/)"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:81
+msgid "Lock Screen"
+msgstr "Κλείδωμα Οθόνης"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:83
+msgid "Logout"
+msgstr "Αποσύνδεση"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:87
+msgid "Switch User"
+msgstr "Εναλλαγή Χρήστη"
+
+#: alan/extensions/logout.py:54
+msgid "Guest session"
+msgstr ""
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:124
+msgid "Suspend"
+msgstr "Αναστολή"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:127
+msgid "Hibernate"
+msgstr "Αδρανοποίηση"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:132
+msgid "Shutdown"
+msgstr "Τερματισμός"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:135
+msgid "Reboot"
+msgstr "Επανεκκίνηση"
+
+#: alan/extensions/logout.py:74
+msgid "(CTRL+ALT+SPACE)"
+msgstr "(CTRL+ALT+SPACE)"
+
+#: alan/extensions/logout.py:112
+msgid "Change profile image"
+msgstr ""
+
+#: alan/extensions/logout.py:117
+msgid "Other..."
+msgstr "Άλλο..."
+
+#: alan/extensions/logout.py:140
+msgid "Settings..."
+msgstr "Ρυθμίσεις..."
+
+#: alan/extensions/exaile.py:21
+msgid "Coders"
+msgstr "Προγραμματιστές"
+
+#: alan/extensions/exaile.py:55
+msgid "Pause"
+msgstr "Παύση"
+
+#: alan/extensions/exaile.py:57
+msgid "Play"
+msgstr "Αναπαραγωγή"
+
+#: alan/extensions/exaile.py:59
+msgid "Stop"
+msgstr "Διακοπή"
+
+#: alan/extensions/exaile.py:63
+msgid "Previous"
+msgstr "Προηγούμενο"
+
+#: alan/extensions/exaile.py:64
+msgid "Next"
+msgstr "Επόμενο"
+
+#: alan/extensions/exaile.py:74
+msgid "Exaile is not playing."
+msgstr "Ο Exaile δεν παίζει"
+
+#: alan/extensions/exaile.py:76
+msgid "Open Exaile"
+msgstr "Άνοιγμα Exaile"
+
+#: alan.conf:1
+msgid "Applications"
+msgstr "Εφαρμογές"
+
+#: alan.conf:2
+msgid "Places"
+msgstr "Τοποθεσίες"
+
+#: alan.conf:3
+msgid "Appearance"
+msgstr "Εμφάνιση"
+
+#: alan.conf:4
+msgid "Help"
+msgstr "Βοήθεια"
+
+#: alan.conf:5
+msgid "About Semplice..."
+msgstr "Σχετικά με τον Semplice..."
+
+#: alan.conf:6
+msgid "Semplice Website"
+msgstr "Ιστότοπος Semplice"
+
+#: alan.conf:7
+msgid "Semplice Wiki"
+msgstr "Semplice Wiki"
+
+#: alan.conf:8
+msgid "Semplice Forums"
+msgstr "Semplice Forums"
+
+#: alan.conf:9
+msgid "Semplice on IRC"
+msgstr "Το Semplice στο IRC"

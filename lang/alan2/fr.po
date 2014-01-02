@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: alan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-02 17:32+0100\n"
+"PO-Revision-Date: 2014-01-02 16:29+0000\n"
+"Last-Translator: g7 <me@medesimo.eu>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/semplice/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: alan/extensions/appearance.py:44
+msgid "Wallpaper"
+msgstr "Papier peint"
+
+#: alan/extensions/appearance.py:45
+msgid "Add"
+msgstr "Ajouter"
+
+#: alan/extensions/appearance.py:46
+msgid "Manage"
+msgstr "Gérer"
+
+#: alan/extensions/appearance.py:52
+msgid "Appearance settings"
+msgstr "Paramètres d'apparence"
+
+#: alan/extensions/appearance.py:56
+msgid "Visual effects"
+msgstr ""
+
+#: alan/extensions/places.py:52
+msgid "Desktop"
+msgstr "Bureau"
+
+#: alan/extensions/places.py:55
+msgid "Trash"
+msgstr "Poubelle"
+
+#: alan/extensions/places.py:58
+msgid "Computer"
+msgstr "Ordinateur"
+
+#: alan/extensions/places.py:66
+msgid "System (/)"
+msgstr "System (/)"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:81
+msgid "Lock Screen"
+msgstr "Verrouiller l'écran"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:83
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:87
+msgid "Switch User"
+msgstr "Changer d'utilisateur"
+
+#: alan/extensions/logout.py:54
+msgid "Guest session"
+msgstr "Session d'invité"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:124
+msgid "Suspend"
+msgstr "Mettre en veille"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:127
+msgid "Hibernate"
+msgstr "Mettre en hibernation"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:132
+msgid "Shutdown"
+msgstr "Éteindre"
+
+#: alan/extensions/logout.py:54 alan/extensions/logout.py:135
+msgid "Reboot"
+msgstr "Redémarrer"
+
+#: alan/extensions/logout.py:74
+msgid "(CTRL+ALT+SPACE)"
+msgstr "(CTRL+ALT+SPACE)"
+
+#: alan/extensions/logout.py:112
+msgid "Change profile image"
+msgstr "Changer l'image du profil"
+
+#: alan/extensions/logout.py:117
+msgid "Other..."
+msgstr "Autre…"
+
+#: alan/extensions/logout.py:140
+msgid "Settings..."
+msgstr "Paramètres…"
+
+#: alan/extensions/exaile.py:21
+msgid "Coders"
+msgstr "Développeurs"
+
+#: alan/extensions/exaile.py:55
+msgid "Pause"
+msgstr "Pause"
+
+#: alan/extensions/exaile.py:57
+msgid "Play"
+msgstr "Lecture"
+
+#: alan/extensions/exaile.py:59
+msgid "Stop"
+msgstr "Arrêter"
+
+#: alan/extensions/exaile.py:63
+msgid "Previous"
+msgstr "Précédent"
+
+#: alan/extensions/exaile.py:64
+msgid "Next"
+msgstr "Suivant"
+
+#: alan/extensions/exaile.py:74
+msgid "Exaile is not playing."
+msgstr ""
+
+#: alan/extensions/exaile.py:76
+msgid "Open Exaile"
+msgstr ""
+
+#: alan.conf:1
+msgid "Applications"
+msgstr "Applications"
+
+#: alan.conf:2
+msgid "Places"
+msgstr ""
+
+#: alan.conf:3
+msgid "Appearance"
+msgstr "Apparence"
+
+#: alan.conf:4
+msgid "Help"
+msgstr "Aide"
+
+#: alan.conf:5
+msgid "About Semplice..."
+msgstr "À propos de Semplice..."
+
+#: alan.conf:6
+msgid "Semplice Website"
+msgstr "Site internet de Semplice"
+
+#: alan.conf:7
+msgid "Semplice Wiki"
+msgstr "Wiki de Semplice"
+
+#: alan.conf:8
+msgid "Semplice Forums"
+msgstr "Forums de Semplice"
+
+#: alan.conf:9
+msgid "Semplice on IRC"
+msgstr "IRC de Semplice"
