@@ -1,37 +1,38 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-02 17:32+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-01-02 16:29+0000\n"
+"Last-Translator: g7 <me@medesimo.eu>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/semplice/language/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: alan/extensions/appearance.py:44
 msgid "Wallpaper"
-msgstr ""
+msgstr "Papier peint"
 
 #: alan/extensions/appearance.py:45
 msgid "Add"
-msgstr ""
+msgstr "Ajouter"
 
 #: alan/extensions/appearance.py:46
 msgid "Manage"
-msgstr ""
+msgstr "Gérer"
 
 #: alan/extensions/appearance.py:52
 msgid "Appearance settings"
-msgstr ""
+msgstr "Paramètres d'apparence"
 
 #: alan/extensions/appearance.py:56
 msgid "Visual effects"
@@ -39,91 +40,91 @@ msgstr ""
 
 #: alan/extensions/places.py:52
 msgid "Desktop"
-msgstr ""
+msgstr "Bureau"
 
 #: alan/extensions/places.py:55
 msgid "Trash"
-msgstr ""
+msgstr "Poubelle"
 
 #: alan/extensions/places.py:58
 msgid "Computer"
-msgstr ""
+msgstr "Ordinateur"
 
 #: alan/extensions/places.py:66
 msgid "System (/)"
-msgstr ""
+msgstr "System (/)"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:81
 msgid "Lock Screen"
-msgstr ""
+msgstr "Verrouiller l'écran"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:83
 msgid "Logout"
-msgstr ""
+msgstr "Déconnexion"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:87
 msgid "Switch User"
-msgstr ""
+msgstr "Changer d'utilisateur"
 
 #: alan/extensions/logout.py:54
 msgid "Guest session"
-msgstr ""
+msgstr "Session d'invité"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:124
 msgid "Suspend"
-msgstr ""
+msgstr "Mettre en veille"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:127
 msgid "Hibernate"
-msgstr ""
+msgstr "Mettre en hibernation"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:132
 msgid "Shutdown"
-msgstr ""
+msgstr "Éteindre"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:135
 msgid "Reboot"
-msgstr ""
+msgstr "Redémarrer"
 
 #: alan/extensions/logout.py:74
 msgid "(CTRL+ALT+SPACE)"
-msgstr ""
+msgstr "(CTRL+ALT+SPACE)"
 
 #: alan/extensions/logout.py:112
 msgid "Change profile image"
-msgstr ""
+msgstr "Changer l'image du profil"
 
 #: alan/extensions/logout.py:117
 msgid "Other..."
-msgstr ""
+msgstr "Autre…"
 
 #: alan/extensions/logout.py:140
 msgid "Settings..."
-msgstr ""
+msgstr "Paramètres…"
 
 #: alan/extensions/exaile.py:21
 msgid "Coders"
-msgstr ""
+msgstr "Développeurs"
 
 #: alan/extensions/exaile.py:55
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #: alan/extensions/exaile.py:57
 msgid "Play"
-msgstr ""
+msgstr "Lecture"
 
 #: alan/extensions/exaile.py:59
 msgid "Stop"
-msgstr ""
+msgstr "Arrêter"
 
 #: alan/extensions/exaile.py:63
 msgid "Previous"
-msgstr ""
+msgstr "Précédent"
 
 #: alan/extensions/exaile.py:64
 msgid "Next"
-msgstr ""
+msgstr "Suivant"
 
 #: alan/extensions/exaile.py:74
 msgid "Exaile is not playing."
@@ -132,9 +133,10 @@ msgstr ""
 #: alan/extensions/exaile.py:76
 msgid "Open Exaile"
 msgstr ""
+
 #: alan.conf:1
 msgid "Applications"
-msgstr ""
+msgstr "Applications"
 
 #: alan.conf:2
 msgid "Places"
@@ -142,29 +144,28 @@ msgstr ""
 
 #: alan.conf:3
 msgid "Appearance"
-msgstr ""
+msgstr "Apparence"
 
 #: alan.conf:4
 msgid "Help"
-msgstr ""
+msgstr "Aide"
 
 #: alan.conf:5
 msgid "About Semplice..."
-msgstr ""
+msgstr "À propos de Semplice..."
 
 #: alan.conf:6
 msgid "Semplice Website"
-msgstr ""
+msgstr "Site internet de Semplice"
 
 #: alan.conf:7
 msgid "Semplice Wiki"
-msgstr ""
+msgstr "Wiki de Semplice"
 
 #: alan.conf:8
 msgid "Semplice Forums"
-msgstr ""
+msgstr "Forums de Semplice"
 
 #: alan.conf:9
 msgid "Semplice on IRC"
-msgstr ""
-
+msgstr "IRC de Semplice"

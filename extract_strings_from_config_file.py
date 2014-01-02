@@ -25,18 +25,24 @@ import ConfigParser as cp
 cfg = cp.SafeConfigParser()
 cfg.read("./alan.conf")
 
-potfile = open("lang/alan2/alan2.pot", "a")
+potfile = open("lang/alan2/alan2.pot", "a+")
 potfile.write("\n")
+
+lines = potfile.readlines()
+
+# Fake ugly counter
+counter = 0
 
 for sect in cfg.sections():
 	for opt in cfg.options(sect):
 		# *label*
-		if "label" in opt:
+		if "label" in opt and not ("msgid \"%s\"\n" % cfg.get(sect, opt)) in lines:
 			# Yay!
-			potfile.write("""# alan.conf
+			counter += 1
+			potfile.write("""#: alan.conf:%i
 msgid "%s"
 msgstr ""
 
-""" % cfg.get(sect, opt))
+""" % (counter, cfg.get(sect, opt)))
 
 potfile.close()

@@ -1,37 +1,38 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-02 17:32+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-01-02 16:29+0000\n"
+"Last-Translator: g7 <me@medesimo.eu>\n"
+"Language-Team: Greek (http://www.transifex.com/projects/p/semplice/language/el/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: alan/extensions/appearance.py:44
 msgid "Wallpaper"
-msgstr ""
+msgstr "Ταπετσαρία"
 
 #: alan/extensions/appearance.py:45
 msgid "Add"
-msgstr ""
+msgstr "Προσθήκη"
 
 #: alan/extensions/appearance.py:46
 msgid "Manage"
-msgstr ""
+msgstr "Διαχείριση"
 
 #: alan/extensions/appearance.py:52
 msgid "Appearance settings"
-msgstr ""
+msgstr "Ρυθμίσεις Εμφάνισης"
 
 #: alan/extensions/appearance.py:56
 msgid "Visual effects"
@@ -39,31 +40,31 @@ msgstr ""
 
 #: alan/extensions/places.py:52
 msgid "Desktop"
-msgstr ""
+msgstr "Επιφάνεια εργασίας"
 
 #: alan/extensions/places.py:55
 msgid "Trash"
-msgstr ""
+msgstr "Κάδος Απορριμμάτων"
 
 #: alan/extensions/places.py:58
 msgid "Computer"
-msgstr ""
+msgstr "Υπολογιστής"
 
 #: alan/extensions/places.py:66
 msgid "System (/)"
-msgstr ""
+msgstr "Σύστημα Αρχείων (/)"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:81
 msgid "Lock Screen"
-msgstr ""
+msgstr "Κλείδωμα Οθόνης"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:83
 msgid "Logout"
-msgstr ""
+msgstr "Αποσύνδεση"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:87
 msgid "Switch User"
-msgstr ""
+msgstr "Εναλλαγή Χρήστη"
 
 #: alan/extensions/logout.py:54
 msgid "Guest session"
@@ -71,23 +72,23 @@ msgstr ""
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:124
 msgid "Suspend"
-msgstr ""
+msgstr "Αναστολή"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:127
 msgid "Hibernate"
-msgstr ""
+msgstr "Αδρανοποίηση"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:132
 msgid "Shutdown"
-msgstr ""
+msgstr "Τερματισμός"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:135
 msgid "Reboot"
-msgstr ""
+msgstr "Επανεκκίνηση"
 
 #: alan/extensions/logout.py:74
 msgid "(CTRL+ALT+SPACE)"
-msgstr ""
+msgstr "(CTRL+ALT+SPACE)"
 
 #: alan/extensions/logout.py:112
 msgid "Change profile image"
@@ -95,76 +96,76 @@ msgstr ""
 
 #: alan/extensions/logout.py:117
 msgid "Other..."
-msgstr ""
+msgstr "Άλλο..."
 
 #: alan/extensions/logout.py:140
 msgid "Settings..."
-msgstr ""
+msgstr "Ρυθμίσεις..."
 
 #: alan/extensions/exaile.py:21
 msgid "Coders"
-msgstr ""
+msgstr "Προγραμματιστές"
 
 #: alan/extensions/exaile.py:55
 msgid "Pause"
-msgstr ""
+msgstr "Παύση"
 
 #: alan/extensions/exaile.py:57
 msgid "Play"
-msgstr ""
+msgstr "Αναπαραγωγή"
 
 #: alan/extensions/exaile.py:59
 msgid "Stop"
-msgstr ""
+msgstr "Διακοπή"
 
 #: alan/extensions/exaile.py:63
 msgid "Previous"
-msgstr ""
+msgstr "Προηγούμενο"
 
 #: alan/extensions/exaile.py:64
 msgid "Next"
-msgstr ""
+msgstr "Επόμενο"
 
 #: alan/extensions/exaile.py:74
 msgid "Exaile is not playing."
-msgstr ""
+msgstr "Ο Exaile δεν παίζει"
 
 #: alan/extensions/exaile.py:76
 msgid "Open Exaile"
-msgstr ""
+msgstr "Άνοιγμα Exaile"
+
 #: alan.conf:1
 msgid "Applications"
-msgstr ""
+msgstr "Εφαρμογές"
 
 #: alan.conf:2
 msgid "Places"
-msgstr ""
+msgstr "Τοποθεσίες"
 
 #: alan.conf:3
 msgid "Appearance"
-msgstr ""
+msgstr "Εμφάνιση"
 
 #: alan.conf:4
 msgid "Help"
-msgstr ""
+msgstr "Βοήθεια"
 
 #: alan.conf:5
 msgid "About Semplice..."
-msgstr ""
+msgstr "Σχετικά με τον Semplice..."
 
 #: alan.conf:6
 msgid "Semplice Website"
-msgstr ""
+msgstr "Ιστότοπος Semplice"
 
 #: alan.conf:7
 msgid "Semplice Wiki"
-msgstr ""
+msgstr "Semplice Wiki"
 
 #: alan.conf:8
 msgid "Semplice Forums"
-msgstr ""
+msgstr "Semplice Forums"
 
 #: alan.conf:9
 msgid "Semplice on IRC"
-msgstr ""
-
+msgstr "Το Semplice στο IRC"
