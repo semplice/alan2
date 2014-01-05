@@ -1,3 +1,10 @@
+alan2 (0.80.0-4) unstable; urgency=low
+
+  * Moved watchers to main alan2 package, fixed links.
+  * Upload to current! Hey!
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 05 Jan 2014 14:06:20 +0100
+
 alan2 (0.80.0-3) devel; urgency=low
 
   * debian/rules: ship translations.
