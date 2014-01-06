@@ -24,7 +24,7 @@ import ConfigParser as cp
 import os
 
 DEFAULTS = "/etc/alan/alan.conf"
-USER = os.path.expanduser("~/.config/alan/user.conf")
+USER = os.path.expanduser("~/.config/alan/alan.conf")
 
 class Configuration(cp.SafeConfigParser):
 	""" The Configuration() class handles a configuration file. """
@@ -38,11 +38,8 @@ class Configuration(cp.SafeConfigParser):
 		
 		cp.SafeConfigParser.__init__(self)
 		
-		# Load defaults
-		self.readfp(open(DEFAULTS))
-		
-		# Load USER
-		self.read(USER)
+		# Load DEFAULTS and USER
+		self.read((DEFAULTS, USER))
 		
 		# Populate settings with the application settings...
 		self.populate_settings("alan")
@@ -54,7 +51,7 @@ class Configuration(cp.SafeConfigParser):
 	def populate_settings(self, extension):
 		""" Populates self.settings with extension's settings. """
 		
-		self.settings[extension] = {}
+		self.settings[extension] = {"__ConfigParser":self}
 		for option, value in self.items(extension):
 			# Handle boolean values and None
 			if value.lower() == "false":

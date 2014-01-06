@@ -4,12 +4,13 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2011
+# g7 <me@medesimo.eu>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-02 17:32+0100\n"
-"PO-Revision-Date: 2014-01-02 16:29+0000\n"
+"POT-Creation-Date: 2014-01-06 11:41+0100\n"
+"PO-Revision-Date: 2014-01-06 10:44+0000\n"
 "Last-Translator: g7 <me@medesimo.eu>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/semplice/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -151,21 +152,29 @@ msgid "Help"
 msgstr "Hilfe"
 
 #: alan.conf:5
+msgid "Terminal Emulator"
+msgstr "Terminal-Emulator"
+
+#: alan.conf:6
+msgid "Web Browser"
+msgstr "Web-Browser"
+
+#: alan.conf:7
 msgid "About Semplice..."
 msgstr "Über Semplice..."
 
-#: alan.conf:6
+#: alan.conf:8
 msgid "Semplice Website"
 msgstr "Semplice-Website"
 
-#: alan.conf:7
+#: alan.conf:9
 msgid "Semplice Wiki"
 msgstr "Semplice-Wiki"
 
-#: alan.conf:8
+#: alan.conf:10
 msgid "Semplice Forums"
 msgstr "Semplice-Foren"
 
-#: alan.conf:9
+#: alan.conf:11
 msgid "Semplice on IRC"
 msgstr "Semplice im IRC"

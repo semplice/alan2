@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-02 17:32+0100\n"
-"PO-Revision-Date: 2014-01-02 16:29+0000\n"
+"POT-Creation-Date: 2014-01-06 11:41+0100\n"
+"PO-Revision-Date: 2014-01-06 10:41+0000\n"
 "Last-Translator: g7 <me@medesimo.eu>\n"
 "Language-Team: Bosnian (Bosnia and Herzegovina) (http://www.transifex.com/projects/p/semplice/language/bs_BA/)\n"
 "MIME-Version: 1.0\n"
@@ -150,21 +150,29 @@ msgid "Help"
 msgstr ""
 
 #: alan.conf:5
-msgid "About Semplice..."
+msgid "Terminal Emulator"
 msgstr ""
 
 #: alan.conf:6
-msgid "Semplice Website"
+msgid "Web Browser"
 msgstr ""
 
 #: alan.conf:7
-msgid "Semplice Wiki"
+msgid "About Semplice..."
 msgstr ""
 
 #: alan.conf:8
-msgid "Semplice Forums"
+msgid "Semplice Website"
 msgstr ""
 
 #: alan.conf:9
+msgid "Semplice Wiki"
+msgstr ""
+
+#: alan.conf:10
+msgid "Semplice Forums"
+msgstr ""
+
+#: alan.conf:11
 msgid "Semplice on IRC"
 msgstr ""
