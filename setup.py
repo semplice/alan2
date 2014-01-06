@@ -24,7 +24,7 @@ from distutils.core import setup
 
 setup(
 	name='alan2',
-	version='0.80.0',
+	version='0.90.0',
 	description='Openbox Menu Extension Framework and Builder',
 	author='Eugenio Paolantonio',
 	author_email='me@medesimo.eu',
