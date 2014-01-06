@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-02 17:32+0100\n"
+"POT-Creation-Date: 2014-01-06 11:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,22 +149,30 @@ msgid "Help"
 msgstr ""
 
 #: alan.conf:5
-msgid "About Semplice..."
+msgid "Terminal Emulator"
 msgstr ""
 
 #: alan.conf:6
-msgid "Semplice Website"
+msgid "Web Browser"
 msgstr ""
 
 #: alan.conf:7
-msgid "Semplice Wiki"
+msgid "About Semplice..."
 msgstr ""
 
 #: alan.conf:8
-msgid "Semplice Forums"
+msgid "Semplice Website"
 msgstr ""
 
 #: alan.conf:9
+msgid "Semplice Wiki"
+msgstr ""
+
+#: alan.conf:10
+msgid "Semplice Forums"
+msgstr ""
+
+#: alan.conf:11
 msgid "Semplice on IRC"
 msgstr ""
 

@@ -4,12 +4,13 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
+# g7 <me@medesimo.eu>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-02 17:32+0100\n"
-"PO-Revision-Date: 2014-01-02 16:29+0000\n"
+"POT-Creation-Date: 2014-01-06 11:41+0100\n"
+"PO-Revision-Date: 2014-01-06 10:45+0000\n"
 "Last-Translator: g7 <me@medesimo.eu>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/semplice/language/el/)\n"
 "MIME-Version: 1.0\n"
@@ -151,21 +152,29 @@ msgid "Help"
 msgstr "Βοήθεια"
 
 #: alan.conf:5
+msgid "Terminal Emulator"
+msgstr "Προσομοιωτής Τερματικού"
+
+#: alan.conf:6
+msgid "Web Browser"
+msgstr "Περιηγητής Ιστού"
+
+#: alan.conf:7
 msgid "About Semplice..."
 msgstr "Σχετικά με τον Semplice..."
 
-#: alan.conf:6
+#: alan.conf:8
 msgid "Semplice Website"
 msgstr "Ιστότοπος Semplice"
 
-#: alan.conf:7
+#: alan.conf:9
 msgid "Semplice Wiki"
 msgstr "Semplice Wiki"
 
-#: alan.conf:8
+#: alan.conf:10
 msgid "Semplice Forums"
 msgstr "Semplice Forums"
 
-#: alan.conf:9
+#: alan.conf:11
 msgid "Semplice on IRC"
 msgstr "Το Semplice στο IRC"

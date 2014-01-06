@@ -39,7 +39,7 @@ class Configuration(cp.SafeConfigParser):
 		cp.SafeConfigParser.__init__(self)
 		
 		# Load defaults
-		self.readfp(open(DEFAULTS))
+		self.read(DEFAULTS)
 		
 		# Load USER
 		self.read(USER)
@@ -54,7 +54,7 @@ class Configuration(cp.SafeConfigParser):
 	def populate_settings(self, extension):
 		""" Populates self.settings with extension's settings. """
 		
-		self.settings[extension] = {}
+		self.settings[extension] = {"__ConfigParser":self}
 		for option, value in self.items(extension):
 			# Handle boolean values and None
 			if value.lower() == "false":

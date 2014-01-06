@@ -105,8 +105,11 @@ class Extension(extension.Extension):
 		returnlst = []
 		
 		launcher_settings = self.settings["LauncherPool:%s" % item]
-		structure = launcher_settings["structure"].split(" ")
-		
+		if "structure" in launcher_settings:
+			structure = launcher_settings["structure"].split(" ")
+		else:
+			structure = launcher_settings["__ConfigParser"].options("LauncherPool:%s" % item)
+				
 		for item in structure:
 
 			if item == "-":
