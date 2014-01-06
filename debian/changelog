@@ -1,3 +1,11 @@
+alan2 (0.90.0-1) unstable; urgency=low
+
+  * extensions/main: LauncherPools now do not need the structure anymore.
+  * core/config: changed user config path to ~/.config/alan/alan.conf.
+  * Added support for forced pipe menus.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 06 Jan 2014 12:07:13 +0100
+
 alan2 (0.80.0-4) unstable; urgency=low
 
   * Moved watchers to main alan2 package, fixed links.
