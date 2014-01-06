@@ -88,6 +88,8 @@ class Extension(extension.Extension):
 			# Set linkedto
 			if obj == "MenuLink":
 				linkedto = self.new_menu_link
+			elif obj == "Pipe":
+				linkedto = self.new_pipe_menu_link
 			elif obj == "ItemPool":
 				linkedto = self.new_itempool
 			elif obj == "Menu":
@@ -131,12 +133,17 @@ class Extension(extension.Extension):
 		
 		return returnlst
 	
-	def new_menu_link(self, item):
+	def new_menu_link(self, item, pipe=None):
 		""" Creates a new_menu_link """
 		
 		if self.is_pipe:
+			_id = "PIPE_%s" % item
 			execute = "%s %s" % (os.path.abspath(sys.argv[0]), item)
+		elif pipe:
+			_id = "PIPE_%s" % item
+			execute = "%s %s" % ("/usr/bin/alan-pipe", item)
 		else:
+			_id = item
 			execute = None
 		
 		# Get name
@@ -151,7 +158,13 @@ class Extension(extension.Extension):
 		else:
 			icon = None
 		
-		return [Menu(id=item, label=label, execute=execute, icon=self.IconPool.get_icon(icon)), ]
+		return [Menu(id=_id, label=label, execute=execute, icon=self.IconPool.get_icon(icon)), ]
+	
+	def new_pipe_menu_link(self, item):
+		""" Creates a new pipe menu link. """
+		
+		print "Piping"
+		return self.new_menu_link(item, pipe=True)
 			
 	def new_internal_menu(self, item):
 		""" Creates a new internal menu """
