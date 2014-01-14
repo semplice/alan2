@@ -1,3 +1,10 @@
+alan2 (0.99.0-1) unstable; urgency=low
+
+  * alan-config: support for openbox-3.4 namespaces (<= Semplice 5)
+  * Ported alan legacy's exaile extension to alan2.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 14 Jan 2014 18:37:37 +0100
+
 alan2 (0.90.0-1) unstable; urgency=low
 
   * extensions/main: LauncherPools now do not need the structure anymore.
