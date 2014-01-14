@@ -29,9 +29,6 @@ import argparse
 import os
 import sys
 
-namespaces = {"ob":"http://openbox.org/3.5/rc"}
-etree.register_namespace('',namespaces["ob"])
-
 OPENBOX_CONFIGURATION_DIR = os.path.expanduser("~/.config/openbox")
 DEFAULT_PATH=os.path.expanduser("~/.config/alan-menus")
 
@@ -91,7 +88,15 @@ if args.extension:
 # Open openbox configuration
 tree = etree.parse(os.path.join(OPENBOX_CONFIGURATION_DIR, "rc.xml"), tree_helpers.PIParser())
 document = tree.getroot()
-root = document.find("ob:openbox_config", namespaces=namespaces)
+root = document.find("ob:openbox_config", namespaces={"ob":"http://openbox.org/3.5/rc"})
+if root is None:
+	# openbox-3.4
+	root = document.find("ob3:openbox_config", namespaces={"ob3":"http://openbox.org/3.4/rc"})
+	namespaces = {"ob":"http://openbox.org/3.4/rc"}
+else:
+	namespaces = {"ob":"http://openbox.org/3.5/rc"}
+etree.register_namespace('',namespaces["ob"])
+
 menu = root.find("ob:menu", namespaces=namespaces)
 
 # Get and parse all enabled modules...

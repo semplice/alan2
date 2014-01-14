@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# CostGranda <costeeleation@openmailbox.org>, 2014
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 # g7 <me@medesimo.eu>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-06 11:41+0100\n"
-"PO-Revision-Date: 2014-01-06 10:44+0000\n"
+"POT-Creation-Date: 2014-01-14 18:30+0100\n"
+"PO-Revision-Date: 2014-01-14 17:35+0000\n"
 "Last-Translator: g7 <me@medesimo.eu>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/semplice/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +38,7 @@ msgstr "Configuraciones de aspecto"
 
 #: alan/extensions/appearance.py:56
 msgid "Visual effects"
-msgstr ""
+msgstr "Efectos visuales"
 
 #: alan/extensions/places.py:52
 msgid "Desktop"
@@ -103,35 +104,31 @@ msgstr "Otro…"
 msgid "Settings..."
 msgstr "Configuraciones..."
 
-#: alan/extensions/exaile.py:21
-msgid "Coders"
-msgstr "Programadores"
-
-#: alan/extensions/exaile.py:55
+#: alan/extensions/exaile.py:63
 msgid "Pause"
 msgstr "Pausar"
 
-#: alan/extensions/exaile.py:57
+#: alan/extensions/exaile.py:65
 msgid "Play"
 msgstr "Reproducir"
 
-#: alan/extensions/exaile.py:59
+#: alan/extensions/exaile.py:67
 msgid "Stop"
 msgstr "Detener"
 
-#: alan/extensions/exaile.py:63
+#: alan/extensions/exaile.py:71
 msgid "Previous"
 msgstr "Anterior"
 
-#: alan/extensions/exaile.py:64
+#: alan/extensions/exaile.py:72
 msgid "Next"
 msgstr "Siguiente"
 
-#: alan/extensions/exaile.py:74
+#: alan/extensions/exaile.py:81
 msgid "Exaile is not playing."
 msgstr "Exaile no está en reproducción."
 
-#: alan/extensions/exaile.py:76
+#: alan/extensions/exaile.py:83
 msgid "Open Exaile"
 msgstr "Abrir Exaile"
 
@@ -152,29 +149,33 @@ msgid "Help"
 msgstr "Ayuda"
 
 #: alan.conf:5
+msgid "Music"
+msgstr "Música"
+
+#: alan.conf:6
 msgid "Terminal Emulator"
 msgstr "Emulador de terminal"
 
-#: alan.conf:6
+#: alan.conf:7
 msgid "Web Browser"
 msgstr "Navegador web"
 
-#: alan.conf:7
+#: alan.conf:8
 msgid "About Semplice..."
 msgstr "Acerca de Semplice..."
 
-#: alan.conf:8
+#: alan.conf:9
 msgid "Semplice Website"
 msgstr "Sitio web de Semplice"
 
-#: alan.conf:9
+#: alan.conf:10
 msgid "Semplice Wiki"
 msgstr "Wiki de Semplice"
 
-#: alan.conf:10
+#: alan.conf:11
 msgid "Semplice Forums"
 msgstr "Foros de Semplice"
 
-#: alan.conf:11
+#: alan.conf:12
 msgid "Semplice on IRC"
 msgstr "Semplice en IRC"
