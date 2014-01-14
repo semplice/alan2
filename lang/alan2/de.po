@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-06 11:41+0100\n"
-"PO-Revision-Date: 2014-01-06 10:44+0000\n"
+"POT-Creation-Date: 2014-01-14 18:30+0100\n"
+"PO-Revision-Date: 2014-01-14 17:35+0000\n"
 "Last-Translator: g7 <me@medesimo.eu>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/semplice/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -103,35 +103,31 @@ msgstr "Anderes …"
 msgid "Settings..."
 msgstr "Einstellungen..."
 
-#: alan/extensions/exaile.py:21
-msgid "Coders"
-msgstr "Programmierer"
-
-#: alan/extensions/exaile.py:55
+#: alan/extensions/exaile.py:63
 msgid "Pause"
 msgstr "Pause"
 
-#: alan/extensions/exaile.py:57
+#: alan/extensions/exaile.py:65
 msgid "Play"
 msgstr "Wiedergabe"
 
-#: alan/extensions/exaile.py:59
+#: alan/extensions/exaile.py:67
 msgid "Stop"
 msgstr "Stop"
 
-#: alan/extensions/exaile.py:63
+#: alan/extensions/exaile.py:71
 msgid "Previous"
 msgstr "Vorheriger"
 
-#: alan/extensions/exaile.py:64
+#: alan/extensions/exaile.py:72
 msgid "Next"
 msgstr "Nächster"
 
-#: alan/extensions/exaile.py:74
+#: alan/extensions/exaile.py:81
 msgid "Exaile is not playing."
 msgstr "Es läuft keine Wiedergabe über Exaile."
 
-#: alan/extensions/exaile.py:76
+#: alan/extensions/exaile.py:83
 msgid "Open Exaile"
 msgstr "Exaile öffnen"
 
@@ -152,29 +148,33 @@ msgid "Help"
 msgstr "Hilfe"
 
 #: alan.conf:5
+msgid "Music"
+msgstr "Musik"
+
+#: alan.conf:6
 msgid "Terminal Emulator"
 msgstr "Terminal-Emulator"
 
-#: alan.conf:6
+#: alan.conf:7
 msgid "Web Browser"
 msgstr "Web-Browser"
 
-#: alan.conf:7
+#: alan.conf:8
 msgid "About Semplice..."
 msgstr "Über Semplice..."
 
-#: alan.conf:8
+#: alan.conf:9
 msgid "Semplice Website"
 msgstr "Semplice-Website"
 
-#: alan.conf:9
+#: alan.conf:10
 msgid "Semplice Wiki"
 msgstr "Semplice-Wiki"
 
-#: alan.conf:10
+#: alan.conf:11
 msgid "Semplice Forums"
 msgstr "Semplice-Foren"
 
-#: alan.conf:11
+#: alan.conf:12
 msgid "Semplice on IRC"
 msgstr "Semplice im IRC"

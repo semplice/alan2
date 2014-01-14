@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-06 11:41+0100\n"
-"PO-Revision-Date: 2014-01-06 10:45+0000\n"
+"POT-Creation-Date: 2014-01-14 18:30+0100\n"
+"PO-Revision-Date: 2014-01-14 17:35+0000\n"
 "Last-Translator: g7 <me@medesimo.eu>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/semplice/language/el/)\n"
 "MIME-Version: 1.0\n"
@@ -103,35 +103,31 @@ msgstr "Άλλο..."
 msgid "Settings..."
 msgstr "Ρυθμίσεις..."
 
-#: alan/extensions/exaile.py:21
-msgid "Coders"
-msgstr "Προγραμματιστές"
-
-#: alan/extensions/exaile.py:55
+#: alan/extensions/exaile.py:63
 msgid "Pause"
 msgstr "Παύση"
 
-#: alan/extensions/exaile.py:57
+#: alan/extensions/exaile.py:65
 msgid "Play"
 msgstr "Αναπαραγωγή"
 
-#: alan/extensions/exaile.py:59
+#: alan/extensions/exaile.py:67
 msgid "Stop"
 msgstr "Διακοπή"
 
-#: alan/extensions/exaile.py:63
+#: alan/extensions/exaile.py:71
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: alan/extensions/exaile.py:64
+#: alan/extensions/exaile.py:72
 msgid "Next"
 msgstr "Επόμενο"
 
-#: alan/extensions/exaile.py:74
+#: alan/extensions/exaile.py:81
 msgid "Exaile is not playing."
 msgstr "Ο Exaile δεν παίζει"
 
-#: alan/extensions/exaile.py:76
+#: alan/extensions/exaile.py:83
 msgid "Open Exaile"
 msgstr "Άνοιγμα Exaile"
 
@@ -152,29 +148,33 @@ msgid "Help"
 msgstr "Βοήθεια"
 
 #: alan.conf:5
+msgid "Music"
+msgstr "Μουσική"
+
+#: alan.conf:6
 msgid "Terminal Emulator"
 msgstr "Προσομοιωτής Τερματικού"
 
-#: alan.conf:6
+#: alan.conf:7
 msgid "Web Browser"
 msgstr "Περιηγητής Ιστού"
 
-#: alan.conf:7
+#: alan.conf:8
 msgid "About Semplice..."
 msgstr "Σχετικά με τον Semplice..."
 
-#: alan.conf:8
+#: alan.conf:9
 msgid "Semplice Website"
 msgstr "Ιστότοπος Semplice"
 
-#: alan.conf:9
+#: alan.conf:10
 msgid "Semplice Wiki"
 msgstr "Semplice Wiki"
 
-#: alan.conf:10
+#: alan.conf:11
 msgid "Semplice Forums"
 msgstr "Semplice Forums"
 
-#: alan.conf:11
+#: alan.conf:12
 msgid "Semplice on IRC"
 msgstr "Το Semplice στο IRC"

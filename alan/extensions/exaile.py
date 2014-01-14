@@ -1,94 +1,107 @@
-# -*- coding=utf-8 -*-
-# Alan Exaile plugin v0.1
-# Copyright © 2013 Semplice Team. All rights reserved.
-# Written by Luca B. <sidtux _AT_ gmail _DOT_ com>, released under GPLv3 license.
+# -*- coding: utf-8 -*-
+#
+# alan2 - An openbox menu builder
+# Copyright (C) 2014  Semplice Project
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# Authors:
+#	Luca B. <sidtux _AT_ gmail _DOT_ com>
+#	Eugenio "g7" Paolantonio <me@medesimo.eu>
+#
+# This file contains the exaile extension.
 
-import alan.core.structure as struct
-import alan.core.objects.core as core
-import alan.core.actions.glob as ga
-import t9n.library as trans
-
-import alan.core.extension
+import alan.core.extension as extension
+from alan.core.objects.separator import Header, Separator
+from alan.core.objects.item import Item
+from alan.core.objects.menu import Menu
+from alan.core.objects.actions import ExecuteAction
 
 import os, sys, dbus
 
-_ = trans.translation_init("alan")
-
 executable = " ".join(sys.argv)
-
-# Information about this extension ;)
-coders = { "Luca B.":"http://semplice-linux.sourceforge.net" }
-infos = {_("Coders"):coders}
 
 # Initialize the session bus
 bus = dbus.SessionBus()
 
 class Exaile:
-    def playpause(self, iface):
-        iface.PlayPause()
+	def playpause(self, iface):
+		iface.PlayPause()
 
-    def stop(self, iface):
-        iface.Stop()
+	def stop(self, iface):
+		iface.Stop()
 
-    def prev(self, iface):
-        iface.Prev()
+	def prev(self, iface):
+		iface.Prev()
 
-    def next(self, iface):
-        iface.Next()
+	def next(self, iface):
+		iface.Next()
 
-class Extension(alan.core.extension.Extension):
-    def run(self):
+class Extension(extension.Extension):
+	
+	extensionName = "exaile"
+	
+	def generate(self):
 
-        # Initiate pipemenu
-        self.menu = struct.PipeMenu()
-        self.menu.start() # add initial tag
-        
-        i = self.menu.insert
-        
-        i(core.header("Exaile"))
-            
-        try:
-            self.remote_object = bus.get_object("org.exaile.Exaile","/org/exaile/Exaile")
-            self.iface = dbus.Interface(self.remote_object, "org.exaile.Exaile")
+		self.add(Header("Exaile"))
+					
+		try:
+			self.remote_object = bus.get_object("org.exaile.Exaile","/org/exaile/Exaile")
+			self.iface = dbus.Interface(self.remote_object, "org.exaile.Exaile")
 
-            if self.iface.GetState() == "playing":
-                i(core.item(_("Pause"), ga.execute("alan-show-extension %s playpause" % sys.argv[1]), icon="media-playback-pause"))
-            else:
-                i(core.item(_("Play"), ga.execute("alan-show-extension %s playpause" % sys.argv[1]), icon="media-playback-start"))
-                
-            i(core.item(_("Stop"), ga.execute("alan-show-extension %s stop" % sys.argv[1]), icon="media-playback-stop"))
-    
-            i(core.separator)
-    
-            i(core.item(_("Previous"), ga.execute("alan-show-extension %s prev" % sys.argv[1]), icon="media-skip-backward"))
-            i(core.item(_("Next"), ga.execute("alan-show-extension %s next" % sys.argv[1]), icon="media-skip-forward"))
-            
-            i(core.separator)
-            # Displays infos about the current song
-            if(self.iface.IsPlaying()):
-                i(core.item(self.iface.GetTrackAttr("title"), ga.execute("echo"), icon="audio-x-generic"))
-                i(core.item(self.iface.GetTrackAttr("album"), ga.execute("echo"), icon="media-optical"))
-                i(core.item(self.iface.GetTrackAttr("artist"), ga.execute("echo"), icon="audio-input-microphone"))
-            else:
-                #i(core.item(_("Open Exaile"), ga.execute("exaile"), icon="/usr/share/pixmaps/exaile.png"))
-                i(core.item(_("Exaile is not playing."), ga.execute("echo"), icon=""))
-        except dbus.exceptions.DBusException:
-            i(core.item(_("Open Exaile"), ga.execute("exaile"), icon="exaile"))
-            #print("Exaile is not running.")
+			if self.iface.GetState() == "playing":
+				self.add(self.return_executable_item(_("Pause"), "alan-show-extension %s playpause" % sys.argv[1], icon="media-playback-pause"))
+			else:
+				self.add(self.return_executable_item(_("Play"), "alan-show-extension %s playpause" % sys.argv[1], icon="media-playback-start"))
+				
+			self.add(self.return_executable_item(_("Stop"), "alan-show-extension %s stop" % sys.argv[1], icon="media-playback-stop"))
+	
+			self.add(Separator())
+	
+			self.add(self.return_executable_item(_("Previous"), "alan-show-extension %s prev" % sys.argv[1], icon="media-skip-backward"))
+			self.add(self.return_executable_item(_("Next"), "alan-show-extension %s next" % sys.argv[1], icon="media-skip-forward"))
+			
+			self.add(Separator())
+			# Displays infos about the current song
+			if(self.iface.IsPlaying()):
+				self.add(self.return_executable_item(self.iface.GetTrackAttr("title"), "echo", icon="audio-x-generic"))
+				self.add(self.return_executable_item(self.iface.GetTrackAttr("album"), "echo", icon="media-optical"))
+				self.add(self.return_executable_item(self.iface.GetTrackAttr("artist"), "echo", icon="audio-input-microphone"))
+			else:
+				self.add(self.return_executable_item(_("Exaile is not playing."), "echo", icon=""))
+		except dbus.exceptions.DBusException:
+			self.add(self.return_executable_item(_("Open Exaile"), "exaile", icon="exaile"))
 
-        self.menu.end()
+	def return_executable_item(self, label, target, icon=None):
+		""" Returns an executable item. """
+				
+		item = Item(label=label, icon=self.IconPool.get_icon(icon))
+		action = ExecuteAction(target)
+		item.append(action)
+		
+		return item
 
 if len(sys.argv) > 2:
-    try:
-        remote_object = bus.get_object("org.exaile.Exaile","/org/exaile/Exaile")
-        iface = dbus.Interface(remote_object, "org.exaile.Exaile")
-        if sys.argv[2] == "playpause":
-            Exaile().playpause(iface)
-        elif sys.argv[2] == "stop":
-            Exaile().stop(iface)
-        elif sys.argv[2] == "prev":
-            Exaile().prev(iface)
-        elif sys.argv[2] == "next":
-            Exaile().next(iface)
-    except:
-        pass
+	try:
+		remote_object = bus.get_object("org.exaile.Exaile","/org/exaile/Exaile")
+		iface = dbus.Interface(remote_object, "org.exaile.Exaile")
+		if sys.argv[2] == "playpause":
+			Exaile().playpause(iface)
+		elif sys.argv[2] == "stop":
+			Exaile().stop(iface)
+		elif sys.argv[2] == "prev":
+			Exaile().prev(iface)
+		elif sys.argv[2] == "next":
+			Exaile().next(iface)
+	except:
+		pass
