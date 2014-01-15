@@ -101,22 +101,22 @@ menu = root.find("ob:menu", namespaces=namespaces)
 
 # Get and parse all enabled modules...
 ENABLED_MODULES = {}
-_openbox_menu = None
+_openbox_menu = []
 for child in menu.findall("ob:file", namespaces=namespaces):
 	if os.path.dirname(child.text) == DEFAULT_PATH:
 		# it's ours!
 		ENABLED_MODULES[".".join(os.path.basename(child.text).split(".")[:-1])] = child
-	elif child.text == "menu.xml":
+	elif child.text in ("menu.xml","menu-static.xml"):
 		# Openbox default? Maybe. Cache the child, so that we can use it
 		# if we are going to setup alan2.
-		_openbox_menu = child
+		_openbox_menu.append(child)
 
 # What should we do?
 if args.setup:
 	# Setup!
-	if _openbox_menu is not None:
-		# Remove menu.xml, it will clash with alan2 *for sure*.
-		menu.remove(_openbox_menu)
+	for _menu in _openbox_menu:
+		# Remove found menus, they will clash with alan2 *for sure*.
+		menu.remove(_menu)
 
 	# If there are some extensions in the arguments, it's a good thing
 	# to set args.enable to True so that we do not need to recall this
