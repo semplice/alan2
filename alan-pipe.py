@@ -37,6 +37,10 @@ parser.add_argument(
 	"extension",
 	help="the extension to process"
 )
+parser.add_argument(
+	"-a", "--arguments",
+	help="arguments to pass to the extension."
+)
 
 args = parser.parse_args()
 
@@ -49,7 +53,7 @@ configuration = config.Configuration(args.extension)
 extension_module = main.import_extension(args.extension)
 
 # Get extension object
-extension = extension_module.Extension(configuration=configuration, is_pipe=True)
+extension = extension_module.Extension(configuration=configuration, is_pipe=True,arguments=args.arguments)
 
 # Generate menu
 extension.generate()

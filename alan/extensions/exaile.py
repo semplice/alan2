@@ -34,24 +34,29 @@ executable = " ".join(sys.argv)
 # Initialize the session bus
 bus = dbus.SessionBus()
 
-class Exaile:
-	def playpause(self, iface):
-		iface.PlayPause()
-
-	def stop(self, iface):
-		iface.Stop()
-
-	def prev(self, iface):
-		iface.Prev()
-
-	def next(self, iface):
-		iface.Next()
-
 class Extension(extension.Extension):
 	
 	extensionName = "exaile"
 	
 	def generate(self):
+
+		if self.arguments:
+			arg = self.arguments[0]
+			try:
+				remote_object = bus.get_object("org.exaile.Exaile","/org/exaile/Exaile")
+				iface = dbus.Interface(remote_object, "org.exaile.Exaile")
+				if arg == "playpause":
+					iface.PlayPause()
+				elif arg == "stop":
+					iface.Stop()
+				elif arg == "prev":
+					iface.Prev()
+				elif arg == "next":
+					iface.Next()
+			except:
+				pass
+			
+			return
 
 		self.add(Header("Exaile"))
 					
@@ -60,16 +65,16 @@ class Extension(extension.Extension):
 			self.iface = dbus.Interface(self.remote_object, "org.exaile.Exaile")
 
 			if self.iface.GetState() == "playing":
-				self.add(self.return_executable_item(_("Pause"), "alan-show-extension %s playpause" % sys.argv[1], icon="media-playback-pause"))
+				self.add(self.return_executable_item(_("Pause"), "alan-pipe %s -a playpause" % sys.argv[1], icon="media-playback-pause"))
 			else:
-				self.add(self.return_executable_item(_("Play"), "alan-show-extension %s playpause" % sys.argv[1], icon="media-playback-start"))
+				self.add(self.return_executable_item(_("Play"), "alan-pipe %s -a playpause" % sys.argv[1], icon="media-playback-start"))
 				
-			self.add(self.return_executable_item(_("Stop"), "alan-show-extension %s stop" % sys.argv[1], icon="media-playback-stop"))
+			self.add(self.return_executable_item(_("Stop"), "alan-pipe %s -a stop" % sys.argv[1], icon="media-playback-stop"))
 	
 			self.add(Separator())
 	
-			self.add(self.return_executable_item(_("Previous"), "alan-show-extension %s prev" % sys.argv[1], icon="media-skip-backward"))
-			self.add(self.return_executable_item(_("Next"), "alan-show-extension %s next" % sys.argv[1], icon="media-skip-forward"))
+			self.add(self.return_executable_item(_("Previous"), "alan-pipe %s -a prev" % sys.argv[1], icon="media-skip-backward"))
+			self.add(self.return_executable_item(_("Next"), "alan-pipe %s -a next" % sys.argv[1], icon="media-skip-forward"))
 			
 			self.add(Separator())
 			# Displays infos about the current song
@@ -90,18 +95,3 @@ class Extension(extension.Extension):
 		item.append(action)
 		
 		return item
-
-if len(sys.argv) > 2:
-	try:
-		remote_object = bus.get_object("org.exaile.Exaile","/org/exaile/Exaile")
-		iface = dbus.Interface(remote_object, "org.exaile.Exaile")
-		if sys.argv[2] == "playpause":
-			Exaile().playpause(iface)
-		elif sys.argv[2] == "stop":
-			Exaile().stop(iface)
-		elif sys.argv[2] == "prev":
-			Exaile().prev(iface)
-		elif sys.argv[2] == "next":
-			Exaile().next(iface)
-	except:
-		pass
