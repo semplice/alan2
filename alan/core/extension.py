@@ -32,10 +32,15 @@ class Extension(OpenboxMenu):
 	extensionName = "Extension"
 	structure = []
 	
-	def __init__(self, configuration=None, is_pipe=False):
+	def __init__(self, configuration=None, is_pipe=False, arguments=None):
 		""" Initializes the object. """
 		
 		self.is_pipe = is_pipe
+		
+		if arguments:
+			self.arguments = arguments.split(" ")
+		else:
+			self.arguments = None
 		
 		self.extensionId = self.__module__.replace("alan.extensions.", "")
 		
