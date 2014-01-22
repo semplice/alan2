@@ -1,3 +1,11 @@
+alan2 (1.0.0-1) unstable; urgency=low
+
+  * Added arguments support in alan-pipe.
+    Modified the exaile extension to use this feature to manage the music player.
+  * alan2 1.0.0. Huh, awesome. :)
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 22 Jan 2014 20:02:26 +0100
+
 alan2 (0.99.1-1) unstable; urgency=low
 
   * alan-config: setup: ensure we remove also the eventual entry of menu-static.xml.
