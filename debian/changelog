@@ -1,3 +1,12 @@
+alan2 (1.20.0-1) devel; urgency=medium
+
+  * Custom configuration directory and profiles support.
+  * Added vera profile configuration file.
+  * debian/: added alan2-config-semplice-vera package.
+  * Added semplice-vera distrib file.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 13 Jul 2014 17:41:47 +0200
+
 alan2 (1.0.0-1) unstable; urgency=low
 
   * Added arguments support in alan-pipe.
