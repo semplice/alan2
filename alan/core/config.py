@@ -23,9 +23,6 @@
 import ConfigParser as cp
 import os
 
-DEFAULTS = "/etc/alan/alan.conf"
-USER = os.path.expanduser("~/.config/alan/alan.conf")
-
 class Configuration(cp.SafeConfigParser):
 	""" The Configuration() class handles a configuration file. """
 	
