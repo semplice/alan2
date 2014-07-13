@@ -31,17 +31,24 @@ import alan.core.config as config
 import argparse
 import os
 
-DEFAULT_PATH=os.path.expanduser("~/.config/alan-menus")
-# Generate directory if it doesn't exist
-if not os.path.exists(DEFAULT_PATH):
-	os.makedirs(DEFAULT_PATH)
-
 # Create and parse arguments
 parser = argparse.ArgumentParser()
 parser.add_argument(
 	"extension",
 	help="the extension to process"
 )
+
+parser.add_argument(
+	"-i", "--directory",
+	help="directory where to look for configuration files (default: ~/.config)",
+	default="~/.config"
+)
+
+parser.add_argument(
+	"-p", "--profile",
+	help="the profile to use"
+)
+
 parser.add_argument(
 	"-t", "--target",
 	help="the target file. Defaults to ~/.config/alan-menus/<extension>.xml"
@@ -49,14 +56,20 @@ parser.add_argument(
 
 args = parser.parse_args()
 
+## Welcome to alan2!
+DIRECTORY = os.path.expanduser(args.directory)
+
+DEFAULT_PATH=os.path.join(DIRECTORY, "alan-menus")
+# Generate directory if it doesn't exist
+if not os.path.exists(DEFAULT_PATH):
+	os.makedirs(DEFAULT_PATH)
+
 # If target is not specified, use our default
 if not args.target:
 	args.target = os.path.join(DEFAULT_PATH, "%s.xml" % args.extension)
 
-## Welcome to alan2!
-
 # Get extension configuration
-configuration = config.Configuration(args.extension)
+configuration = config.Configuration(args.extension, DIRECTORY, args.profile)
 
 # Import extension
 extension_module = main.import_extension(args.extension)
