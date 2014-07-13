@@ -37,6 +37,18 @@ parser.add_argument(
 	"extension",
 	help="the extension to process"
 )
+
+parser.add_argument(
+	"-i", "--directory",
+	help="directory where to look for configuration files (default: ~/.config)",
+	default="~/.config"
+)
+
+parser.add_argument(
+	"-p", "--profile",
+	help="the profile to use"
+)
+
 parser.add_argument(
 	"-a", "--arguments",
 	help="arguments to pass to the extension."
@@ -45,9 +57,10 @@ parser.add_argument(
 args = parser.parse_args()
 
 ## Welcome to alan2!
+DIRECTORY = os.path.expanduser(args.directory)
 
 # Get extension configuration
-configuration = config.Configuration(args.extension)
+configuration = config.Configuration(args.extension, DIRECTORY, args.profile)
 
 # Import extension
 extension_module = main.import_extension(args.extension)

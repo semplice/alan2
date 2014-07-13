@@ -29,15 +29,23 @@ import argparse
 import os
 import sys
 
-OPENBOX_CONFIGURATION_DIR = os.path.expanduser("~/.config/openbox")
-DEFAULT_PATH=os.path.expanduser("~/.config/alan-menus")
-
 # Create and parse arguments
 parser = argparse.ArgumentParser(description="Modifies Openbox configuration to enable/disable alan2 modules.")
 parser.add_argument(
 	"extension",
 	nargs="?",
 	help="the extension to process",
+)
+
+parser.add_argument(
+	"-i", "--directory",
+	help="directory where to look for configuration files (default: ~/.config)",
+	default="~/.config"
+)
+
+parser.add_argument(
+	"-p", "--profile",
+	help="the profile to use"
 )
 
 group = parser.add_mutually_exclusive_group()
@@ -70,9 +78,13 @@ if not (args.list or args.setup) and not args.extension:
 	raise Exception("You must specify an extension!")
 
 ## Welcome to alan2!
+DIRECTORY = os.path.expanduser(args.directory)
+
+OPENBOX_CONFIGURATION_DIR = os.path.join(DIRECTORY, "openbox")
+DEFAULT_PATH=os.path.join(DIRECTORY, "alan-menus")
 
 # Open alan2 configuration
-configuration = config.Configuration(args.extension)
+configuration = config.Configuration(args.extension, DIRECTORY, args.profile)
 map_as_main = configuration.settings["alan"]["map_as_main"]
 
 if args.extension:

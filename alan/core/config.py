@@ -31,13 +31,20 @@ class Configuration(cp.SafeConfigParser):
 	
 	settings = {}
 	
-	def __init__(self, extension):
+	def __init__(self, extension, directory, profile=None):
 		""" Initializes the object.
 		
 		extension is the extension to parse. """
 		
 		cp.SafeConfigParser.__init__(self)
 		
+		if profile:
+			DEFAULTS = "/etc/alan/alan-%s.conf" % profile
+			USER = os.path.join(directory, "alan/alan-%s.conf" % profile)
+		else:
+			DEFAULTS = "/etc/alan/alan.conf"
+			USER = os.path.join(directory, "alan/alan.conf")
+				
 		# Load DEFAULTS and USER
 		self.read((DEFAULTS, USER))
 		
