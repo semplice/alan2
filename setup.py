@@ -24,7 +24,7 @@ from distutils.core import setup
 
 setup(
 	name='alan2',
-	version='1.20.0',
+	version='1.20.1',
 	description='Openbox Menu Extension Framework and Builder',
 	author='Eugenio Paolantonio',
 	author_email='me@medesimo.eu',
@@ -34,7 +34,7 @@ setup(
 	data_files=[
 		("/usr/share/alan2", ["alan2-setup.sh"]),
 		("/etc/xdg/autostart", ["alan-reference-watcher.desktop"]),
-		("/etc/alan", ["alan.conf", "semplice.distrib"]),
+		("/etc/alan", ["alan.conf", "alan-vera.conf", "semplice-vera.distrib", "semplice.distrib"]),
 		(
 			"/etc/alan/watchers",
 			[
