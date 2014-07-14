@@ -1,3 +1,13 @@
+alan2 (1.20.2-1) devel; urgency=medium
+
+  * alan-config: check for the basename of the <file> child
+    when looking at openbox's default items to remove
+    during setup.
+  * alan2-setup.sh: execute alan-menu-updater with the
+    eventual $ARGS.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 15 Jul 2014 01:22:50 +0200
+
 alan2 (1.20.1-1) devel; urgency=medium
 
   * setup.py: install alan-vera.conf and semplice-vera.distrib.
