@@ -1,3 +1,9 @@
+alan2 (1.20.1-1) devel; urgency=medium
+
+  * setup.py: install alan-vera.conf and semplice-vera.distrib.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 14 Jul 2014 13:21:01 +0200
+
 alan2 (1.20.0-1) devel; urgency=medium
 
   * Custom configuration directory and profiles support.
