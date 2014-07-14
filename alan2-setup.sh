@@ -65,7 +65,7 @@ fi
 modules="`xargs -a $LIST`"
 
 for module in $modules; do
-	alan-menu-updater $module
+	alan-menu-updater $ARGS $module
 done
 
 exec alan-config $ARGS --setup "$modules"
