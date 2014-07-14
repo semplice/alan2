@@ -118,7 +118,7 @@ for child in menu.findall("ob:file", namespaces=namespaces):
 	if os.path.dirname(child.text) == DEFAULT_PATH:
 		# it's ours!
 		ENABLED_MODULES[".".join(os.path.basename(child.text).split(".")[:-1])] = child
-	elif child.text in ("menu.xml","menu-static.xml"):
+	elif os.path.basename(child.text) in ("menu.xml","menu-static.xml"):
 		# Openbox default? Maybe. Cache the child, so that we can use it
 		# if we are going to setup alan2.
 		_openbox_menu.append(child)
