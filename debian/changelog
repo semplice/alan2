@@ -1,3 +1,13 @@
+alan2 (1.21-1) devel; urgency=medium
+
+  * extensions/main: when processing a Pipe item, ensure
+    that alan-pipe will be called with the same profile
+    and configuration directory as the parent.
+  * Added extensions/logout_vera.py, a logout extension modified for vera.
+  * Added logout_vera watcher (which doesn't work because we now need to look in dconf)
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 01 Aug 2014 00:22:13 +0200
+
 alan2 (1.20.2-1) devel; urgency=medium
 
   * alan-config: check for the basename of the <file> child
