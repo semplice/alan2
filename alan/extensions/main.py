@@ -39,6 +39,16 @@ class Extension(extension.Extension):
 	
 	extensionName = "main"
 	
+	@property
+	def pipe_arguments(self):
+		""" Returns a string with the arguments to pass to alan-pipe. """
+		
+		result = ["-i %s" % self.configuration.directory]
+		if self.configuration.profile:
+			result.append("-p %s" % self.configuration.profile)
+		
+		return " ".join(result)
+	
 	def generate(self):
 		""" Actually generate things. """
 		
@@ -138,10 +148,10 @@ class Extension(extension.Extension):
 		
 		if self.is_pipe:
 			_id = "PIPE_%s" % item
-			execute = "%s %s" % (os.path.abspath(sys.argv[0]), item)
+			execute = "%s %s %s" % (os.path.abspath(sys.argv[0]), self.pipe_arguments, item)
 		elif pipe:
 			_id = "PIPE_%s" % item
-			execute = "%s %s" % ("/usr/bin/alan-pipe", item)
+			execute = "%s %s %s" % ("/usr/bin/alan-pipe", self.pipe_arguments, item)
 		else:
 			_id = item
 			execute = None
@@ -163,7 +173,6 @@ class Extension(extension.Extension):
 	def new_pipe_menu_link(self, item):
 		""" Creates a new pipe menu link. """
 		
-		print "Piping"
 		return self.new_menu_link(item, pipe=True)
 			
 	def new_internal_menu(self, item):

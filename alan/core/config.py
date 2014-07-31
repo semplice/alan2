@@ -41,6 +41,9 @@ class Configuration(cp.SafeConfigParser):
 		else:
 			DEFAULTS = "/etc/alan/alan.conf"
 			USER = os.path.join(directory, "alan/alan.conf")
+		
+		self.directory = directory
+		self.profile = profile
 				
 		# Load DEFAULTS and USER
 		self.read((DEFAULTS, USER))
