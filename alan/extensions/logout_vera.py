@@ -82,6 +82,7 @@ class Extension(extension.Extension):
 		# create menu:
 		switch_items = Menu("switchuser_vera", _("Switch User"), icon=self.IconPool.get_icon("system-users"))
 		# open passwd and populate switch_items
+		at_least_one = False
 		with open("/etc/passwd", "r") as passwd:
 			for line in passwd.readlines():
 				line = line.split(":")
@@ -94,6 +95,7 @@ class Extension(extension.Extension):
 				if not _udesc: _udesc = _uname
 				
 				if not _uname == USER:
+					at_least_one = True
 					_uhome = line[5]
 					if os.path.exists(os.path.join(_uhome, ".face")):
 						_uface = os.path.join(_uhome, ".face")
@@ -104,8 +106,12 @@ class Extension(extension.Extension):
 
 		switch_items.append(Separator())
 		switch_items.append(self.return_executable_item(_("Other..."), "vera-command --switch-user", icon="gdm"))
-
-		self.add(switch_items)
+		
+		if at_least_one:
+			self.add(switch_items)
+		else:
+			# Generic switch user command
+			self.return_executable_item(_("Switch User"), "vera-command --switch-user", icon="system-users")
 
 		self.add(Separator())
 

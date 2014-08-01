@@ -1,3 +1,4 @@
 [nala]
-application = logout
-files = ~/.semplice-logout
+application = logout_vera
+files = /etc/passwd
+gsettings = org.semplicelinux.vera:ninja-shortcut org.semplicelinux.vera:last-exit-action

@@ -24,7 +24,7 @@ from distutils.core import setup
 
 setup(
 	name='alan2',
-	version='1.21',
+	version='1.21.1',
 	description='Openbox Menu Extension Framework and Builder',
 	author='Eugenio Paolantonio',
 	author_email='me@medesimo.eu',
@@ -40,7 +40,7 @@ setup(
 			[
 				"watchers/xdgmenu.watcher",
 				"watchers/places.watcher",
-				"watchers/logout.watcher",
+				#"watchers/logout.watcher",
 				"watchers/logout_vera.watcher",
 				"watchers/appearance.watcher",
 				"watchers/main.watcher",
