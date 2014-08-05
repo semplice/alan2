@@ -109,10 +109,10 @@ class Extension(extension.Extension):
 			self.hide_settings_menu = False
 
 		# Lookup menu file
-		if os.path.exists("/etc/xdg/menus/semplice-applications.menu"):
-			applications_menu = "semplice-applications.menu"
-		elif os.path.exists("/etc/xdg/menus/gnome-applications.menu"):
-			applications_menu = "gnome-applications.menu"
+		if "XDG_MENU_PREFIX" in os.environ and os.path.exists(
+			os.path.join("/etc/xdg/menus", "%s-applications.menu" % os.environ["XDG_MENU_PREFIX"])
+		):
+			applications_menu = "%s-applications.menu" % os.environ["XDG_MENU_PREFIX"]
 		else:
 			applications_menu = "applications.menu" # Force to applications.menu, may fail if not existent, of course.
 
