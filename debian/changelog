@@ -1,3 +1,10 @@
+alan2 (1.22.0-1) devel; urgency=medium
+
+  * xdgmenu: use XDG_MENU_PREFIX to get the right menu file.
+  * xdgmenu: ensure we do not skip menus if hide_settings_menu is True.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 06 Aug 2014 00:40:38 +0200
+
 alan2 (1.21.1-2) devel; urgency=medium
 
   * semplice-vera.distrib: enable logout_vera in place of logout.
