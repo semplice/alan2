@@ -64,8 +64,6 @@ if os.path.exists("/usr/bin/oneslip"):
 else:
 	ONESLIP = False
 
-to_skip = ("Administration", "Preferences")
-
 class Extension(extension.Extension):
 	
 	extensionName = "xdgmenu"
@@ -75,7 +73,7 @@ class Extension(extension.Extension):
 
 		for entry in parent:
 			if entry.get_type() == gmenu.TYPE_DIRECTORY:
-				if entry.menu_id in to_skip:
+				if entry.menu_id in self.to_skip:
 					continue
 				
 				# Directory, create new submenu
@@ -102,11 +100,13 @@ class Extension(extension.Extension):
 
 	def generate(self):
 		""" Actually generate things. """
-
+		
 		if "hide_settings_menu" in self.extension_settings and self.extension_settings["hide_settings_menu"]:
 			self.hide_settings_menu = True
+			self.to_skip = ()			
 		else:
 			self.hide_settings_menu = False
+			self.to_skip = ("Administration", "Preferences")
 
 		# Lookup menu file
 		if "XDG_MENU_PREFIX" in os.environ and os.path.exists(
