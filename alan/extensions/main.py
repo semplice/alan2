@@ -25,7 +25,9 @@ from socket import gethostname
 
 import xdg.DesktopEntry
 
-import os, sys
+import os
+import sys
+import re
 
 import alan.core.extension as extension
 from alan.core.objects.separator import Header, Separator
@@ -125,7 +127,7 @@ class Extension(extension.Extension):
 			
 			item = Item(label=item_file.getName(), icon=self.IconPool.get_icon(item_file.getIcon()))
 			# Create an action...
-			action = ExecuteAction(item_file.getExec())
+			action = ExecuteAction(re.sub(' [^ ]*%[fFuUdDnNickvm]', '', item_file.getExec()))
 			
 			item.append(action)
 			
