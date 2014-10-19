@@ -1,3 +1,10 @@
+alan2 (1.23.0-1) devel; urgency=medium
+
+  * main: strip out unwanted arguments for commands in LauncherPools.
+  * extensions: added MPRIS extension.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 19 Oct 2014 18:30:22 +0200
+
 alan2 (1.22.0-1) devel; urgency=medium
 
   * xdgmenu: use XDG_MENU_PREFIX to get the right menu file.
