@@ -28,9 +28,9 @@ def load():
 	Thus, this ugly workaround will be called on load by IconPool's __init__
 	when the enabled parameter is set to True. """
 	
-	from gi.repository import Gtk
+	from gi.repository import Gtk, Gio
 	
-	global Gtk
+	global Gtk, Gio
 	
 class IconPool:
 	""" A Pool of icons. """
@@ -53,7 +53,7 @@ class IconPool:
 		""" Gets an icon from the GTK+ icons repository.
 		Use get_icon() instead. It will call this def when needed. """
 		
-		if type(icon) == str:
+		if type(icon) != Gio.Icon:
 			icon = self.theme.lookup_icon(icon.replace(".png","").replace(".xpm","").replace(".svg",""), self.size, 0)
 		else:
 			# Assuming it's gicon
@@ -69,7 +69,7 @@ class IconPool:
 		
 		if not self.enabled or not icon: return None
 		
-		if type(icon) == str:
+		if type(icon) != Gio.Icon:
 			
 			icon = os.path.expanduser(icon)
 		
