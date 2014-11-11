@@ -28,10 +28,10 @@ def load():
 	Thus, this ugly workaround will be called on load by IconPool's __init__
 	when the enabled parameter is set to True. """
 	
-	from gtk import icon_theme_get_default, ICON_LOOKUP_NO_SVG, ICON_LOOKUP_FORCE_SVG
+	from gi.repository import Gtk
 	
-	global icon_theme_get_default, ICON_LOOKUP_NO_SVG, ICON_LOOKUP_FORCE_SVG
-
+	global Gtk
+	
 class IconPool:
 	""" A Pool of icons. """
 
@@ -46,14 +46,14 @@ class IconPool:
 		
 		if self.enabled:
 			load()
+			
+			self.theme = Gtk.IconTheme.new()
 	
 	def __get_stock_icon(self, icon, size=size):
 		""" Gets an icon from the GTK+ icons repository.
 		Use get_icon() instead. It will call this def when needed. """
 		
-		#theme = IconTheme.new()
-		theme = icon_theme_get_default()
-		icon = theme.lookup_icon(icon.replace(".png","").replace(".xpm","").replace(".svg",""), self.size, ICON_LOOKUP_FORCE_SVG)
+		icon = self.theme.lookup_icon(icon.replace(".png","").replace(".xpm","").replace(".svg",""), self.size, 0)
 		
 		if icon:
 			return icon.get_filename()
