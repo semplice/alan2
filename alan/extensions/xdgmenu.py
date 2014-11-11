@@ -5,7 +5,7 @@
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
+# the Free Software Foundation, either version 2 of the License, or
 # (at your option) any later version.
 #
 # This program is distributed in the hope that it will be useful,
@@ -44,7 +44,9 @@
 import sys, os
 import glob
 
-import gmenu, re, sys
+from gi.repository import GMenu
+
+import re, sys
 from xml.sax.saxutils import escape
 
 from getpass import getuser
@@ -71,32 +73,46 @@ class Extension(extension.Extension):
 	def walk(self, parent, menu=None):
 		""" Walks through the menu and does pretty things. """
 
-		for entry in parent:
-			if entry.get_type() == gmenu.TYPE_DIRECTORY:
-				if entry.menu_id in self.to_skip:
+		itr = parent.iter()
+		typ = None
+		
+		while typ != GMenu.TreeItemType.INVALID:
+			typ = itr.next()
+						
+			if typ == GMenu.TreeItemType.DIRECTORY:
+				
+				entry = itr.get_directory()
+				
+				if entry.get_menu_id() in self.to_skip or entry.get_is_nodisplay():
 					continue
 				
 				# Directory, create new submenu
-				_menu = Menu(escape(entry.menu_id), entry.name, icon=self.IconPool.get_icon(entry.icon))
+				_menu = Menu(escape(entry.get_menu_id()), entry.get_name(), icon=self.IconPool.get_icon(entry.get_icon()))
 				
-				self.walk(entry.get_contents(), _menu)
+				self.walk(itr.get_directory(), _menu)
 				
 				if menu is not None:
 					menu.append(_menu)
 				else:
 					self.add(_menu)
 				
-			elif entry.get_type() == gmenu.TYPE_ENTRY and not entry.is_excluded:
+			elif typ == GMenu.TreeItemType.ENTRY:
+
+				entry = itr.get_entry().get_app_info()
+				if entry.get_is_hidden():
+					continue
+				
+				name = entry.get_name()
 					
-				command = re.sub(' [^ ]*%[fFuUdDnNickvm]', '', entry.get_exec())
+				command = re.sub(' [^ ]*%[fFuUdDnNickvm]', '', entry.get_executable())
 				if "oneslip" in command and not ONESLIP:
 					# oneslip not installed, link to bricks
-					command = "pkexec /usr/bin/bricks \"%s\" oneslip" % escape(entry.name.replace("&","and"))
-				if entry.launch_in_terminal:
+					command = "pkexec /usr/bin/bricks \"%s\" oneslip" % escape(name.replace("&","and"))
+				if entry.has_key("Terminal") and entry.get_boolean("Terminal"):
 					command = 'x-terminal-emulator --title "%s" -e %s' % \
-						(entry.name.replace("&","and"), command)
+						(name.replace("&","and"), command)
 				
-				menu.append(self.return_executable_item(entry.name, command, icon=entry.icon))
+				menu.append(self.return_executable_item(name, command, icon=entry.get_icon()))
 
 	def generate(self):
 		""" Actually generate things. """
@@ -117,21 +133,23 @@ class Extension(extension.Extension):
 			applications_menu = "applications.menu" # Force to applications.menu, may fail if not existent, of course.
 
 		# Walk through the normal Applications menu
-		self.walk(gmenu.lookup_tree(applications_menu).get_directory_from_path("/").get_contents())
+		tree = GMenu.Tree.new(applications_menu, GMenu.TreeFlags.NONE);
+		tree.load_sync()
+		self.walk(tree.get_root_directory())
 		
 		if not self.hide_settings_menu:
 			self.add(Separator())
 			
 			# Preferences
-			preferences = gmenu.lookup_tree(applications_menu).get_directory_from_path("/System/Preferences")
-			preferences_menu = Menu(escape(preferences.menu_id), escape(preferences.name), icon=self.IconPool.get_icon(preferences.icon))
-			self.walk(preferences.get_contents(), preferences_menu)
+			preferences = tree.get_directory_from_path("/System/Preferences")
+			preferences_menu = Menu(escape(preferences.get_menu_id()), escape(preferences.get_name()), icon=self.IconPool.get_icon(preferences.get_icon()))
+			self.walk(preferences, preferences_menu)
 			self.add(preferences_menu)
 			
 			# Administration
-			administration = gmenu.lookup_tree(applications_menu).get_directory_from_path("/System/Administration")
-			administration_menu = Menu(escape(administration.menu_id), escape(administration.name), icon=self.IconPool.get_icon(administration.icon))
-			self.walk(administration.get_contents(), administration_menu)
+			administration = tree.get_directory_from_path("/System/Administration")
+			administration_menu = Menu(escape(administration.get_menu_id()), escape(administration.get_name()), icon=self.IconPool.get_icon(administration.get_icon()))
+			self.walk(administration, administration_menu)
 			self.add(administration_menu)
 		
 	def return_executable_item(self, label, command, icon=None):

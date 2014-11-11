@@ -28,9 +28,9 @@ def load():
 	Thus, this ugly workaround will be called on load by IconPool's __init__
 	when the enabled parameter is set to True. """
 	
-	from gi.repository import Gtk
+	from gi.repository import Gtk, Gio
 	
-	global Gtk
+	global Gtk, Gio
 	
 class IconPool:
 	""" A Pool of icons. """
@@ -47,13 +47,17 @@ class IconPool:
 		if self.enabled:
 			load()
 			
-			self.theme = Gtk.IconTheme.new()
+			self.theme = Gtk.IconTheme.get_default()
 	
 	def __get_stock_icon(self, icon, size=size):
 		""" Gets an icon from the GTK+ icons repository.
 		Use get_icon() instead. It will call this def when needed. """
 		
-		icon = self.theme.lookup_icon(icon.replace(".png","").replace(".xpm","").replace(".svg",""), self.size, 0)
+		if type(icon) not in (Gio.Icon, Gio.ThemedIcon, Gio.FileIcon):
+			icon = self.theme.lookup_icon(icon.replace(".png","").replace(".xpm","").replace(".svg",""), self.size, 0)
+		else:
+			# Assuming it's gicon
+			icon = self.theme.lookup_by_gicon(icon, self.size, 0)
 		
 		if icon:
 			return icon.get_filename()
@@ -65,13 +69,15 @@ class IconPool:
 		
 		if not self.enabled or not icon: return None
 		
-		icon = os.path.expanduser(icon)
+		if type(icon) not in (Gio.Icon, Gio.ThemedIcon, Gio.FileIcon):
+			
+			icon = os.path.expanduser(icon)
 		
-		if icon[0] == "/":
-			# local icon
-			if os.path.exists(icon):
-				return icon
-			else:
-				return None
-		else:
-			return self.__get_stock_icon(icon, self.size)
+			if icon[0] == "/":
+				# local icon
+				if os.path.exists(icon):
+					return icon
+				else:
+					return None
+		
+		return self.__get_stock_icon(icon, self.size)
