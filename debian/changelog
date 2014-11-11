@@ -1,3 +1,15 @@
+alan2 (1.30.0-1) devel; urgency=medium
+
+  * core/objects/icon: switch to Gtk+ 3.0.
+  * debian/rules: do not guess python dependencies.
+  * debian/control: depend on python-gi and gir1.2-gtk-3.0; removed python-t9n and python-gtk2.
+  * xdgmenu: ported to GMenu 3
+  * objects/baseobject: ensure that a value to be set is properly decoded.
+  * config: use applications-other as xdgmenu-icon.
+  * debian/control: replace python-gmenu with gir1.2-gmenu-3.0.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 11 Nov 2014 10:16:54 +0100
+
 alan2 (1.23.0-1) devel; urgency=medium
 
   * main: strip out unwanted arguments for commands in LauncherPools.
