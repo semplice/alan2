@@ -53,7 +53,11 @@ class IconPool:
 		""" Gets an icon from the GTK+ icons repository.
 		Use get_icon() instead. It will call this def when needed. """
 		
-		icon = self.theme.lookup_icon(icon.replace(".png","").replace(".xpm","").replace(".svg",""), self.size, 0)
+		if type(icon) == str:
+			icon = self.theme.lookup_icon(icon.replace(".png","").replace(".xpm","").replace(".svg",""), self.size, 0)
+		else:
+			# Assuming it's gicon
+			icon = self.theme.lookup_by_gicon(icon, self.size, 0)
 		
 		if icon:
 			return icon.get_filename()
@@ -65,13 +69,15 @@ class IconPool:
 		
 		if not self.enabled or not icon: return None
 		
-		icon = os.path.expanduser(icon)
+		if type(icon) == str:
+			
+			icon = os.path.expanduser(icon)
 		
-		if icon[0] == "/":
-			# local icon
-			if os.path.exists(icon):
-				return icon
-			else:
-				return None
-		else:
-			return self.__get_stock_icon(icon, self.size)
+			if icon[0] == "/":
+				# local icon
+				if os.path.exists(icon):
+					return icon
+				else:
+					return None
+		
+		return self.__get_stock_icon(icon, self.size)
