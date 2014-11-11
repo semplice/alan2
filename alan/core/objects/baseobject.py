@@ -32,6 +32,14 @@ class BaseObject(etree.Element):
 		""" Initializes the object. """
 
 		etree.Element.__init__(self, self.objectName)
+	
+	def set(self, key, value):
+		"""
+		Sets the key-value pair, ensuring that the value is properly
+		decoded to utf-8
+		"""
+		
+		return etree.Element.set(self, key, value.decode("utf-8"))
 
 class DynamicObject(etree.Element):
 	""" A BaseObject-derived object with the objectName set at runtime. """
@@ -45,4 +53,12 @@ class DynamicObject(etree.Element):
 		
 		etree.Element.__init__(self, name)
 		if text:
-			self.text = text
+			self.text = text.decode("utf-8")
+
+	def set(self, key, value):
+		"""
+		Sets the key-value pair, ensuring that the value is properly
+		decoded to utf-8
+		"""
+		
+		return etree.Element.set(self, key, value.decode("utf-8"))
