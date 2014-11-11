@@ -47,13 +47,13 @@ class IconPool:
 		if self.enabled:
 			load()
 			
-			self.theme = Gtk.IconTheme.new()
+			self.theme = Gtk.IconTheme.get_default()
 	
 	def __get_stock_icon(self, icon, size=size):
 		""" Gets an icon from the GTK+ icons repository.
 		Use get_icon() instead. It will call this def when needed. """
 		
-		if type(icon) != Gio.Icon:
+		if type(icon) not in (Gio.Icon, Gio.ThemedIcon, Gio.FileIcon):
 			icon = self.theme.lookup_icon(icon.replace(".png","").replace(".xpm","").replace(".svg",""), self.size, 0)
 		else:
 			# Assuming it's gicon
@@ -69,7 +69,7 @@ class IconPool:
 		
 		if not self.enabled or not icon: return None
 		
-		if type(icon) != Gio.Icon:
+		if type(icon) not in (Gio.Icon, Gio.ThemedIcon, Gio.FileIcon):
 			
 			icon = os.path.expanduser(icon)
 		
