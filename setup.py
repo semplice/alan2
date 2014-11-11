@@ -24,7 +24,7 @@ from distutils.core import setup
 
 setup(
 	name='alan2',
-	version='1.23.0',
+	version='1.23.1',
 	description='Openbox Menu Extension Framework and Builder',
 	author='Eugenio Paolantonio',
 	author_email='me@medesimo.eu',
@@ -48,5 +48,5 @@ setup(
 		)
 	
 	],
-	requires=['ConfigParser', 'commands', 'gettext', 'gmenu', 'locale', 'os', 'sys', 're', 'shutil', 'xml.etree.ElementTree', 'quickstart.translations', 'gtk', 'nala'],
+	requires=['ConfigParser', 'commands', 'gettext', 'gmenu', 'locale', 'os', 'sys', 're', 'shutil', 'xml.etree.ElementTree', 'quickstart.translations', 'gi.repository.Gtk', 'nala'],
 )
