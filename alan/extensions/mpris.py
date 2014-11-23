@@ -166,7 +166,6 @@ class Extension(extension.Extension):
 		for player in self.players:
 			
 			if player == None:
-				# FIXME: Hardcoding the default player is bad
 				self.add(Header(_("Music")))
 				self.add(self.return_executable_item(_("No music player running"), None, None, icon="preferences-desktop-sound"))
 				break
@@ -216,7 +215,7 @@ class Extension(extension.Extension):
 				
 		item = Item(label=label, icon=self.IconPool.get_icon(icon))
 		if player and player_action:
-			action = ExecuteAction("alan-pipe %s -a \"%s %s\"" % (sys.argv[1], player, player_action))
+			action = ExecuteAction("alan-pipe %s -a \"%s %s\"" % (self.extensionName, player, player_action))
 			item.append(action)
 		
 		return item
