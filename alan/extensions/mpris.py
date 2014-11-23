@@ -200,7 +200,7 @@ class Extension(extension.Extension):
 				metadata = player_iface.Metadata
 				try:
 					self.add(Separator())
-					self.add(self.return_executable_item(str(metadata["xesam:title"].replace("_","__")), None, None, icon="audio-x-generic"))
+					self.add(self.return_executable_item(str(metadata["xesam:title"].replace("_","__")), None, None, icon="music-player"))
 					self.add(self.return_executable_item(str(metadata["xesam:album"].replace("_","__")), None, None, icon="media-optical"))
 					self.add(self.return_executable_item(str(metadata["xesam:artist"][0].replace("_","__")), None, None, icon="audio-input-microphone"))
 				except:
