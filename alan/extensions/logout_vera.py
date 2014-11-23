@@ -36,7 +36,6 @@ userbegin = 1000
 
 USER = getuser()
 HOME = os.path.expanduser("~")
-cfile = os.path.join(HOME, ".semplice-logout")
 
 # ExitAction "enum"
 ExitAction = {
@@ -116,10 +115,10 @@ class Extension(extension.Extension):
 		self.add(Separator())
 
 		# Suspend
-		self.add(self.return_executable_item(_("Suspend"), "vera-command --suspend", icon="gnome-session-suspend"))
+		self.add(self.return_executable_item(_("Suspend"), "vera-command --suspend", icon="system-suspend"))
 
 		# Hibernate
-		self.add(self.return_executable_item(_("Hibernate"), "vera-command --hibernate", icon="gnome-session-hibernate"))
+		self.add(self.return_executable_item(_("Hibernate"), "vera-command --hibernate", icon="system-hibernate"))
 
 		self.add(Separator())
 
