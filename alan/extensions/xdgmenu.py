@@ -61,10 +61,10 @@ USER = getuser()
 HOME = os.path.expanduser("~")
 
 # Check for oneslip
-if os.path.exists("/usr/bin/oneslip"):
-	ONESLIP = True
-else:
-	ONESLIP = False
+#if os.path.exists("/usr/bin/oneslip"):
+#	ONESLIP = True
+#else:
+#	ONESLIP = False
 
 class Extension(extension.Extension):
 	
@@ -104,10 +104,10 @@ class Extension(extension.Extension):
 				
 				name = entry.get_name()
 					
-				command = re.sub(' [^ ]*%[fFuUdDnNickvm]', '', entry.get_executable())
-				if "oneslip" in command and not ONESLIP:
-					# oneslip not installed, link to bricks
-					command = "pkexec /usr/bin/bricks \"%s\" oneslip" % escape(name.replace("&","and"))
+				command = re.sub(' [^ ]*%[fFuUdDnNickvm]', '', entry.get_commandline())
+				#if "oneslip" in command and not ONESLIP:
+				#	# oneslip not installed, link to bricks
+				#	command = "pkexec /usr/bin/bricks \"%s\" oneslip" % escape(name.replace("&","and"))
 				if entry.has_key("Terminal") and entry.get_boolean("Terminal"):
 					command = 'x-terminal-emulator --title "%s" -e %s' % \
 						(name.replace("&","and"), command)

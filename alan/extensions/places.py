@@ -81,10 +81,10 @@ class Extension(extension.Extension):
 					dire = media.split(" ")[1].replace('\\040'," ") # use only the directory name
 					self.add(self.return_executable_item(os.path.basename(dire).replace("_","__"), dire, icon=icon))
 
-		if os.path.exists(os.path.join(HOME, ".gtk-bookmarks")):
+		if os.path.exists(os.path.join(HOME, ".config/gtk-3.0/bookmarks")):
 			self.add(Separator())
 
-			with open(os.path.join(HOME, ".gtk-bookmarks")) as _file:
+			with open(os.path.join(HOME, ".config/gtk-3.0/bookmarks")) as _file:
 				for line in _file:
 					line = line.split(" ")
 					directory = line[0].replace("\n","")
@@ -93,13 +93,13 @@ class Extension(extension.Extension):
 					else:
 						name = os.path.basename(directory.replace("file://","")).replace("_","__").replace("\n","")
 					if directory.startswith("smb://"):
-						icon = "folder-remote-smb"
+						icon = "gnome-fs-smb"
 					elif directory.startswith("nfs://"):
-						icon = "folder-remote-nfs"
+						icon = "gnome-fs-nfs"
 					elif directory.startswith("ssh://"):
-						icon = "folder-remote-ssh"
+						icon = "gnome-fs-ssh"
 					elif directory.startswith("ftp://"):
-						icon = "folder-remote-ftp"
+						icon = "gnome-fs-ftp"
 					else:
 						icon = "folder"
 					self.add(self.return_executable_item(name, directory, icon=icon))
