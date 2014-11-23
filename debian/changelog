@@ -1,3 +1,17 @@
+alan2 (1.30.1-1) devel; urgency=medium
+
+  * places: search for bookmarks in ~/.config/gtk-3.0/bookmarks.
+  * places: changed icon names for remote folders
+  * mpris: use the extensionName as the actual extension when
+    generating ExecuteActions.
+  * mpris: use music-player icon as the song title's icon.
+  * xdgmenu: comment out oneslip checks as the web applications feature
+    has been removed from bricks.
+  * xdgmenu: ensure we get the entire command to execute and not only the executable.
+  * logout_vera: modified some icons.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 23 Nov 2014 17:01:39 +0100
+
 alan2 (1.30.0-1) devel; urgency=medium
 
   * core/objects/icon: switch to Gtk+ 3.0.
