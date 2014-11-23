@@ -81,10 +81,10 @@ class Extension(extension.Extension):
 					dire = media.split(" ")[1].replace('\\040'," ") # use only the directory name
 					self.add(self.return_executable_item(os.path.basename(dire).replace("_","__"), dire, icon=icon))
 
-		if os.path.exists(os.path.join(HOME, ".gtk-bookmarks")):
+		if os.path.exists(os.path.join(HOME, ".config/gtk-3.0/bookmarks")):
 			self.add(Separator())
 
-			with open(os.path.join(HOME, ".gtk-bookmarks")) as _file:
+			with open(os.path.join(HOME, ".config/gtk-3.0/bookmarks")) as _file:
 				for line in _file:
 					line = line.split(" ")
 					directory = line[0].replace("\n","")
