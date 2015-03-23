@@ -5,20 +5,53 @@
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2011
 # g7 <me@medesimo.eu>, 2014
-# vinzv Vietzke <vinz@vinzv.de>, 2014
+# Vinzenz Vietzke <vinz@vinzv.de>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 19:59+0100\n"
-"PO-Revision-Date: 2014-01-14 21:59+0000\n"
-"Last-Translator: vinzv Vietzke <vinz@vinzv.de>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/semplice/language/de/)\n"
+"POT-Creation-Date: 2015-03-23 14:29+0100\n"
+"PO-Revision-Date: 2015-03-23 15:57+0000\n"
+"Last-Translator: g7 <me@medesimo.eu>\n"
+"Language-Team: German (http://www.transifex.com/projects/p/alan-1/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: alan/extensions/mpris.py:169
+msgid "Music"
+msgstr "Musik"
+
+#: alan/extensions/mpris.py:170
+msgid "No music player running"
+msgstr ""
+
+#: alan/extensions/mpris.py:183 alan/extensions/exaile.py:68
+msgid "Pause"
+msgstr "Pause"
+
+#: alan/extensions/mpris.py:186 alan/extensions/exaile.py:70
+msgid "Play"
+msgstr "Wiedergabe"
+
+#: alan/extensions/mpris.py:189 alan/extensions/exaile.py:72
+msgid "Stop"
+msgstr "Stop"
+
+#: alan/extensions/mpris.py:194 alan/extensions/exaile.py:76
+msgid "Previous"
+msgstr "Vorheriger"
+
+#: alan/extensions/mpris.py:197 alan/extensions/exaile.py:77
+msgid "Next"
+msgstr "Nächster"
+
+#: alan/extensions/mpris.py:210
+#, python-format
+msgid "%s is not playing."
+msgstr ""
 
 #: alan/extensions/appearance.py:44
 msgid "Wallpaper"
@@ -57,14 +90,18 @@ msgid "System (/)"
 msgstr "System (/)"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:81
+#: alan/extensions/logout_vera.py:47 alan/extensions/logout_vera.py:76
 msgid "Lock Screen"
 msgstr "Bildschirm sperren"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:83
+#: alan/extensions/logout_vera.py:46 alan/extensions/logout_vera.py:78
 msgid "Logout"
 msgstr "Abmelden"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:87
+#: alan/extensions/logout_vera.py:49 alan/extensions/logout_vera.py:82
+#: alan/extensions/logout_vera.py:113
 msgid "Switch User"
 msgstr "Benutzer wechseln"
 
@@ -73,22 +110,26 @@ msgid "Guest session"
 msgstr "Gastsitzung"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:124
+#: alan/extensions/logout_vera.py:45 alan/extensions/logout_vera.py:118
 msgid "Suspend"
 msgstr "Bereitschaft"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:127
+#: alan/extensions/logout_vera.py:48 alan/extensions/logout_vera.py:121
 msgid "Hibernate"
 msgstr "Ruhezustand"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:132
+#: alan/extensions/logout_vera.py:126
 msgid "Shutdown"
 msgstr "Ausschalten"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:135
+#: alan/extensions/logout_vera.py:44 alan/extensions/logout_vera.py:129
 msgid "Reboot"
 msgstr "Neu starten"
 
-#: alan/extensions/logout.py:74
+#: alan/extensions/logout.py:74 alan/extensions/logout_vera.py:69
 msgid "(CTRL+ALT+SPACE)"
 msgstr "(Strg+Alt+Leertaste)"
 
@@ -96,7 +137,7 @@ msgstr "(Strg+Alt+Leertaste)"
 msgid "Change profile image"
 msgstr "Profilbild ändern"
 
-#: alan/extensions/logout.py:117
+#: alan/extensions/logout.py:117 alan/extensions/logout_vera.py:107
 msgid "Other..."
 msgstr "Anderes …"
 
@@ -104,31 +145,15 @@ msgstr "Anderes …"
 msgid "Settings..."
 msgstr "Einstellungen..."
 
-#: alan/extensions/exaile.py:81
-msgid "Pause"
-msgstr "Pause"
+#: alan/extensions/logout_vera.py:43
+msgid "Power Off"
+msgstr ""
 
-#: alan/extensions/exaile.py:83
-msgid "Play"
-msgstr "Wiedergabe"
-
-#: alan/extensions/exaile.py:85
-msgid "Stop"
-msgstr "Stop"
-
-#: alan/extensions/exaile.py:89
-msgid "Previous"
-msgstr "Vorheriger"
-
-#: alan/extensions/exaile.py:90
-msgid "Next"
-msgstr "Nächster"
-
-#: alan/extensions/exaile.py:99
+#: alan/extensions/exaile.py:86
 msgid "Exaile is not playing."
 msgstr "Es läuft keine Wiedergabe über Exaile."
 
-#: alan/extensions/exaile.py:101
+#: alan/extensions/exaile.py:88
 msgid "Open Exaile"
 msgstr "Exaile öffnen"
 
@@ -149,33 +174,33 @@ msgid "Help"
 msgstr "Hilfe"
 
 #: alan.conf:5
-msgid "Music"
-msgstr "Musik"
-
-#: alan.conf:6
 msgid "Terminal Emulator"
 msgstr "Terminal-Emulator"
 
-#: alan.conf:7
+#: alan.conf:6
 msgid "Web Browser"
 msgstr "Web-Browser"
 
-#: alan.conf:8
+#: alan.conf:7
 msgid "About Semplice..."
 msgstr "Über Semplice..."
 
-#: alan.conf:9
+#: alan.conf:8
 msgid "Semplice Website"
 msgstr "Semplice-Website"
 
-#: alan.conf:10
+#: alan.conf:9
 msgid "Semplice Wiki"
 msgstr "Semplice-Wiki"
 
-#: alan.conf:11
+#: alan.conf:10
 msgid "Semplice Forums"
 msgstr "Semplice-Foren"
 
-#: alan.conf:12
+#: alan.conf:11
 msgid "Semplice on IRC"
 msgstr "Semplice im IRC"
+
+#: alan-vera.conf:1
+msgid "Settings"
+msgstr ""
