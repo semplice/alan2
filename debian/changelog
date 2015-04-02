@@ -1,3 +1,11 @@
+alan2 (1.90.0-1) devel; urgency=medium
+
+  * Improved translation support.
+  * Updated translations.
+  * alan-vera.conf: changed client-list-menu's icon to 'desktop'.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 02 Apr 2015 19:21:52 +0200
+
 alan2 (1.30.2-1) devel; urgency=medium
 
   * places: check for bookmarks in both ~/.config/gtk-3.0/bookmarks and ~/.gtk-bookmarks.
