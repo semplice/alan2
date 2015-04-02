@@ -3,9 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Cost Granda <costeeleation@openmailbox.org>, 2014
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
-# g7 <me@medesimo.eu>, 2014
+# Heimen Stoffels <vistausss@outlook.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
@@ -13,194 +11,194 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 14:29+0100\n"
 "PO-Revision-Date: 2015-04-01 20:54+0000\n"
 "Last-Translator: g7 <me@medesimo.eu>\n"
-"Language-Team: Spanish (http://www.transifex.com/projects/p/alan-1/language/es/)\n"
+"Language-Team: Dutch (Netherlands) (http://www.transifex.com/projects/p/alan-1/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
+"Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: alan/extensions/mpris.py:169
 msgid "Music"
-msgstr "Música"
+msgstr "Muziek"
 
 #: alan/extensions/mpris.py:170
 msgid "No music player running"
-msgstr ""
+msgstr "Er is geen draaiende muziekspeler"
 
 #: alan/extensions/mpris.py:183 alan/extensions/exaile.py:68
 msgid "Pause"
-msgstr "Pausar"
+msgstr "Pauzeren"
 
 #: alan/extensions/mpris.py:186 alan/extensions/exaile.py:70
 msgid "Play"
-msgstr "Reproducir"
+msgstr "Afspelen"
 
 #: alan/extensions/mpris.py:189 alan/extensions/exaile.py:72
 msgid "Stop"
-msgstr "Detener"
+msgstr "Stoppen"
 
 #: alan/extensions/mpris.py:194 alan/extensions/exaile.py:76
 msgid "Previous"
-msgstr "Anterior"
+msgstr "Vorige"
 
 #: alan/extensions/mpris.py:197 alan/extensions/exaile.py:77
 msgid "Next"
-msgstr "Siguiente"
+msgstr "Volgende"
 
 #: alan/extensions/mpris.py:210
 #, python-format
 msgid "%s is not playing."
-msgstr ""
+msgstr "%s I niet aan het afspelen."
 
 #: alan/extensions/appearance.py:44
 msgid "Wallpaper"
-msgstr "Fondo de pantalla"
+msgstr "Bureaubladachtergrond"
 
 #: alan/extensions/appearance.py:45
 msgid "Add"
-msgstr "Añadir"
+msgstr "Toevoegen"
 
 #: alan/extensions/appearance.py:46
 msgid "Manage"
-msgstr "Administrar"
+msgstr "Beheren"
 
 #: alan/extensions/appearance.py:52
 msgid "Appearance settings"
-msgstr "Configuraciones de aspecto"
+msgstr "Uiterlijk-instellingen"
 
 #: alan/extensions/appearance.py:56
 msgid "Visual effects"
-msgstr "Efectos visuales"
+msgstr "Visuele effecten"
 
 #: alan/extensions/places.py:52
 msgid "Desktop"
-msgstr "Escritorio"
+msgstr "Bureaublad"
 
 #: alan/extensions/places.py:55
 msgid "Trash"
-msgstr "Papelera"
+msgstr "Prullenbak"
 
 #: alan/extensions/places.py:58
 msgid "Computer"
-msgstr "Ordenador"
+msgstr "Computer"
 
 #: alan/extensions/places.py:66
 msgid "System (/)"
-msgstr "Sistema (/)"
+msgstr "Bestandssysteem (/)"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:81
 #: alan/extensions/logout_vera.py:47 alan/extensions/logout_vera.py:76
 msgid "Lock Screen"
-msgstr "Bloquear la pantalla"
+msgstr "Vergrendelscherm"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:83
 #: alan/extensions/logout_vera.py:46 alan/extensions/logout_vera.py:78
 msgid "Logout"
-msgstr "Cerrar la sesión"
+msgstr "Afmelden"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:87
 #: alan/extensions/logout_vera.py:49 alan/extensions/logout_vera.py:82
 #: alan/extensions/logout_vera.py:113
 msgid "Switch User"
-msgstr "Cambiar de usuario"
+msgstr "Gebruiker wisselen"
 
 #: alan/extensions/logout.py:54
 msgid "Guest session"
-msgstr "Sesión de invitado"
+msgstr "Gastsessie"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:124
 #: alan/extensions/logout_vera.py:45 alan/extensions/logout_vera.py:118
 msgid "Suspend"
-msgstr "Suspender"
+msgstr "Pauzestand"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:127
 #: alan/extensions/logout_vera.py:48 alan/extensions/logout_vera.py:121
 msgid "Hibernate"
-msgstr "Hibernar"
+msgstr "Slaapstand"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:132
 #: alan/extensions/logout_vera.py:126
 msgid "Shutdown"
-msgstr "Apagar"
+msgstr "Uitschakelen"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:135
 #: alan/extensions/logout_vera.py:44 alan/extensions/logout_vera.py:129
 msgid "Reboot"
-msgstr "Reiniciar"
+msgstr "Herstarten"
 
 #: alan/extensions/logout.py:74 alan/extensions/logout_vera.py:69
 msgid "(CTRL+ALT+SPACE)"
-msgstr "(CTRL+ALT+ESPACIO)"
+msgstr "(CTRL+ALT+SPACE)"
 
 #: alan/extensions/logout.py:112
 msgid "Change profile image"
-msgstr "Cambiar la foto de perfil"
+msgstr "Profielafbeelding wijzigen"
 
 #: alan/extensions/logout.py:117 alan/extensions/logout_vera.py:107
 msgid "Other..."
-msgstr "Otro…"
+msgstr "Overig..."
 
 #: alan/extensions/logout.py:140
 msgid "Settings..."
-msgstr "Configuraciones..."
+msgstr "Instellingen..."
 
 #: alan/extensions/logout_vera.py:43
 msgid "Power Off"
-msgstr ""
+msgstr "Uitschakelen"
 
 #: alan/extensions/exaile.py:86
 msgid "Exaile is not playing."
-msgstr "Exaile no está en reproducción."
+msgstr "Exaile is niks aan het afspelen."
 
 #: alan/extensions/exaile.py:88
 msgid "Open Exaile"
-msgstr "Abrir Exaile"
+msgstr "Exaile openen"
 
 #: alan.conf:1
 msgid "Applications"
-msgstr "Programas"
+msgstr "Applicaties"
 
 #: alan.conf:2
 msgid "Places"
-msgstr "Lugares"
+msgstr "Locaties"
 
 #: alan.conf:3
 msgid "Appearance"
-msgstr "Apariencia"
+msgstr "Uiterlijk"
 
 #: alan.conf:4
 msgid "Help"
-msgstr "Ayuda"
+msgstr "Hulp"
 
 #: alan.conf:5
 msgid "Terminal Emulator"
-msgstr "Emulador de terminal"
+msgstr "Terminal-emulator"
 
 #: alan.conf:6
 msgid "Web Browser"
-msgstr "Navegador web"
+msgstr "Webbrowser"
 
 #: alan.conf:7
 msgid "About Semplice..."
-msgstr "Acerca de Semplice..."
+msgstr "Over Semplice..."
 
 #: alan.conf:8
 msgid "Semplice Website"
-msgstr "Sitio web de Semplice"
+msgstr "Semplice-website"
 
 #: alan.conf:9
 msgid "Semplice Wiki"
-msgstr "Wiki de Semplice"
+msgstr "Semplice-wiki"
 
 #: alan.conf:10
 msgid "Semplice Forums"
-msgstr "Foros de Semplice"
+msgstr "Semplice-fora"
 
 #: alan.conf:11
 msgid "Semplice on IRC"
-msgstr "Semplice en IRC"
+msgstr "Semplice op IRC"
 
 #: alan-vera.conf:1
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
