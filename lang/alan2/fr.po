@@ -4,6 +4,7 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013
+# Jocelyn <anechampenois@solydxk.com>, 2015
 # g7 <me@medesimo.eu>, 2014
 # Philippe Etienne <petienne@laposte.net>, 2014
 msgid ""
@@ -11,7 +12,7 @@ msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-23 14:29+0100\n"
-"PO-Revision-Date: 2015-03-23 15:57+0000\n"
+"PO-Revision-Date: 2015-04-01 20:54+0000\n"
 "Last-Translator: g7 <me@medesimo.eu>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/alan-1/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +27,7 @@ msgstr "Musique"
 
 #: alan/extensions/mpris.py:170
 msgid "No music player running"
-msgstr ""
+msgstr "Aucun lecteur de musique n'est en fonctionnement."
 
 #: alan/extensions/mpris.py:183 alan/extensions/exaile.py:68
 msgid "Pause"
@@ -51,7 +52,7 @@ msgstr "Suivant"
 #: alan/extensions/mpris.py:210
 #, python-format
 msgid "%s is not playing."
-msgstr ""
+msgstr "%s ne fonctionne pas."
 
 #: alan/extensions/appearance.py:44
 msgid "Wallpaper"
@@ -131,7 +132,7 @@ msgstr "Redémarrer"
 
 #: alan/extensions/logout.py:74 alan/extensions/logout_vera.py:69
 msgid "(CTRL+ALT+SPACE)"
-msgstr "(CTRL+ALT+SPACE)"
+msgstr "(CTRL+ALT+ESPACE)"
 
 #: alan/extensions/logout.py:112
 msgid "Change profile image"
@@ -203,4 +204,4 @@ msgstr "IRC de Semplice"
 
 #: alan-vera.conf:1
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"

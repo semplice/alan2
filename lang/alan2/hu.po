@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Puskas-Kolozsvari Frederic <pkfric@yahoo.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-23 14:29+0100\n"
-"PO-Revision-Date: 2015-03-23 15:57+0000\n"
+"PO-Revision-Date: 2015-04-01 20:54+0000\n"
 "Last-Translator: g7 <me@medesimo.eu>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/alan-1/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -19,185 +20,185 @@ msgstr ""
 
 #: alan/extensions/mpris.py:169
 msgid "Music"
-msgstr ""
+msgstr "Zene"
 
 #: alan/extensions/mpris.py:170
 msgid "No music player running"
-msgstr ""
+msgstr "Nincs futó zenelejátszó"
 
 #: alan/extensions/mpris.py:183 alan/extensions/exaile.py:68
 msgid "Pause"
-msgstr ""
+msgstr "Szünet"
 
 #: alan/extensions/mpris.py:186 alan/extensions/exaile.py:70
 msgid "Play"
-msgstr ""
+msgstr "Lejátszás"
 
 #: alan/extensions/mpris.py:189 alan/extensions/exaile.py:72
 msgid "Stop"
-msgstr ""
+msgstr "Leállítás"
 
 #: alan/extensions/mpris.py:194 alan/extensions/exaile.py:76
 msgid "Previous"
-msgstr ""
+msgstr "Előző"
 
 #: alan/extensions/mpris.py:197 alan/extensions/exaile.py:77
 msgid "Next"
-msgstr ""
+msgstr "Következő"
 
 #: alan/extensions/mpris.py:210
 #, python-format
 msgid "%s is not playing."
-msgstr ""
+msgstr "%s nem játszik le semmit."
 
 #: alan/extensions/appearance.py:44
 msgid "Wallpaper"
-msgstr ""
+msgstr "Háttérkép"
 
 #: alan/extensions/appearance.py:45
 msgid "Add"
-msgstr ""
+msgstr "Hozzáadás"
 
 #: alan/extensions/appearance.py:46
 msgid "Manage"
-msgstr ""
+msgstr "Kezelés"
 
 #: alan/extensions/appearance.py:52
 msgid "Appearance settings"
-msgstr ""
+msgstr "Megjelenítés beállítások"
 
 #: alan/extensions/appearance.py:56
 msgid "Visual effects"
-msgstr ""
+msgstr "Vizuális hatások"
 
 #: alan/extensions/places.py:52
 msgid "Desktop"
-msgstr ""
+msgstr "Asztal"
 
 #: alan/extensions/places.py:55
 msgid "Trash"
-msgstr ""
+msgstr "Lomtár"
 
 #: alan/extensions/places.py:58
 msgid "Computer"
-msgstr ""
+msgstr "Számítógép"
 
 #: alan/extensions/places.py:66
 msgid "System (/)"
-msgstr ""
+msgstr "Rendszer (/)"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:81
 #: alan/extensions/logout_vera.py:47 alan/extensions/logout_vera.py:76
 msgid "Lock Screen"
-msgstr ""
+msgstr "Képernyő zárolása"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:83
 #: alan/extensions/logout_vera.py:46 alan/extensions/logout_vera.py:78
 msgid "Logout"
-msgstr ""
+msgstr "Kijelentkezés"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:87
 #: alan/extensions/logout_vera.py:49 alan/extensions/logout_vera.py:82
 #: alan/extensions/logout_vera.py:113
 msgid "Switch User"
-msgstr ""
+msgstr "Felhasználó váltás"
 
 #: alan/extensions/logout.py:54
 msgid "Guest session"
-msgstr ""
+msgstr "Vendég munkamenet"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:124
 #: alan/extensions/logout_vera.py:45 alan/extensions/logout_vera.py:118
 msgid "Suspend"
-msgstr ""
+msgstr "Felfüggesztés"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:127
 #: alan/extensions/logout_vera.py:48 alan/extensions/logout_vera.py:121
 msgid "Hibernate"
-msgstr ""
+msgstr "Hibernálás"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:132
 #: alan/extensions/logout_vera.py:126
 msgid "Shutdown"
-msgstr ""
+msgstr "Leállítás"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:135
 #: alan/extensions/logout_vera.py:44 alan/extensions/logout_vera.py:129
 msgid "Reboot"
-msgstr ""
+msgstr "Újraindítás"
 
 #: alan/extensions/logout.py:74 alan/extensions/logout_vera.py:69
 msgid "(CTRL+ALT+SPACE)"
-msgstr ""
+msgstr "(CTRL+ALT+SPACE)"
 
 #: alan/extensions/logout.py:112
 msgid "Change profile image"
-msgstr ""
+msgstr "Profilkép megváltoztatása"
 
 #: alan/extensions/logout.py:117 alan/extensions/logout_vera.py:107
 msgid "Other..."
-msgstr ""
+msgstr "Egyéb..."
 
 #: alan/extensions/logout.py:140
 msgid "Settings..."
-msgstr ""
+msgstr "Beállítások..."
 
 #: alan/extensions/logout_vera.py:43
 msgid "Power Off"
-msgstr ""
+msgstr "Kikapcsolás"
 
 #: alan/extensions/exaile.py:86
 msgid "Exaile is not playing."
-msgstr ""
+msgstr "Az Exaile nem játszik le semmit."
 
 #: alan/extensions/exaile.py:88
 msgid "Open Exaile"
-msgstr ""
+msgstr "Exaile megnyitása"
 
 #: alan.conf:1
 msgid "Applications"
-msgstr ""
+msgstr "Alkalmazások"
 
 #: alan.conf:2
 msgid "Places"
-msgstr ""
+msgstr "Helyek"
 
 #: alan.conf:3
 msgid "Appearance"
-msgstr ""
+msgstr "Megjelenés"
 
 #: alan.conf:4
 msgid "Help"
-msgstr ""
+msgstr "Segítség"
 
 #: alan.conf:5
 msgid "Terminal Emulator"
-msgstr ""
+msgstr "Terminál emulátor"
 
 #: alan.conf:6
 msgid "Web Browser"
-msgstr ""
+msgstr "Internet böngésző"
 
 #: alan.conf:7
 msgid "About Semplice..."
-msgstr ""
+msgstr "A Sempliceről..."
 
 #: alan.conf:8
 msgid "Semplice Website"
-msgstr ""
+msgstr "Semplice weboldal"
 
 #: alan.conf:9
 msgid "Semplice Wiki"
-msgstr ""
+msgstr "Semplice Wiki"
 
 #: alan.conf:10
 msgid "Semplice Forums"
-msgstr ""
+msgstr "Semplice fórumok"
 
 #: alan.conf:11
 msgid "Semplice on IRC"
-msgstr ""
+msgstr "Semplice az IRC-n"
 
 #: alan-vera.conf:1
 msgid "Settings"
-msgstr ""
+msgstr "Beállítások"
