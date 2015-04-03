@@ -169,7 +169,7 @@ setup(
 		"install": CustomInstall
 	},
 	name=APP_NAME,
-	version='1.90.0',
+	version='2.0.0',
 	description='Openbox Menu Extension Framework and Builder',
 	author='Eugenio Paolantonio',
 	author_email='me@medesimo.eu',
