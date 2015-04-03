@@ -1,3 +1,10 @@
+alan2 (2.0.0-1) unstable; urgency=medium
+
+  * BaseObject: handle already encoded strings
+  * debian/gbp.conf: not in devel anymore.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 03 Apr 2015 15:28:46 +0200
+
 alan2 (1.90.0-1) devel; urgency=medium
 
   * Improved translation support.
