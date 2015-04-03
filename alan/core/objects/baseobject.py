@@ -39,7 +39,10 @@ class BaseObject(etree.Element):
 		decoded to utf-8
 		"""
 		
-		return etree.Element.set(self, key, value.decode("utf-8"))
+		try:
+			return etree.Element.set(self, key, value.decode("utf-8"))
+		except UnicodeEncodeError:
+			return etree.Element.set(self, key, value)
 
 class DynamicObject(etree.Element):
 	""" A BaseObject-derived object with the objectName set at runtime. """
