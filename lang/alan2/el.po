@@ -9,15 +9,48 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-14 18:30+0100\n"
-"PO-Revision-Date: 2014-01-14 17:35+0000\n"
+"POT-Creation-Date: 2015-03-23 14:29+0100\n"
+"PO-Revision-Date: 2015-04-01 20:54+0000\n"
 "Last-Translator: g7 <me@medesimo.eu>\n"
-"Language-Team: Greek (http://www.transifex.com/projects/p/semplice/language/el/)\n"
+"Language-Team: Greek (http://www.transifex.com/projects/p/alan-1/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: alan/extensions/mpris.py:169
+msgid "Music"
+msgstr "Μουσική"
+
+#: alan/extensions/mpris.py:170
+msgid "No music player running"
+msgstr ""
+
+#: alan/extensions/mpris.py:183 alan/extensions/exaile.py:68
+msgid "Pause"
+msgstr "Παύση"
+
+#: alan/extensions/mpris.py:186 alan/extensions/exaile.py:70
+msgid "Play"
+msgstr "Αναπαραγωγή"
+
+#: alan/extensions/mpris.py:189 alan/extensions/exaile.py:72
+msgid "Stop"
+msgstr "Διακοπή"
+
+#: alan/extensions/mpris.py:194 alan/extensions/exaile.py:76
+msgid "Previous"
+msgstr "Προηγούμενο"
+
+#: alan/extensions/mpris.py:197 alan/extensions/exaile.py:77
+msgid "Next"
+msgstr "Επόμενο"
+
+#: alan/extensions/mpris.py:210
+#, python-format
+msgid "%s is not playing."
+msgstr ""
 
 #: alan/extensions/appearance.py:44
 msgid "Wallpaper"
@@ -56,14 +89,18 @@ msgid "System (/)"
 msgstr "Σύστημα Αρχείων (/)"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:81
+#: alan/extensions/logout_vera.py:47 alan/extensions/logout_vera.py:76
 msgid "Lock Screen"
 msgstr "Κλείδωμα Οθόνης"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:83
+#: alan/extensions/logout_vera.py:46 alan/extensions/logout_vera.py:78
 msgid "Logout"
 msgstr "Αποσύνδεση"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:87
+#: alan/extensions/logout_vera.py:49 alan/extensions/logout_vera.py:82
+#: alan/extensions/logout_vera.py:113
 msgid "Switch User"
 msgstr "Εναλλαγή Χρήστη"
 
@@ -72,22 +109,26 @@ msgid "Guest session"
 msgstr ""
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:124
+#: alan/extensions/logout_vera.py:45 alan/extensions/logout_vera.py:118
 msgid "Suspend"
 msgstr "Αναστολή"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:127
+#: alan/extensions/logout_vera.py:48 alan/extensions/logout_vera.py:121
 msgid "Hibernate"
 msgstr "Αδρανοποίηση"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:132
+#: alan/extensions/logout_vera.py:126
 msgid "Shutdown"
 msgstr "Τερματισμός"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:135
+#: alan/extensions/logout_vera.py:44 alan/extensions/logout_vera.py:129
 msgid "Reboot"
 msgstr "Επανεκκίνηση"
 
-#: alan/extensions/logout.py:74
+#: alan/extensions/logout.py:74 alan/extensions/logout_vera.py:69
 msgid "(CTRL+ALT+SPACE)"
 msgstr "(CTRL+ALT+SPACE)"
 
@@ -95,7 +136,7 @@ msgstr "(CTRL+ALT+SPACE)"
 msgid "Change profile image"
 msgstr ""
 
-#: alan/extensions/logout.py:117
+#: alan/extensions/logout.py:117 alan/extensions/logout_vera.py:107
 msgid "Other..."
 msgstr "Άλλο..."
 
@@ -103,31 +144,15 @@ msgstr "Άλλο..."
 msgid "Settings..."
 msgstr "Ρυθμίσεις..."
 
-#: alan/extensions/exaile.py:63
-msgid "Pause"
-msgstr "Παύση"
+#: alan/extensions/logout_vera.py:43
+msgid "Power Off"
+msgstr ""
 
-#: alan/extensions/exaile.py:65
-msgid "Play"
-msgstr "Αναπαραγωγή"
-
-#: alan/extensions/exaile.py:67
-msgid "Stop"
-msgstr "Διακοπή"
-
-#: alan/extensions/exaile.py:71
-msgid "Previous"
-msgstr "Προηγούμενο"
-
-#: alan/extensions/exaile.py:72
-msgid "Next"
-msgstr "Επόμενο"
-
-#: alan/extensions/exaile.py:81
+#: alan/extensions/exaile.py:86
 msgid "Exaile is not playing."
 msgstr "Ο Exaile δεν παίζει"
 
-#: alan/extensions/exaile.py:83
+#: alan/extensions/exaile.py:88
 msgid "Open Exaile"
 msgstr "Άνοιγμα Exaile"
 
@@ -148,33 +173,33 @@ msgid "Help"
 msgstr "Βοήθεια"
 
 #: alan.conf:5
-msgid "Music"
-msgstr "Μουσική"
-
-#: alan.conf:6
 msgid "Terminal Emulator"
 msgstr "Προσομοιωτής Τερματικού"
 
-#: alan.conf:7
+#: alan.conf:6
 msgid "Web Browser"
 msgstr "Περιηγητής Ιστού"
 
-#: alan.conf:8
+#: alan.conf:7
 msgid "About Semplice..."
 msgstr "Σχετικά με τον Semplice..."
 
-#: alan.conf:9
+#: alan.conf:8
 msgid "Semplice Website"
 msgstr "Ιστότοπος Semplice"
 
-#: alan.conf:10
+#: alan.conf:9
 msgid "Semplice Wiki"
 msgstr "Semplice Wiki"
 
-#: alan.conf:11
+#: alan.conf:10
 msgid "Semplice Forums"
 msgstr "Semplice Forums"
 
-#: alan.conf:12
+#: alan.conf:11
 msgid "Semplice on IRC"
 msgstr "Το Semplice στο IRC"
+
+#: alan-vera.conf:1
+msgid "Settings"
+msgstr ""

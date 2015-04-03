@@ -81,28 +81,39 @@ class Extension(extension.Extension):
 					dire = media.split(" ")[1].replace('\\040'," ") # use only the directory name
 					self.add(self.return_executable_item(os.path.basename(dire).replace("_","__"), dire, icon=icon))
 
-		if os.path.exists(os.path.join(HOME, ".gtk-bookmarks")):
-			self.add(Separator())
+		separator_shown = False
+		processed = []
+		for path in (".config/gtk-3.0/bookmarks", ".gtk-bookmarks"):
+			path = os.path.join(HOME, path)
+			
+			if os.path.exists(path):
+				if not separator_shown:
+					self.add(Separator())
+					separator_shown = True
 
-			with open(os.path.join(HOME, ".gtk-bookmarks")) as _file:
-				for line in _file:
-					line = line.split(" ")
-					directory = line[0].replace("\n","")
-					if len(line) > 1:
-						name = " ".join(line[1:]).replace("_","__").replace("\n","")
-					else:
-						name = os.path.basename(directory.replace("file://","")).replace("_","__").replace("\n","")
-					if directory.startswith("smb://"):
-						icon = "folder-remote-smb"
-					elif directory.startswith("nfs://"):
-						icon = "folder-remote-nfs"
-					elif directory.startswith("ssh://"):
-						icon = "folder-remote-ssh"
-					elif directory.startswith("ftp://"):
-						icon = "folder-remote-ftp"
-					else:
-						icon = "folder"
-					self.add(self.return_executable_item(name, directory, icon=icon))
+				with open(path) as _file:
+					for line in _file:
+						line = line.split(" ")
+						directory = line[0].replace("\n","")
+						if not directory in processed:
+							if len(line) > 1:
+								name = " ".join(line[1:]).replace("_","__").replace("\n","")
+							else:
+								name = os.path.basename(directory.replace("file://","")).replace("_","__").replace("\n","")
+							if directory.startswith("smb://"):
+								icon = "gnome-fs-smb"
+							elif directory.startswith("nfs://"):
+								icon = "gnome-fs-nfs"
+							elif directory.startswith("ssh://"):
+								icon = "gnome-fs-ssh"
+							elif directory.startswith("ftp://"):
+								icon = "gnome-fs-ftp"
+							else:
+								icon = "folder"
+							
+							processed.append(directory)
+							
+							self.add(self.return_executable_item(name, directory, icon=icon))
 		
 	def return_executable_item(self, label, target, icon=None):
 		""" Returns an executable item. """

@@ -11,7 +11,7 @@ Vcs-Browser: https://github.com/semplice/alan2
 
 Package: alan2
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}, python-t9n, python-t9n, python-gmenu, python-gtk2, python-quickstart
+Depends: ${misc:Depends}, ${python:Depends}, python-gi, gir1.2-gtk-3.0, gir1.2-gmenu-3.0, python-quickstart
 Description: New generation Openbox menu framework - Main Executable and Extensions
  Alan is a framework that permits to generate dynamic menus
  just with some python code.
@@ -40,3 +40,14 @@ Description: New generation Openbox menu framework - Semplice Configuration
  menu tree with only a configuration file (ConfigParser style)
  .
  This package contains the configuration file for semplice.
+
+Package: alan2-config-semplice-vera
+Architecture: all
+Description: New generation Openbox menu framework - Semplice Configuration (Vera profile)
+ Alan is a framework that permits to generate dynamic menus
+ just with some python code.
+ It supports i18n (via gettext) and can generate a dynamic
+ menu tree with only a configuration file (ConfigParser style)
+ .
+ This package contains the configuration file for the vera desktop environment
+ on semplice.

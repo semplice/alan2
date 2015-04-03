@@ -49,16 +49,23 @@ esac
 
 LIST="$LIST_DIRECTORY/$1.distrib"
 
+if [ -n "`echo $1 | grep vera`" ]; then
+	# Ugly as hell, but works
+	ARGS="-p vera -i ~/.config/vera"
+fi
+
 if [ ! -e "$LIST" ]; then
 	# Whoops... file doesn't exist...
 	echo "$LIST not found. Aborting." >&2
 	exit 1
 fi
 
+
+
 modules="`xargs -a $LIST`"
 
 for module in $modules; do
-	alan-menu-updater $module
+	alan-menu-updater $ARGS $module
 done
 
-exec alan-config --setup "$modules"
+exec alan-config $ARGS --setup "$modules"

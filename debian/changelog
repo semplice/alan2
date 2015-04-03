@@ -1,8 +1,109 @@
+alan2 (1.90.0-1) devel; urgency=medium
+
+  * Improved translation support.
+  * Updated translations.
+  * alan-vera.conf: changed client-list-menu's icon to 'desktop'.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 02 Apr 2015 19:21:52 +0200
+
+alan2 (1.30.2-1) devel; urgency=medium
+
+  * places: check for bookmarks in both ~/.config/gtk-3.0/bookmarks and ~/.gtk-bookmarks.
+  * places (watcher): react to ~/.gtk-bookmarks changes.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 19 Feb 2015 17:13:13 +0100
+
+alan2 (1.30.1-1) devel; urgency=medium
+
+  * places: search for bookmarks in ~/.config/gtk-3.0/bookmarks.
+  * places: changed icon names for remote folders
+  * mpris: use the extensionName as the actual extension when
+    generating ExecuteActions.
+  * mpris: use music-player icon as the song title's icon.
+  * xdgmenu: comment out oneslip checks as the web applications feature
+    has been removed from bricks.
+  * xdgmenu: ensure we get the entire command to execute and not only the executable.
+  * logout_vera: modified some icons.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 23 Nov 2014 17:01:39 +0100
+
+alan2 (1.30.0-1) devel; urgency=medium
+
+  * core/objects/icon: switch to Gtk+ 3.0.
+  * debian/rules: do not guess python dependencies.
+  * debian/control: depend on python-gi and gir1.2-gtk-3.0; removed python-t9n and python-gtk2.
+  * xdgmenu: ported to GMenu 3
+  * objects/baseobject: ensure that a value to be set is properly decoded.
+  * config: use applications-other as xdgmenu-icon.
+  * debian/control: replace python-gmenu with gir1.2-gmenu-3.0.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 11 Nov 2014 10:16:54 +0100
+
+alan2 (1.23.0-1) devel; urgency=medium
+
+  * main: strip out unwanted arguments for commands in LauncherPools.
+  * extensions: added MPRIS extension.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 19 Oct 2014 18:30:22 +0200
+
 alan2 (1.0.1-1) unstable; urgency=medium
 
   * main: strip out unwanted arguments for commands in LauncherPools.
 
  -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 13 Aug 2014 11:18:30 +0200
+
+alan2 (1.22.0-1) devel; urgency=medium
+
+  * xdgmenu: use XDG_MENU_PREFIX to get the right menu file.
+  * xdgmenu: ensure we do not skip menus if hide_settings_menu is True.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 06 Aug 2014 00:40:38 +0200
+
+alan2 (1.21.1-2) devel; urgency=medium
+
+  * semplice-vera.distrib: enable logout_vera in place of logout.
+  * logout_vera.watcher: watch ninja-shortcut and last-exit-action
+    in org.semplicelinux.vera.
+  * logout_vera: if no other user available, do not add the Switch User menu.
+  * logout_vera.watcher: watch /etc/passwd.
+  * setup.py: do not ship logout.watcher anymore.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 01 Aug 2014 09:49:10 +0200
+
+alan2 (1.21-1) devel; urgency=medium
+
+  * extensions/main: when processing a Pipe item, ensure
+    that alan-pipe will be called with the same profile
+    and configuration directory as the parent.
+  * Added extensions/logout_vera.py, a logout extension modified for vera.
+  * Added logout_vera watcher (which doesn't work because we now need to look in dconf)
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 01 Aug 2014 00:22:13 +0200
+
+alan2 (1.20.2-1) devel; urgency=medium
+
+  * alan-config: check for the basename of the <file> child
+    when looking at openbox's default items to remove
+    during setup.
+  * alan2-setup.sh: execute alan-menu-updater with the
+    eventual $ARGS.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 15 Jul 2014 01:22:50 +0200
+
+alan2 (1.20.1-1) devel; urgency=medium
+
+  * setup.py: install alan-vera.conf and semplice-vera.distrib.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 14 Jul 2014 13:21:01 +0200
+
+alan2 (1.20.0-1) devel; urgency=medium
+
+  * Custom configuration directory and profiles support.
+  * Added vera profile configuration file.
+  * debian/: added alan2-config-semplice-vera package.
+  * Added semplice-vera distrib file.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 13 Jul 2014 17:41:47 +0200
 
 alan2 (1.0.0-1) unstable; urgency=low
 
