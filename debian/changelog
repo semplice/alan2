@@ -1,3 +1,10 @@
+alan2 (2.0.1-1) unstable; urgency=medium
+
+  * [xdgmenu] Manually replace captions (%c) with two quotation marks.
+  * [translations] Updated.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 01 Aug 2015 23:32:54 +0200
+
 alan2 (2.0.0-1) unstable; urgency=medium
 
   * BaseObject: handle already encoded strings
