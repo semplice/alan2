@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Moo, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-23 14:29+0100\n"
-"PO-Revision-Date: 2015-04-01 20:54+0000\n"
-"Last-Translator: g7 <me@medesimo.eu>\n"
+"PO-Revision-Date: 2015-04-16 19:20+0000\n"
+"Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/alan-1/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,185 +20,185 @@ msgstr ""
 
 #: alan/extensions/mpris.py:169
 msgid "Music"
-msgstr ""
+msgstr "Muzika"
 
 #: alan/extensions/mpris.py:170
 msgid "No music player running"
-msgstr ""
+msgstr "Nevykdomas joks muzikos grotuvas"
 
 #: alan/extensions/mpris.py:183 alan/extensions/exaile.py:68
 msgid "Pause"
-msgstr ""
+msgstr "Pristabdyti"
 
 #: alan/extensions/mpris.py:186 alan/extensions/exaile.py:70
 msgid "Play"
-msgstr ""
+msgstr "Groti"
 
 #: alan/extensions/mpris.py:189 alan/extensions/exaile.py:72
 msgid "Stop"
-msgstr ""
+msgstr "Stabdyti"
 
 #: alan/extensions/mpris.py:194 alan/extensions/exaile.py:76
 msgid "Previous"
-msgstr ""
+msgstr "Ankstesnis"
 
 #: alan/extensions/mpris.py:197 alan/extensions/exaile.py:77
 msgid "Next"
-msgstr ""
+msgstr "Kitas"
 
 #: alan/extensions/mpris.py:210
 #, python-format
 msgid "%s is not playing."
-msgstr ""
+msgstr "%s negroja."
 
 #: alan/extensions/appearance.py:44
 msgid "Wallpaper"
-msgstr ""
+msgstr "Darbastalio fonas"
 
 #: alan/extensions/appearance.py:45
 msgid "Add"
-msgstr ""
+msgstr "Pridėti"
 
 #: alan/extensions/appearance.py:46
 msgid "Manage"
-msgstr ""
+msgstr "Tvarkyti"
 
 #: alan/extensions/appearance.py:52
 msgid "Appearance settings"
-msgstr ""
+msgstr "Išvaizdos nustatymai"
 
 #: alan/extensions/appearance.py:56
 msgid "Visual effects"
-msgstr ""
+msgstr "Vaizdiniai efektai"
 
 #: alan/extensions/places.py:52
 msgid "Desktop"
-msgstr ""
+msgstr "Darbastalis"
 
 #: alan/extensions/places.py:55
 msgid "Trash"
-msgstr ""
+msgstr "Šiukšlinė"
 
 #: alan/extensions/places.py:58
 msgid "Computer"
-msgstr ""
+msgstr "Kompiuteris"
 
 #: alan/extensions/places.py:66
 msgid "System (/)"
-msgstr ""
+msgstr "Sistema (/)"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:81
 #: alan/extensions/logout_vera.py:47 alan/extensions/logout_vera.py:76
 msgid "Lock Screen"
-msgstr ""
+msgstr "Užrakinti Ekraną"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:83
 #: alan/extensions/logout_vera.py:46 alan/extensions/logout_vera.py:78
 msgid "Logout"
-msgstr ""
+msgstr "Atsijungti"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:87
 #: alan/extensions/logout_vera.py:49 alan/extensions/logout_vera.py:82
 #: alan/extensions/logout_vera.py:113
 msgid "Switch User"
-msgstr ""
+msgstr "Keisti Naudotoją"
 
 #: alan/extensions/logout.py:54
 msgid "Guest session"
-msgstr ""
+msgstr "Svečio seansas"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:124
 #: alan/extensions/logout_vera.py:45 alan/extensions/logout_vera.py:118
 msgid "Suspend"
-msgstr ""
+msgstr "Pristabdyti"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:127
 #: alan/extensions/logout_vera.py:48 alan/extensions/logout_vera.py:121
 msgid "Hibernate"
-msgstr ""
+msgstr "Užmigdyti"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:132
 #: alan/extensions/logout_vera.py:126
 msgid "Shutdown"
-msgstr ""
+msgstr "Išjungti"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:135
 #: alan/extensions/logout_vera.py:44 alan/extensions/logout_vera.py:129
 msgid "Reboot"
-msgstr ""
+msgstr "Paleisti iš naujo"
 
 #: alan/extensions/logout.py:74 alan/extensions/logout_vera.py:69
 msgid "(CTRL+ALT+SPACE)"
-msgstr ""
+msgstr "(CTRL+ALT+SPACE)"
 
 #: alan/extensions/logout.py:112
 msgid "Change profile image"
-msgstr ""
+msgstr "Keisti profilio paveikslą"
 
 #: alan/extensions/logout.py:117 alan/extensions/logout_vera.py:107
 msgid "Other..."
-msgstr ""
+msgstr "Kita..."
 
 #: alan/extensions/logout.py:140
 msgid "Settings..."
-msgstr ""
+msgstr "Nustatymai..."
 
 #: alan/extensions/logout_vera.py:43
 msgid "Power Off"
-msgstr ""
+msgstr "Išjungti"
 
 #: alan/extensions/exaile.py:86
 msgid "Exaile is not playing."
-msgstr ""
+msgstr "Exaile negroja."
 
 #: alan/extensions/exaile.py:88
 msgid "Open Exaile"
-msgstr ""
+msgstr "Atidaryti Exaile"
 
 #: alan.conf:1
 msgid "Applications"
-msgstr ""
+msgstr "Programos"
 
 #: alan.conf:2
 msgid "Places"
-msgstr ""
+msgstr "Vietos"
 
 #: alan.conf:3
 msgid "Appearance"
-msgstr ""
+msgstr "Išvaizda"
 
 #: alan.conf:4
 msgid "Help"
-msgstr ""
+msgstr "Pagalba"
 
 #: alan.conf:5
 msgid "Terminal Emulator"
-msgstr ""
+msgstr "Terminalo Emuliatorius"
 
 #: alan.conf:6
 msgid "Web Browser"
-msgstr ""
+msgstr "Žiniatinklio Naršyklė"
 
 #: alan.conf:7
 msgid "About Semplice..."
-msgstr ""
+msgstr "Apie Semplice..."
 
 #: alan.conf:8
 msgid "Semplice Website"
-msgstr ""
+msgstr "Semplice Svetainė"
 
 #: alan.conf:9
 msgid "Semplice Wiki"
-msgstr ""
+msgstr "Semplice Vikis"
 
 #: alan.conf:10
 msgid "Semplice Forums"
-msgstr ""
+msgstr "Semplice Forumai"
 
 #: alan.conf:11
 msgid "Semplice on IRC"
-msgstr ""
+msgstr "Semplice IRC"
 
 #: alan-vera.conf:1
 msgid "Settings"
-msgstr ""
+msgstr "Nustatymai"
