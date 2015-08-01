@@ -104,7 +104,7 @@ class Extension(extension.Extension):
 				
 				name = entry.get_name()
 					
-				command = re.sub(' [^ ]*%[fFuUdDnNickvm]', '', entry.get_commandline())
+				command = re.sub(' [^ ]*%[fFuUdDnNikvm]', '', entry.get_commandline()).replace("%c","\"\"")
 				#if "oneslip" in command and not ONESLIP:
 				#	# oneslip not installed, link to bricks
 				#	command = "pkexec /usr/bin/bricks \"%s\" oneslip" % escape(name.replace("&","and"))
