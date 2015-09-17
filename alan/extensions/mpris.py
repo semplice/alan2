@@ -88,6 +88,16 @@ class Extension(extension.Extension):
 	"""
 	
 	extensionName = "mpris"
+
+	@property
+	def pipe_arguments(self):
+		""" Returns a string with the arguments to pass to alan-pipe. """
+		
+		result = ["-i %s" % self.configuration.directory]
+		if self.configuration.profile:
+			result.append("-p %s" % self.configuration.profile)
+		
+		return " ".join(result)
 	
 	@property
 	def players(self):
@@ -215,7 +225,7 @@ class Extension(extension.Extension):
 				
 		item = Item(label=label, icon=self.IconPool.get_icon(icon))
 		if player and player_action:
-			action = ExecuteAction("alan-pipe %s -a \"%s %s\"" % (self.extensionName, player, player_action))
+			action = ExecuteAction("alan-pipe %s %s -a \"%s %s\"" % (self.pipe_arguments, self.extensionName, player, player_action))
 			item.append(action)
 		
 		return item
