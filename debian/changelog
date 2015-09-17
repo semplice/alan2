@@ -1,3 +1,9 @@
+alan2 (2.0.2-1) unstable; urgency=medium
+
+  * [mpris] Pass eventual profile and configuration directory to the alan-pipe calls.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 17 Sep 2015 17:07:56 +0200
+
 alan2 (2.0.1-1) unstable; urgency=medium
 
   * [xdgmenu] Manually replace captions (%c) with two quotation marks.
