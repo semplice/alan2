@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: alan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-23 14:29+0100\n"
-"PO-Revision-Date: 2013-03-25 18:17+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/alan-1/language/da/)\n"
+"PO-Revision-Date: 2015-11-16 14:37+0000\n"
+"Last-Translator: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>\n"
+"Language-Team: Danish (http://www.transifex.com/semplice/alan-1/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,185 +20,185 @@ msgstr ""
 
 #: alan/extensions/mpris.py:169
 msgid "Music"
-msgstr ""
+msgstr "Musik"
 
 #: alan/extensions/mpris.py:170
 msgid "No music player running"
-msgstr ""
+msgstr "Der kører ingen musikafspiller"
 
 #: alan/extensions/mpris.py:183 alan/extensions/exaile.py:68
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #: alan/extensions/mpris.py:186 alan/extensions/exaile.py:70
 msgid "Play"
-msgstr ""
+msgstr "Afspil"
 
 #: alan/extensions/mpris.py:189 alan/extensions/exaile.py:72
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
 #: alan/extensions/mpris.py:194 alan/extensions/exaile.py:76
 msgid "Previous"
-msgstr ""
+msgstr "Foregående"
 
 #: alan/extensions/mpris.py:197 alan/extensions/exaile.py:77
 msgid "Next"
-msgstr ""
+msgstr "Næste"
 
 #: alan/extensions/mpris.py:210
 #, python-format
 msgid "%s is not playing."
-msgstr ""
+msgstr "%s spiller ikke."
 
 #: alan/extensions/appearance.py:44
 msgid "Wallpaper"
-msgstr ""
+msgstr "Baggrund"
 
 #: alan/extensions/appearance.py:45
 msgid "Add"
-msgstr ""
+msgstr "Tilføj"
 
 #: alan/extensions/appearance.py:46
 msgid "Manage"
-msgstr ""
+msgstr "Administrer"
 
 #: alan/extensions/appearance.py:52
 msgid "Appearance settings"
-msgstr ""
+msgstr "Indstillinger for udseende"
 
 #: alan/extensions/appearance.py:56
 msgid "Visual effects"
-msgstr ""
+msgstr "Visuelle effekter"
 
 #: alan/extensions/places.py:52
 msgid "Desktop"
-msgstr ""
+msgstr "Skrivebord"
 
 #: alan/extensions/places.py:55
 msgid "Trash"
-msgstr ""
+msgstr "Skrald"
 
 #: alan/extensions/places.py:58
 msgid "Computer"
-msgstr ""
+msgstr "Computer"
 
 #: alan/extensions/places.py:66
 msgid "System (/)"
-msgstr ""
+msgstr "System (/)"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:81
 #: alan/extensions/logout_vera.py:47 alan/extensions/logout_vera.py:76
 msgid "Lock Screen"
-msgstr ""
+msgstr "Lås skærm"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:83
 #: alan/extensions/logout_vera.py:46 alan/extensions/logout_vera.py:78
 msgid "Logout"
-msgstr ""
+msgstr "Log ud"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:87
 #: alan/extensions/logout_vera.py:49 alan/extensions/logout_vera.py:82
 #: alan/extensions/logout_vera.py:113
 msgid "Switch User"
-msgstr ""
+msgstr "Skift bruger"
 
 #: alan/extensions/logout.py:54
 msgid "Guest session"
-msgstr ""
+msgstr "Gæstesession"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:124
 #: alan/extensions/logout_vera.py:45 alan/extensions/logout_vera.py:118
 msgid "Suspend"
-msgstr ""
+msgstr "Hvile"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:127
 #: alan/extensions/logout_vera.py:48 alan/extensions/logout_vera.py:121
 msgid "Hibernate"
-msgstr ""
+msgstr "Dvale"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:132
 #: alan/extensions/logout_vera.py:126
 msgid "Shutdown"
-msgstr ""
+msgstr "Luk ned"
 
 #: alan/extensions/logout.py:54 alan/extensions/logout.py:135
 #: alan/extensions/logout_vera.py:44 alan/extensions/logout_vera.py:129
 msgid "Reboot"
-msgstr ""
+msgstr "Genstart"
 
 #: alan/extensions/logout.py:74 alan/extensions/logout_vera.py:69
 msgid "(CTRL+ALT+SPACE)"
-msgstr ""
+msgstr "(CTRL+ALT+MELLEMRUM)"
 
 #: alan/extensions/logout.py:112
 msgid "Change profile image"
-msgstr ""
+msgstr "Skift profilbillede"
 
 #: alan/extensions/logout.py:117 alan/extensions/logout_vera.py:107
 msgid "Other..."
-msgstr ""
+msgstr "Andet..."
 
 #: alan/extensions/logout.py:140
 msgid "Settings..."
-msgstr ""
+msgstr "Indstillinger..."
 
 #: alan/extensions/logout_vera.py:43
 msgid "Power Off"
-msgstr ""
+msgstr "Sluk"
 
 #: alan/extensions/exaile.py:86
 msgid "Exaile is not playing."
-msgstr ""
+msgstr "Exaile spiller ikke."
 
 #: alan/extensions/exaile.py:88
 msgid "Open Exaile"
-msgstr ""
+msgstr "Åbn Exaile"
 
 #: alan.conf:1
 msgid "Applications"
-msgstr ""
+msgstr "Proogrammer"
 
 #: alan.conf:2
 msgid "Places"
-msgstr ""
+msgstr "Steder"
 
 #: alan.conf:3
 msgid "Appearance"
-msgstr ""
+msgstr "Udseende"
 
 #: alan.conf:4
 msgid "Help"
-msgstr ""
+msgstr "Hjælp"
 
 #: alan.conf:5
 msgid "Terminal Emulator"
-msgstr ""
+msgstr "Terminal"
 
 #: alan.conf:6
 msgid "Web Browser"
-msgstr ""
+msgstr "Browser"
 
 #: alan.conf:7
 msgid "About Semplice..."
-msgstr ""
+msgstr "Om Semplice..."
 
 #: alan.conf:8
 msgid "Semplice Website"
-msgstr ""
+msgstr "Semplices hjemmeside"
 
 #: alan.conf:9
 msgid "Semplice Wiki"
-msgstr ""
+msgstr "Semplice Wiki"
 
 #: alan.conf:10
 msgid "Semplice Forums"
-msgstr ""
+msgstr "Semplice Forum"
 
 #: alan.conf:11
 msgid "Semplice on IRC"
-msgstr ""
+msgstr "Semplice på IRC"
 
 #: alan-vera.conf:1
 msgid "Settings"
-msgstr ""
+msgstr "Indstillinger"
